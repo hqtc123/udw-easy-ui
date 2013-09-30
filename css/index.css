@@ -1,0 +1,42 @@
+.datagrid-cell {
+    margin-left: 4px;
+    margin-right: 4px;
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+#fm {
+    margin: 0;
+    padding: 10px 30px;
+}
+
+.ftitle {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 0;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.fitem {
+    margin-bottom: 5px;
+}
+
+.fitem label {
+    display: inline-block;
+    width: 80px;
+}
+
+#container {
+    margin: 10px auto;
+}
+
+.easyui-accordion {
+    float: left;
+    margin-right: 10px;
+}
+
+.easyui-datagrid {
+    float: right;
+}

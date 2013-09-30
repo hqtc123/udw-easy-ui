@@ -1,0 +1,43 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #F9F9F9;
+}
+
+#header {
+    background-color: #6c6e65;
+}
+
+#header #header-inner {
+    margin: 0 auto;
+}
+
+#titleDiv {
+    float: left;
+}
+
+#titleDiv #titleDiv-inner {
+    color: #FDFDFD;
+    font-size: 24px;
+    padding-top: 5px;
+}
+
+#linksDiv {
+    float: right;
+    text-align: right;
+}
+
+#linksDiv #linksDiv-inner {
+    padding-top: 10px;
+}
+
+#linksDiv-inner a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #fdfdfd;
+    margin-left: 20px;
+}
+
+#linksDiv-inner a:hover {
+    text-decoration: underline;
+}
