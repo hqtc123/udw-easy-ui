@@ -32,11 +32,51 @@
     margin: 10px auto;
 }
 
-.easyui-accordion {
+.panel {
     float: left;
-    margin-right: 10px;
 }
 
-.easyui-datagrid {
+#leftPanel {
+    float: left;
+    margin-right: 10px;
+    background-color: #f5f5f5;
+}
+
+.panel-title, .panel-with-icon {
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 20px;
+    color: #666;
+}
+
+.panel.datagrid {
     float: right;
+}
+
+#trendGraph {
+    float: right;
+    padding-top: 60px;
+}
+
+.toolMenu li {
+    height: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    list-style-type: circle;
+}
+
+.toolMenu li a {
+    font-size: 15px;
+    font-family: "微软雅黑";
+    color: #033d61;
+    cursor: pointer;
+}
+
+.toolMenu li a:hover {
+    font-weight: bold;
+}
+
+.toolMenu li a.onSelect {
+    font-weight: bold;
+    color: #0099FF;
 }

@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(function () {
     var chart;
     var dateArr = [];
     var inputArr = [];
@@ -48,5 +48,20 @@ $(document).ready(function () {
         }
     });
 
+    $(".datagrid").show();
+    $("#trendGraph").hide();
+    $(".itemSpan").on("click", function () {
+        $(".itemSpan").removeClass("onSelect");
+        $(this).addClass("onSelect");
+    })
 
-})  
+    $("#chooseTask").on("click", function () {
+        $("#trendGraph").hide();
+        $(".datagrid").show();
+    })
+
+    $("#chooseTrend").on("click", function () {
+        $(".datagrid").hide();
+        $("#trendGraph").show();
+    })
+})

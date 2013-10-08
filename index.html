@@ -10,6 +10,9 @@
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="js/highcharts.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+
 </head>
 <body>
 <div id="header" style="height: 36px;width: 100%">
@@ -19,72 +22,79 @@
         </div>
         <div id="linksDiv" style="width: 450px;height: 36px">
             <div id="linksDiv-inner">
-                <a href="#">Home</a>
-                <a href="trend.html">Trend</a>
+                <a href="javascript:void(0)">Home</a>
             </div>
         </div>
     </div>
 </div>
 <div id="container" style="width:1000px;height: 620px">
-    <div class="easyui-accordion" style="width: 180px;height: 520px">
-        <div title="Item 1" data-options="iconCls:'icon-ok'" style="overflow:auto;padding:10px;">
-            <h3 style="color:#0099FF;">Accordion for jQuery</h3>
-
-            <p>Accordion is a part of easyui framework for jQuery. It lets you define your accordion component on web
-                page more easily.</p>
-        </div>
-        <div title="Item 2" data-options="iconCls:'icon-help'" style="padding:10px;">
-            <p>The accordion allows you to provide multiple panels and display one at a time. Each panel has built-in
-                support for expanding and collapsing. Clicking on a panel header to expand or collapse that panel body.
-                The panel content can be loaded via ajax by specifying a 'href' property. Users can define a panel to be
-                selected. If it is not specified, then the first panel is taken by default.</p>
-        </div>
-        <div title="Item 3" data-options="iconCls:'icon-search'" style="padding:10px;">
-            <ul class="easyui-tree">
+    <div class="easyui-panel" id="leftPanel" style="width: 180px;height: 620px">
+        <div id="menuItem1" style="height: 180px">
+            <div class="panel-header accordion-header" style="height: 16px; width: 168px;">
+                <div class="panel-title panel-with-icon">数据统计</div>
+                <div class="panel-icon icon-reload"></div>
+            </div>
+            <ul class="toolMenu">
                 <li>
-                    <span>Foods</span>
-                    <ul>
-                        <li>
-                            <span>Fruits</span>
-                            <ul>
-                                <li>apple</li>
-                                <li>orange</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <span>Vegetables</span>
-                            <ul>
-                                <li>tomato</li>
-                                <li>carrot</li>
-                                <li>cabbage</li>
-                                <li>potato</li>
-                                <li>lettuce</li>
-                            </ul>
-                        </li>
-                    </ul>
+                    <a id="chooseTask" class="itemSpan onSelect">DAG任务列表</a>
+                </li>
+                <li>
+                    <a id="chooseTrend" class="itemSpan">每天输入输出</a>
+                </li>
+                <li>
+                    <a class="itemSpan">其他的东西</a>
                 </li>
             </ul>
         </div>
+        <div id="menuItem2" style="height: 150px">
+            <div class="panel-header accordion-header" style="height: 16px; width: 168px;">
+                <div class="panel-title panel-with-icon">菜单二</div>
+                <div class="panel-icon icon-reload"></div>
+            </div>
+            <ul class="toolMenu">
+                <li>
+                    <a class="itemSpan">菜单项一</a>
+                </li>
+                <li>
+                    <a class="itemSpan">菜单项一</a>
+                </li>
+                <li>
+                    <a class="itemSpan">菜单项一</a>
+                </li>
+            </ul>
+        </div>
+        <div id="menuItem3" style="height: 220px">
+            <div class="panel-header accordion-header" style="height: 16px; width: 168px;">
+                <div class="panel-title panel-with-icon">菜单三</div>
+                <div class="panel-icon icon-reload"></div>
+            </div>
+        </div>
     </div>
-    <table id="dg" title="UDW" class="easyui-datagrid" style="width:810px;height:620px"
-           pagination="true" url="service/main.php" draggable="false"
-           pageSize="20"
-           rownumbers="true" fitColumns="false" singleSelect="true">
-        <thead>
-        <tr>
-            <th field="dagname" width="80">任务名</th>
-            <th field="logname" width="80">日志名</th>
-            <th field="log_type" width="60">日志传输方式</th>
-            <th field="log_path" width="160">日志路径</th>
-            <th field="output_table" width="80">表名称</th>
-            <th field="table_type" width="80">表类型</th>
-            <th field="table_path" width="160">表路径</th>
-        </tr>
-        </thead>
-        <tbody id="mainBody">
+    <div id="rightPanel">
+        <table id="dg" title="UDW" class="easyui-datagrid" style="width:810px;height:620px"
+               pagination="true" url="service/main.php" draggable="false"
+               pageSize="20"
+               rownumbers="true" fitColumns="false" singleSelect="true">
+            <thead>
+            <tr>
+                <th field="dagname" width="80">任务名</th>
+                <th field="logname" width="80">日志名</th>
+                <th field="log_type" width="60">日志传输方式</th>
+                <th field="log_path" width="160">日志路径</th>
+                <th field="output_table" width="80">表名称</th>
+                <th field="table_type" width="80">表类型</th>
+                <th field="table_path" width="160">表路径</th>
+            </tr>
+            </thead>
+            <tbody id="mainBody">
 
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+
+        <div id="trendGraph" style="min-width:810px;max-width:810px;margin: 0 auto">
+
+        </div>
+    </div>
 </div>
 </body>
 </html>
