@@ -10,7 +10,7 @@ require_once("Db.php");
 $db = Db::getInstance();
 $db->createCon();
 
-$result = $db->query('select DISTINCT date FROM input_history_config UNION select DISTINCT date FROM output_history_config ORDER BY date');
+$result = $db->query('select DISTINCT date FROM input_size UNION select DISTINCT date FROM output_size ORDER BY date');
 
 $rows = array();
 

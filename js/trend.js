@@ -11,8 +11,8 @@ $(document).ready(function () {
             var obj = eval(point);
             for (var i = 0; i < obj.length; i++) {
                 dateArr.push(obj[i].date.substring(0, 4) + "-" + obj[i].date.substring(4, 6) + "-" + obj[i].date.substring(6, 8));
-                inputArr.push(parseInt(obj[i].input));
-                outputArr.push(parseInt(obj[i].output));
+                inputArr.push(parseFloat(obj[i].input));
+                outputArr.push(parseFloat(obj[i].output));
             }
             chart = new Highcharts.Chart({
                 chart: {
