@@ -10,15 +10,34 @@ require_once("Db.php");
 $db = Db::getInstance();
 $db->createCon();
 
-$result = $db->query('select input_size,output_size,date from testtrend');
+$result = $db->query('select DISTINCT date FROM input_history_config UNION select DISTINCT date FROM output_history_config ORDER BY date');
 
 $rows = array();
 
 $n = 0;
-
 while ($row = mysql_fetch_array($result)) {
-    $rows[$n] = array("date" => $row[2], "output" => $row[1], "input" => $row[0]);
+    $rows[$n]["date"] = $row[0];
     $n++;
+}
+
+$n2 = 0;
+for ($i = 0; $i < $n; $i++) {
+    $result2 = $db->query('select sum(size) from input_size where date=' . $rows[$i]["date"] . ';');
+    while ($row = mysql_fetch_array($result2)) {
+        $rows[$n2]["input"] = $row[0];
+        $rows[$n2]["date"] = $rows[$i]["date"];
+        $n2++;
+    }
+}
+
+$n2 = 0;
+for ($i = 0; $i < $n; $i++) {
+    $result2 = $db->query('select sum(size) from output_size where date=' . $rows[$i]["date"] . ';');
+    while ($row = mysql_fetch_array($result2)) {
+        $rows[$n2]["output"] = $row[0];
+        $rows[$n2]["date"] = $rows[$i]["date"];
+        $n2++;
+    }
 }
 echo json_encode($rows);
 
