@@ -34,6 +34,8 @@
 
 .panel {
     float: left;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #leftPanel {
@@ -49,7 +51,7 @@
     color: #666;
 }
 
-.panel.datagrid {
+#taskDiv {
     float: right;
 }
 
@@ -79,4 +81,18 @@
 .toolMenu li a.onSelect {
     font-weight: bold;
     color: #0099FF;
+}
+
+#queryPanel {
+    float: left;
+    padding-left: 500px;
+}
+
+#taskDiv .panel + .panel {
+    margin-left: 150px;
+    margin-top: 10px;
+}
+
+#ff{
+    margin-left: 100px;
 }

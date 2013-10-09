@@ -48,7 +48,7 @@ $(function () {
         }
     });
 
-    $(".datagrid").show();
+    $("#taskDiv").show();
     $("#trendGraph").hide();
     $(".itemSpan").on("click", function () {
         $(".itemSpan").removeClass("onSelect");
@@ -57,11 +57,11 @@ $(function () {
 
     $("#chooseTask").on("click", function () {
         $("#trendGraph").hide();
-        $(".datagrid").show();
+        $("#taskDiv").show();
     })
 
     $("#chooseTrend").on("click", function () {
-        $(".datagrid").hide();
+        $("#taskDiv").hide();
         $("#trendGraph").show();
     })
 })
