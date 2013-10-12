@@ -1,11 +1,12 @@
 body {
     padding: 0;
     margin: 0;
-    background-color: #F9F9F9;
+    background-color: #fdfdfd;
 }
 
 #header {
-    background-color: #6c6e65;
+    background-color: #606060;
+    box-shadow: 1px 1px 3px #ddd, -1px -1px 3px #ddd;
 }
 
 #header #header-inner {
@@ -17,7 +18,7 @@ body {
 }
 
 #titleDiv #titleDiv-inner {
-    color: #FDFDFD;
+    color: #fdfdfd;
     font-size: 24px;
     padding-top: 5px;
 }

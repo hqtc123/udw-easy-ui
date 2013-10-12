@@ -1,4 +1,10 @@
-$(function () {
+function getDataAjax(urlStr) {
+    $("#dg").datagrid({
+        url: urlStr
+    })
+}
+
+function drawTrendChart() {
     var chart;
     var dateArr = [];
     var inputArr = [];
@@ -47,7 +53,9 @@ $(function () {
             alert('error!')
         }
     });
-
+}
+$(function () {
+    getDataAjax("service/main.php");
     $("#taskDiv").show();
     $("#trendGraph").hide();
     $(".itemSpan").on("click", function () {
@@ -62,6 +70,22 @@ $(function () {
 
     $("#chooseTrend").on("click", function () {
         $("#taskDiv").hide();
+        drawTrendChart();
         $("#trendGraph").show();
     })
+    $("#hq-query-button").on("click", function () {
+        var tagName = $("input[name='tag-name']").val().trim();
+        var logName = $("input[name='log-name']").val().trim();
+        var tableName = $("input[name='table-name']").val().trim();
+        var transType = $("input[name='trans-type']").val().trim();
+        var tableType = $("input[name='table-type']").val().trim();
+        var suffix = "?";
+        suffix += "tag-name=" + tagName;
+        suffix += "&log-name=" + logName;
+        suffix += "&table-name=" + tableName;
+        suffix += "&trans-type=" + transType;
+        suffix += "&table-type=" + tableType;
+        getDataAjax("service/query.php" + suffix);
+    })
+
 })

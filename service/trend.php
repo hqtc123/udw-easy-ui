@@ -10,15 +10,12 @@ require_once("Db.php");
 $db = Db::getInstance();
 $db->createCon();
 
-$result = $db->query('select DISTINCT date FROM input_size UNION select DISTINCT date FROM output_size ORDER BY date');
 
 $rows = array();
 
-$n = 0;
-while ($row = mysql_fetch_array($result)) {
-    $rows[$n]["date"] = $row[0];
-    $n++;
-}
+$n = 2;
+$rows[0]["date"] = "20130924";
+$rows[1]["date"] = "20130925";
 
 $n2 = 0;
 for ($i = 0; $i < $n; $i++) {
@@ -31,16 +28,15 @@ for ($i = 0; $i < $n; $i++) {
 }
 
 $n2 = 0;
-for ($i = 0; $i < $n; $i++) {
-    $result2 = $db->query('select sum(size) from output_size where date=' . $rows[$i]["date"] . ';');
+for ($j = 0; $j < $n; $j++) {
+    $result2 = $db->query('select sum(size) from output_size where date=' . $rows[$j]["date"] . ';');
     while ($row = mysql_fetch_array($result2)) {
         $rows[$n2]["output"] = $row[0];
-        $rows[$n2]["date"] = $rows[$i]["date"];
+        $rows[$n2]["date"] = $rows[$j]["date"];
         $n2++;
     }
 }
 echo json_encode($rows);
-
 $db->close();
 
 
