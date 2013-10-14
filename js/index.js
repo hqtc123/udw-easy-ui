@@ -20,6 +20,14 @@ function drawTrendChart() {
                 inputArr.push(parseFloat(obj[i].input));
                 outputArr.push(parseFloat(obj[i].output));
             }
+            for (var j = 0; j < inputArr.length; j++) {
+                if (isNaN(inputArr[j])) {
+                    inputArr.rem
+                }
+                if (isNaN(outputArr[j])) {
+                    outputArr[j] = null;
+                }
+            }
             chart = new Highcharts.Chart({
                 chart: {
                     renderTo: 'trendGraph'
@@ -34,9 +42,22 @@ function drawTrendChart() {
                 },
                 yAxis: {
                     title: {
-                        text: 'something'
+                        enabled: false
+                    },
+                    lineWidth: 1,
+                    labels: {
+                        formatter: function () {
+                            return this.value + "TB";
+                        },
+                        style: {
+                            color: "#2f7ed8"
+                        }
                     }
                 },
+                tooltip: {
+                    valueSuffix: "TB"
+                },
+                showEmpty: false,
                 series: [
                     {
                         name: 'Input',
