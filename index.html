@@ -36,13 +36,13 @@
             </div>
             <ul class="toolMenu">
                 <li>
-                    <a id="chooseTask" class="itemSpan onSelect">DAG任务列表</a>
+                    <a id="choose-task" class="itemSpan onSelect">DAG任务列表</a>
                 </li>
                 <li>
-                    <a id="chooseTrend" class="itemSpan">每天输入输出</a>
+                    <a id="choose-trend" class="itemSpan">每天输入输出</a>
                 </li>
                 <li>
-                    <a class="itemSpan">其他的东西</a>
+                    <a id="choose-total-trend" class="itemSpan">UDW数据整体大小</a>
                 </li>
             </ul>
         </div>
@@ -71,7 +71,7 @@
         </div>
     </div>
     <div id="rightPanel">
-        <div id="taskDiv" style="width:818px;height: 980px">
+        <div id="taskDiv" class="right-child" style="width:818px;height: 980px">
             <table id="dg" title="UDW" class="easyui-datagrid" style="width:818px;height:500px"
                    pagination="true" draggable="false"
                    pageSize="10"
@@ -102,10 +102,7 @@
                             <td>日志名 :</td>
                             <td><input class="easyui-validatebox" type="text" name="log-name"></input></td>
                         </tr>
-                        <tr>
-                            <td>表名称 :</td>
-                            <td><input class="easyui-validatebox" type="text" name="table-name"></input></td>
-                        </tr>
+
                         <tr>
                             <td>日志传输方式 : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </td>
                             <td>
@@ -117,6 +114,10 @@
                             </td>
                         </tr>
                         <tr>
+                            <td>表名称 :</td>
+                            <td><input class="easyui-validatebox" type="text" name="table-name"></input></td>
+                        </tr>
+                        <tr>
                             <td>表类型 :</td>
                             <td>
                                 <select class="easyui-combobox" panelHeight="auto" name="table-type">
@@ -125,6 +126,10 @@
                                     <option value="SMALLTABLE">SMALLTABLE</option>
                                 </select>
                             </td>
+                        </tr>
+                        <tr>
+                            <td>表路径 :</td>
+                            <td><input class="easyui-validatebox" type="text" name="table-path"></input></td>
                         </tr>
                         <tr>
                             <td>
@@ -138,9 +143,12 @@
                 </form>
             </div>
         </div>
-    </div>
-    <div id="trendGraph" style="min-width:810px;max-width:810px;margin: 0 auto">
+        <div id="trend-graph" class="right-child" style="min-width:810px;max-width:810px;margin: 0 auto">
 
+        </div>
+        <div id="total-graph" class="right-child" style="min-width:810px;max-width:810px;margin: 0 auto">
+
+        </div>
     </div>
 </div>
 </div>

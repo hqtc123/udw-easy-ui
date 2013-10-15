@@ -8,17 +8,16 @@ $logName = $_GET["log-name"];
 $tableName = $_GET["table-name"];
 $transType = $_GET["trans-type"];
 $tableType = $_GET["table-type"];
+$tablePath = $_GET["table-path"];
 
 $whereSuffix = ' where input.dagname like "%' . $dagName . '%" and input.logname like "%' . $logName . '%" and
-  output.output_table like "%' . $tableName . '%" and input.log_type like "%' . $transType . '%" and output.table_type like "%' . $tableType . '%" ';
+  output.output_table like "%' . $tableName . '%" and output.table_path like "%' . $tablePath . '%" and input.log_type like "%' . $transType . '%" and output.table_type like "%' . $tableType . '%" ';
 
 $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
 $rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
 $offset = ($page - 1) * $rows;
 
 $sql = "select count(*) from input_config input inner join output_config output on input.dagname=output.dagname";
-
-//echo $sql . $whereSuffix;
 
 $rs = $db->query($sql . $whereSuffix);
 
