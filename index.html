@@ -36,7 +36,10 @@
             </div>
             <ul class="toolMenu">
                 <li>
-                    <a id="choose-task" class="itemSpan onSelect">DAG任务列表</a>
+                    <a id="choose-summary" class="itemSpan onSelect">UDW总体情况</a>
+                </li>
+                <li>
+                    <a id="choose-task" class="itemSpan">DAG任务列表</a>
                 </li>
                 <li>
                     <a id="choose-trend" class="itemSpan">每天输入输出</a>
@@ -71,6 +74,28 @@
         </div>
     </div>
     <div id="rightPanel">
+        <div id="summary-div" class="right-child" style="width:818px;height: 980px">
+            <div id="summary-content" class="easyui-panel" title="UDW总体情况" style="width:660px">
+                <table id="hq-summary-table">
+                    <tr>
+                        <td>UDW目前总大小</td>
+                        <td>666P</td>
+                    </tr>
+                    <tr>
+                        <td>DAG任务数目</td>
+                        <td>666P</td>
+                    </tr>
+                    <tr>
+                        <td>LOG日志数目</td>
+                        <td>666P</td>
+                    </tr>
+                    <tr>
+                        <td>TABLE表数目</td>
+                        <td>666P</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
         <div id="taskDiv" class="right-child" style="width:818px;height: 980px">
             <table id="dg" title="UDW" class="easyui-datagrid" style="width:818px;height:500px"
                    pagination="true" draggable="false"

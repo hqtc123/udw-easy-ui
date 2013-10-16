@@ -53,8 +53,33 @@
     color: #666;
 }
 
-#taskDiv {
+.right-child {
     float: right;
+}
+
+#summary-div {
+    border: 1px solid red;
+}
+
+#summary-div .panel {
+    margin-top: 66px;
+    margin-left: 84px;
+}
+
+#summary-div .panel-title {
+    height: 36px;
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 36px;
+    color: #666;
+}
+
+#summary-content {
+    float: left;
+}
+
+#hq-summary-table tr {
+    height: 50px;
 }
 
 #trend-graph, #total-graph {
@@ -109,3 +134,4 @@
     height: 26px;
     box-shadow: 1px 1px 1px #ddd, -1px -1px 1px #ddd;
 }
+

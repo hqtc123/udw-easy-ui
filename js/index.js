@@ -32,7 +32,7 @@ function drawTotalChart() {
 
                 xAxis: {
                     categories: dateArr,
-                    labels: {rotation: 30,	align: 'right',	style: { font: 'normal 10px Verdana, sans-serif'}}
+                    labels: {rotation: -30, align: 'right', style: { font: 'normal 10px Verdana, sans-serif'}}
                 },
                 yAxis: {
                     title: {
@@ -99,7 +99,7 @@ function drawTrendChart() {
 
                 xAxis: {
                     categories: dateArr,
-                    labels: {rotation: 30,	align: 'right',	style: { font: 'normal 10px Verdana, sans-serif'}}
+                    labels: {rotation: -30, align: 'right', style: { font: 'normal 10px Verdana, sans-serif'}}
                 },
                 yAxis: {
                     title: {
@@ -137,32 +137,35 @@ function drawTrendChart() {
     });
 }
 $(function () {
-    getDataAjax("service/main.php");
-    $("#taskDiv").show();
-    $("#trend-graph").hide();
+    $(".right-child").hide();
+    $("#summary-div").show();
     $(".itemSpan").on("click", function () {
         $(".itemSpan").removeClass("onSelect");
         $(this).addClass("onSelect");
     })
+    $("#choose-summary").on("click", function () {
+        $(".right-child[id!='summary-div']").fadeOut("slow", function () {
+            $("#summary-div").show();
+        });
+    })
 
     $("#choose-task").on("click", function () {
         $(".right-child[id!='taskDiv']").fadeOut("slow", function () {
-            $("#taskDiv").fadeIn("normal");
+            $("#taskDiv").show();
+            getDataAjax("service/main.php");
         });
     })
 
     $("#choose-trend").on("click", function () {
+        drawTrendChart();
         $(".right-child[id!='trend-graph']").fadeOut("slow", function () {
-            $("#trend-graph").fadeIn("normal", function () {
-                drawTrendChart();
-            })
+            $("#trend-graph").show();
         });
     })
     $("#choose-total-trend").on("click", function () {
+        drawTotalChart();
         $(".right-child[id!='total-graph']").fadeOut("slow", function () {
-            $("#total-graph").fadeIn("normal", function () {
-                drawTotalChart();
-            })
+            $("#total-graph").show();
         });
     })
     $("#hq-query-button").on("click", function () {
