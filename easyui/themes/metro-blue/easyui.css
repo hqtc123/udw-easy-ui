@@ -2,11 +2,6 @@
   overflow: hidden;
   text-align: left;
 }
-.panel-header,
-.panel-body {
-  border-width: 1px;
-  border-style: solid;
-}
 .panel-header {
   padding: 5px;
   position: relative;
@@ -61,7 +56,6 @@
   background-color: #9cc8f7;
   -moz-border-radius: -2px -2px -2px -2px;
   -webkit-border-radius: -2px -2px -2px -2px;
-  border-radius: -2px -2px -2px -2px;
 }
 .panel-loading {
   padding: 11px 0px 10px 30px;
@@ -97,13 +91,6 @@
 }
 .panel-tool-expand {
   background: url('images/panel_tools.png') no-repeat -32px -16px;
-}
-.panel-header,
-.panel-body {
-  border-color: #c3d9e0;
-}
-.panel-header {
-  background-color: #daeef5;
 }
 .panel-body {
   background-color: #fafafa;

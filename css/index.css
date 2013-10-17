@@ -29,7 +29,7 @@
 }
 
 #container {
-    margin: 10px auto;
+    margin: 46px auto;
 }
 
 .panel {
@@ -50,36 +50,63 @@
     font-size: 15px;
     font-weight: bold;
     line-height: 20px;
-    color: #666;
+    color: #fdfdfd;
 }
 
 .right-child {
     float: right;
-}
-
-#summary-div {
-    border: 1px solid red;
+    width: 818px;
+    height: 880px;
+    background-color: #f5f5f5;
+    box-shadow: 1px 1px 3px #ddd, -1px -1px 3px #ddd;
 }
 
 #summary-div .panel {
-    margin-top: 66px;
-    margin-left: 84px;
+    margin-top: 36px;
+    margin-left: 80px;
+}
+
+.panel-header {
+    background-color: #555;
+    color: #fdfdfd;
 }
 
 #summary-div .panel-title {
-    height: 36px;
-    font-size: 36px;
+    height: 20px;
+    font-size: 18px;
     font-weight: bold;
-    line-height: 36px;
-    color: #666;
+    line-height: 18px;
+    padding-top: 5px;
+    padding-left: 10px;
+    color: #fdfdfd;
 }
 
 #summary-content {
     float: left;
 }
 
-#hq-summary-table tr {
-    height: 50px;
+#contact-content {
+    padding-left: 30px;
+}
+
+#hq-summary-table tr, #hq-total-table tr {
+    height: 36px;
+}
+
+#hq-summary-table td, #hq-total-table td {
+    font-size: 18px;
+    width: 300px;
+    border: 1px solid #ddd;
+    padding-left: 30px;
+}
+
+td a {
+    font-size: 18px;
+    color: #663366;
+}
+
+td span {
+    font-size: 12px;
 }
 
 #trend-graph, #total-graph {
@@ -97,16 +124,17 @@
 .toolMenu li a {
     font-size: 15px;
     font-family: "微软雅黑";
-    color: #033d61;
+    color: #999;
     cursor: pointer;
 }
 
 .toolMenu li a:hover {
-    color: #22ddFF;
+    color: #666;
+    text-decoration: underline;
 }
 
 .toolMenu li a.onSelect {
-    color: #0099FF;
+    color: #333;
 }
 
 #queryPanel {
@@ -133,5 +161,9 @@
     width: 56px;
     height: 26px;
     box-shadow: 1px 1px 1px #ddd, -1px -1px 1px #ddd;
+}
+
+.toolMenu {
+    margin-left: -10px;
 }
 

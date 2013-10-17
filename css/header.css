@@ -1,12 +1,15 @@
 body {
     padding: 0;
     margin: 0;
-    background-color: #fdfdfd;
+    background-color: #ededef;
 }
 
 #header {
-    background-color: #606060;
-    box-shadow: 1px 1px 3px #ddd, -1px -1px 3px #ddd;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #444;
+    z-index: 9999;
 }
 
 #header #header-inner {
