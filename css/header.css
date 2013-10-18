@@ -45,3 +45,8 @@ body {
 #linksDiv-inner a:hover {
     text-decoration: underline;
 }
+
+.panel-header {
+    background-color: #555;
+    color: #fdfdfd;
+}
