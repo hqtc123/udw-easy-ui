@@ -24,7 +24,8 @@ function drawTotalChart() {
             }
             chart = new Highcharts.Chart({
                 chart: {
-                    renderTo: 'total-graph'
+                    renderTo: 'total-graph',
+                    backgroundColor: "transparent"
                 },
                 title: {
                     text: 'UDW Total Size Trend',
@@ -42,7 +43,7 @@ function drawTotalChart() {
                     lineWidth: 1,
                     labels: {
                         formatter: function () {
-                            return this.value + "TB";
+                            return this.value + " T";
                         },
                         style: {
                             color: "#2f7ed8"
@@ -50,7 +51,7 @@ function drawTotalChart() {
                     }
                 },
                 tooltip: {
-                    valueSuffix: "TB"
+                    valueSuffix: " T"
                 },
                 showEmpty: false,
                 series: [
@@ -91,10 +92,11 @@ function drawTrendChart() {
             }
             chart = new Highcharts.Chart({
                 chart: {
-                    renderTo: 'trend-graph'
+                    renderTo: 'trend-graph',
+                    backgroundColor: "transparent"
                 },
                 title: {
-                    text: 'Input VS Output Trend',
+                    text: '总体输入输出趋势',
                     x: -20 //center
                 },
 
@@ -109,7 +111,7 @@ function drawTrendChart() {
                     lineWidth: 1,
                     labels: {
                         formatter: function () {
-                            return this.value + "TB";
+                            return this.value + " T";
                         },
                         style: {
                             color: "#2f7ed8"
@@ -117,7 +119,7 @@ function drawTrendChart() {
                     }
                 },
                 tooltip: {
-                    valueSuffix: "TB"
+                    valueSuffix: " T"
                 },
                 showEmpty: false,
                 series: [

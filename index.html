@@ -183,12 +183,28 @@
                 </form>
             </div>
         </div>
-        <div class="right-child" id="trend-graph-div">
-            <div id="trend-graph" style="width:810px;height:400px;margin: 0 auto">
+        <div id="trend-graph-div" class="right-child">
+            <div id="trend-graph" style="width:810px;height:360px;margin: 0 auto">
 
             </div>
+            <div id="hq-bar"></div>
+            <table id="product-dg" title="各个产品线输入输出" class="easyui-datagrid"
+                   style="width:818px;height:500px;margin-top: 20px;margin-left: 60px"
+                   pagination="false" draggable="false"
+                   rownumbers="true" fitColumns="true" singleSelect="true">
+                <thead>
+                <tr>
+                    <th field="product" width="20">产品线</th>
+                    <th field="inputSize" width="35">输入</th>
+                    <th field="outputSize" width="35">输出</th>
+                    <th field="trend" width="160">趋势</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
         </div>
-        <div class="right-child" id="total-graph-div">
+        <div id="total-graph-div" class="right-child">
             <div id="total-graph" style="width:810px;height:400px;margin: 0 auto">
 
             </div>
