@@ -3,21 +3,7 @@ function getDataAjax(urlStr) {
         url: urlStr
     })
 }
-function getDagList() {
-    $("#dag-dg").datagrid({
-        url: "service/main.php?action=dag"
-    })
-}
-function getLogList() {
-    $("#log-dg").datagrid({
-        url: "service/main.php?action=log"
-    })
-}
-function getTableList() {
-    $("#table-dg").datagrid({
-        url: "service/main.php?action=table"
-    })
-}
+
 function drawTotalChart() {
     var chart;
     var dateArr = [];
@@ -203,36 +189,6 @@ $(function () {
         $(".right-child[id!='total-graph-div']").fadeOut("slow", function () {
             $(".right-child[id='total-graph-div']").show();
         });
-    })
-    /**
-     * 选择任务、日志、生成表
-     */
-    $("#choose-dag-list").on("click", function () {
-        $(".right-child[id!='dag-div']").fadeOut("slow", function () {
-            $(".right-child[id='dag-div']").show();
-            getDagList();
-        });
-    })
-    $("#dag-a").on("click", function () {
-        $("#choose-dag-list").trigger("click");
-    })
-    $("#choose-log-list").on("click", function () {
-        $(".right-child[id!='log-div']").fadeOut("slow", function () {
-            $(".right-child[id='log-div']").show();
-            getLogList();
-        });
-    })
-    $("#log-a").on("click", function () {
-        $("#choose-log-list").trigger("click");
-    })
-    $("#choose-table-list").on("click", function () {
-        $(".right-child[id!='table-div']").fadeOut("slow", function () {
-            $(".right-child[id='table-div']").show();
-            getTableList();
-        });
-    })
-    $("#table-a").on("click", function () {
-        $("#choose-table-list").trigger("click");
     })
     $("#hq-query-button").on("click", function () {
         var tagName = $("input[name='tag-name']").val().trim();
