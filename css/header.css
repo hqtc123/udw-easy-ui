@@ -50,3 +50,10 @@ body {
     background-color: #555;
     color: #fdfdfd;
 }
+
+.panel-title, .panel-with-icon {
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 20px;
+    color: #fdfdfd;
+}

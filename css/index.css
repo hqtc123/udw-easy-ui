@@ -46,13 +46,6 @@
     background-color: #f5f5f5;
 }
 
-.panel-title, .panel-with-icon {
-    font-size: 15px;
-    font-weight: bold;
-    line-height: 20px;
-    color: #fdfdfd;
-}
-
 .right-child {
     float: right;
     width: 818px;
