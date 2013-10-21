@@ -3,14 +3,16 @@ require_once("Db.php");
 $db = Db::getInstance();
 $db->createCon();
 
-$dagName = $_GET["tag-name"];
+$dagName = $_GET["dag-name"];
 $logName = $_GET["log-name"];
 $tableName = $_GET["table-name"];
 $transType = $_GET["trans-type"];
 $tableType = $_GET["table-type"];
 $tablePath = $_GET["table-path"];
+$logPath = $_GET["log-path"];
 
 $whereSuffix = ' where input.dagname like "%' . $dagName . '%" and input.logname like "%' . $logName . '%" and
+  input.log_path like "%' . $logPath . '%" and
   output.output_table like "%' . $tableName . '%" and output.table_path like "%' . $tablePath . '%" and input.log_type like "%' . $transType . '%" and output.table_type like "%' . $tableType . '%" ';
 
 $page = isset($_POST['page']) ? intval($_POST['page']) : 1;

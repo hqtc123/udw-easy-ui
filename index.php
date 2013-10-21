@@ -154,6 +154,10 @@
                             </td>
                         </tr>
                         <tr>
+                            <td>日志路径路径 :</td>
+                            <td><input class="easyui-validatebox" type="text" name="log-path"></input></td>
+                        </tr>
+                        <tr>
                             <td>表名称 :</td>
                             <td><input class="easyui-validatebox" type="text" name="table-name"></input></td>
                         </tr>

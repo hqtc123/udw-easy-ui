@@ -55,6 +55,10 @@
     box-shadow: 1px 1px 3px #aaa, -1px -1px 3px #aaa;
 }
 
+#taskDiv {
+    height: 856px;
+}
+
 #summary-div .panel {
     margin-top: 36px;
     margin-left: 80px;
@@ -123,12 +127,12 @@ td span {
 }
 
 .toolMenu li a:hover {
-    color: #666;
+    color: #33a9d9;
     text-decoration: underline;
 }
 
 .toolMenu li a.onSelect {
-    color: #333;
+    color: #0086c8;
 }
 
 #queryPanel {

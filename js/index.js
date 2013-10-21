@@ -198,19 +198,23 @@ $(function () {
         });
     })
     $("#hq-query-button").on("click", function () {
-        var tagName = $("input[name='tag-name']").val().trim();
+
+        var dagName = $("input[name='dag-name']").val().trim();
         var logName = $("input[name='log-name']").val().trim();
         var tableName = $("input[name='table-name']").val().trim();
         var transType = $("input[name='trans-type']").val().trim();
         var tableType = $("input[name='table-type']").val().trim();
         var tablePath = $("input[name='table-path']").val().trim();
+        alert("dddd")
+        var logPath = $("input[name='log-path']").val().trim();
         var suffix = "?";
-        suffix += "tag-name=" + tagName;
+        suffix += "dag-name=" + dagName;
         suffix += "&log-name=" + logName;
         suffix += "&table-name=" + tableName;
         suffix += "&trans-type=" + transType;
         suffix += "&table-type=" + tableType;
         suffix += "&table-path=" + tablePath;
+        suffix += "&log-path=" + logPath;
         getDataAjax("service/query.php" + suffix);
     })
 })

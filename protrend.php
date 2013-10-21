@@ -23,8 +23,52 @@ if (isset($_GET["product"])) {
     var dateArr = [];
     var inputArr = [];
     var outputArr = [];
+
+    chart = new Highcharts.Chart({
+        loading: {
+            labelStyle: {
+                top: '45%'
+            },
+            style: {
+                backgroundColor: 'transparent'
+            }
+        },
+        chart: {
+            renderTo: 'trend-div',
+            backgroundColor: "transparent"
+        },
+        title: {
+            text: product + ' 产品线输入输出趋势',
+            x: -20 //center
+        },
+
+        xAxis: {
+            categories: dateArr,
+            labels: {rotation: -30, align: 'right', style: { font: 'normal 10px Verdana, sans-serif'}}
+        },
+        yAxis: {
+            title: {
+                enabled: false
+            },
+            lineWidth: 1,
+            labels: {
+                formatter: function () {
+                    return this.value + " T";
+                },
+                style: {
+                    color: "#2f7ed8"
+                }
+            }
+        },
+        tooltip: {
+            valueSuffix: " T"
+        },
+        showEmpty: false,
+        series: []
+    });
+    chart.showLoading();
     $.ajax({
-        url: 'service/trend.php?action=in-out',
+        url: 'service/product.php?product=' + product,
         dataType: "json",
         success: function (point) {
             var obj = eval(point);
@@ -41,48 +85,14 @@ if (isset($_GET["product"])) {
                     outputArr[j] = null;
                 }
             }
-            chart = new Highcharts.Chart({
-                chart: {
-                    renderTo: 'trend-div',
-                    backgroundColor: "transparent"
-                },
-                title: {
-                    text: '总体输入输出趋势',
-                    x: -20 //center
-                },
-
-                xAxis: {
-                    categories: dateArr,
-                    labels: {rotation: -30, align: 'right', style: { font: 'normal 10px Verdana, sans-serif'}}
-                },
-                yAxis: {
-                    title: {
-                        enabled: false
-                    },
-                    lineWidth: 1,
-                    labels: {
-                        formatter: function () {
-                            return this.value + " T";
-                        },
-                        style: {
-                            color: "#2f7ed8"
-                        }
-                    }
-                },
-                tooltip: {
-                    valueSuffix: " T"
-                },
-                showEmpty: false,
-                series: [
-                    {
-                        name: 'Input',
-                        data: inputArr
-                    },
-                    {
-                        name: 'Output',
-                        data: outputArr
-                    }
-                ]
+            chart.hideLoading();
+            chart.addSeries({
+                name: 'Input',
+                data: inputArr
+            });
+            chart.addSeries({
+                name: 'Output',
+                data: outputArr
             });
         },
         error: function () {

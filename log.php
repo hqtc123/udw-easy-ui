@@ -42,6 +42,18 @@
             </thead>
             <tbody></tbody>
         </table>
+
+        <div class="easyui-panel" title="查询" style="width:500px">
+            <form id="ff" method="post">
+                <table>
+                    <tr>
+                        <td>产品线 :</td>
+                        <td><input class="easyui-validatebox" type="text" name="dag-name"></input></td>
+                    </tr>
+
+                </table>
+            </form>
+        </div>
     </div>
 </div>
 <?php include_once("footer.html"); ?>
