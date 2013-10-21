@@ -21,7 +21,7 @@
         </div>
         <div id="linksDiv" style="width: 450px;height: 36px">
             <div id="linksDiv-inner">
-                <a href="index.html">Home</a>
+                <a href="index.php">Home</a>
             </div>
         </div>
     </div>
@@ -42,5 +42,6 @@
         </table>
     </div>
 </div>
+<?php include_once("footer.html"); ?>
 </body>
 </html>

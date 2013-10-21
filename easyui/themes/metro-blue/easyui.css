@@ -1377,7 +1377,7 @@ a:hover.l-btn-plain-selected {
 }
 
 .datagrid-row-selected {
-    background: #6caef5;
+    background: #999999;
     color: #fff;
 }
 

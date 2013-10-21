@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>dag list</title>
+    <title>log list</title>
     <link rel="stylesheet" type="text/css" href="easyui/themes/metro-blue/easyui.css">
     <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
     <link rel="stylesheet" type="text/css" href="easyui/demo/demo.css">
@@ -21,22 +21,22 @@
         </div>
         <div id="linksDiv" style="width: 450px;height: 36px">
             <div id="linksDiv-inner">
-                <a href="index.html">Home</a>
+                <a href="index.php">Home</a>
             </div>
         </div>
     </div>
 </div>
 <div class="container">
-    <div id="table-div" class="right-child">
-        <table id="table-dg" class="easyui-datagrid" title="生成表列表" style="width: 818px;height: 500px"
+    <div id="dag-div" class="right-child">
+        <table id="log-dg" class="easyui-datagrid" title="日志列表" style="width: 818px;height: 600px"
                pagination="true" draggable="false"
                pageSize="20"
                rownumbers="true" fitColumns="true" singleSelect="true">
             <thead>
             <tr>
-                <th field="tablename" width="60">表名</th>
-                <th field="tabletype" width="35">表类型</th>
-                <th field="tablepath" width="190">表路径</th>
+                <th field="logname" width="70">日志名</th>
+                <th field="logtype" width="35">传输方式</th>
+                <th field="logpath" width="180">日志路径</th>
                 <th field="product" width="35">产品线</th>
             </tr>
             </thead>
@@ -44,5 +44,6 @@
         </table>
     </div>
 </div>
+<?php include_once("footer.html"); ?>
 </body>
 </html>

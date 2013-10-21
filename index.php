@@ -98,15 +98,15 @@
                 <table id="hq-summary-table">
                     <tr>
                         <td>DAG:任务数目</td>
-                        <td><a id="dag-a" href="dag.html"></a><span>（点击查看任务列表）</span></td>
+                        <td><a id="dag-a" href="dag.php"></a><span>（点击查看任务列表）</span></td>
                     </tr>
                     <tr>
                         <td>LOG:日志数目</td>
-                        <td><a id="log-a" href="log.html"></a><span>（点击查看日志列表）</span></td>
+                        <td><a id="log-a" href="log.php"></a><span>（点击查看日志列表）</span></td>
                     </tr>
                     <tr>
                         <td>TABLE:表数目</td>
-                        <td><a id="table-a" href="table.html"></a><span>（点击查看生成表列表）</span></td>
+                        <td><a id="table-a" href="table.php"></a><span>（点击查看生成表列表）</span></td>
                     </tr>
                 </table>
             </div>
@@ -189,15 +189,17 @@
             </div>
             <div id="hq-bar"></div>
             <table id="product-dg" title="各个产品线输入输出" class="easyui-datagrid"
-                   style="width:818px;height:500px;margin-top: 20px;margin-left: 60px"
+                   style="width:818px;height:399px;margin-top: 20px;margin-left: 60px"
                    pagination="false" draggable="false"
                    rownumbers="true" fitColumns="true" singleSelect="true">
                 <thead>
                 <tr>
                     <th field="product" width="20">产品线</th>
-                    <th field="inputSize" width="35">输入</th>
-                    <th field="outputSize" width="35">输出</th>
-                    <th field="trend" width="160">趋势</th>
+                    <th field="inputSize" width="35">输入（T）</th>
+                    <th field="inputDate" width="35">输入数据日期</th>
+                    <th field="outputSize" width="35">输出（T）</th>
+                    <th field="outputDate" width="35">输出数据日期</th>
+                    <th field="trend" width="10">趋势</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -212,6 +214,7 @@
     </div>
 </div>
 </div>
+<?php include_once("footer.html") ?>
 <script type="text/javascript">
     function resetQueryForm() {
         $("#ff").form("reset");

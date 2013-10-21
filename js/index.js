@@ -3,7 +3,11 @@ function getDataAjax(urlStr) {
         url: urlStr
     })
 }
-
+function getProductData() {
+    $("#product-dg").datagrid({
+        url: "service/product.php?product=all"
+    })
+}
 function drawTotalChart() {
     var chart;
     var dateArr = [];
@@ -182,6 +186,7 @@ $(function () {
 
     $("#choose-trend").on("click", function () {
         drawTrendChart();
+        getProductData();
         $(".right-child[id!='trend-graph-div']").fadeOut("slow", function () {
             $(".right-child[id='trend-graph-div']").show();
         });

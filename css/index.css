@@ -49,7 +49,8 @@
 .right-child {
     float: right;
     width: 818px;
-    height: 880px;
+    height: 816px;
+    margin-bottom: 10px;
     background-color: #f5f5f5;
     box-shadow: 1px 1px 3px #aaa, -1px -1px 3px #aaa;
 }
@@ -88,7 +89,7 @@
     padding-left: 30px;
 }
 
-td a {
+#hq-summary-table td a {
     font-size: 18px;
     color: #663366;
 }
