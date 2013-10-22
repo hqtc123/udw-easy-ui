@@ -28,7 +28,7 @@
 </div>
 <div class="container">
     <div id="dag-div" class="right-child">
-        <table id="log-dg" class="easyui-datagrid" title="日志列表" style="width: 818px;height: 600px"
+        <table id="log-dg" class="easyui-datagrid" title="日志列表" style="width: 818px;height: 500px"
                pagination="true" draggable="false"
                pageSize="20"
                rownumbers="true" fitColumns="true" singleSelect="true">

@@ -38,7 +38,7 @@
                     <a id="choose-summary" class="itemSpan onSelect">UDW总体情况</a>
                 </li>
                 <li>
-                    <a id="choose-task" class="itemSpan">DAG任务列表</a>
+                    <a id="choose-task" class="itemSpan">DAG任务流</a>
                 </li>
                 <li>
                     <a id="choose-trend" class="itemSpan">每天输入输出</a>
@@ -79,7 +79,8 @@
                         href="http://wiki.babel.baidu.com/twiki/bin/view/Com/Inf/UDW%E8%B5%84%E6%BA%90%E4%BD%BF%E7%94%A8%E7%BB%9F%E8%AE%A1">各产品线的udw-rd接口人信息</a>
                 </h3>
 
-                <h3>&nbsp;&nbsp;2.&nbsp;&nbsp;udw用户hi群号：1388125
+                <h3>&nbsp;&nbsp;2.&nbsp;&nbsp;udw用户hi群号：1388125 &nbsp;&nbsp;&nbsp;&nbsp;用户邮件组：<a
+                        href="mailto:udw-user@baidu.com">udw-user@baidu.com</a>
                 </h3>
 
                 <h3>&nbsp;&nbsp;3.&nbsp;&nbsp;<a
@@ -154,7 +155,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>日志路径路径 :</td>
+                            <td>日志路径 :</td>
                             <td><input class="easyui-validatebox" type="text" name="log-path"></input></td>
                         </tr>
                         <tr>
