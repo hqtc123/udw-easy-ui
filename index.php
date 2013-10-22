@@ -83,7 +83,7 @@
                 </h3>
 
                 <h3>&nbsp;&nbsp;3.&nbsp;&nbsp;<a
-                        href="http://icafe.baidu.com/space/udw/issue/wall?spaceId=4254&cid=5&vid=0#tip=nofield&lane=&channel=">其他需求请移步icafe</a>
+                        href="http://icafe.baidu.com/space/udw/issue/wall?spaceId=4254&cid=5&vid=0#tip=nofield&lane=&channel=">若有需求请移步icafe</a>
                 </h3>
             </div>
             <div id="total-content" class="easyui-panel" title="UDW总体大小" style="width:660px">

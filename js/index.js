@@ -205,7 +205,6 @@ $(function () {
         var transType = $("input[name='trans-type']").val().trim();
         var tableType = $("input[name='table-type']").val().trim();
         var tablePath = $("input[name='table-path']").val().trim();
-        alert("dddd")
         var logPath = $("input[name='log-path']").val().trim();
         var suffix = "?";
         suffix += "dag-name=" + dagName;

@@ -6,3 +6,11 @@
     margin-top: 50px;
     box-shadow: 1px 1px 1px #aaa, -1px -1px 1px #aaa;
 }
+
+.datagrid {
+    margin-bottom: 25px;
+}
+
+.combo-panel {
+    height: 66px;
+}
