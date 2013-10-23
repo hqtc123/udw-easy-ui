@@ -8,7 +8,7 @@ function getProductData() {
         url: "service/product.php?product=all"
     })
 }
-function drawTotalChart() {
+function drawTotalChart(id) {
     var chart;
     var dateArr = [];
     var totalArr = [];
@@ -28,17 +28,24 @@ function drawTotalChart() {
             }
             chart = new Highcharts.Chart({
                 chart: {
-                    renderTo: 'total-graph',
+                    renderTo: id,
                     backgroundColor: "transparent"
                 },
                 title: {
-                    text: 'UDW Total Size Trend',
-                    x: -20 //center
+                    text: 'UDW 建设数据量趋势',
+                    y: 10,
+                    verticalAlign: "bottom",
+                    style: {
+                        paddingBottom: "5px"
+                    }
                 },
 
                 xAxis: {
                     categories: dateArr,
                     labels: {rotation: -30, align: 'right', style: { font: 'normal 10px Verdana, sans-serif'}}
+                },
+                legend: {
+                    enabled: false
                 },
                 yAxis: {
                     title: {
@@ -71,7 +78,7 @@ function drawTotalChart() {
         }
     });
 }
-function drawTrendChart() {
+function drawTrendChart(id) {
     var chart;
     var dateArr = [];
     var inputArr = [];
@@ -96,12 +103,13 @@ function drawTrendChart() {
             }
             chart = new Highcharts.Chart({
                 chart: {
-                    renderTo: 'trend-graph',
+                    renderTo: id,
                     backgroundColor: "transparent"
                 },
                 title: {
-                    text: '总体输入输出趋势',
-                    x: -20 //center
+                    text: '每天总体输入输出趋势',
+                    verticalAlign: "bottom",
+                    y: 10
                 },
 
                 xAxis: {
@@ -121,6 +129,9 @@ function drawTrendChart() {
                             color: "#2f7ed8"
                         }
                     }
+                },
+                legend: {
+                    enabled: false
                 },
                 tooltip: {
                     valueSuffix: " T"
@@ -149,20 +160,31 @@ function createSummary() {
         dataType: "json",
         success: function (res) {
             if (res.success == 1) {
-                var totalSize = (res.totalSize / 1024).toFixed(5);
+                var totalSize = (res.totalSize / 1024).toFixed(2);
                 var dagNum = res.dagNum;
                 var logNum = res.logNum;
                 var tableNum = res.tableNum;
+                var percentage = ((totalSize / 35) * 100).toFixed(1);
 
-                $("#hq-total-table tr:eq(0) td:eq(1)").html(totalSize + "  P");
-                $("#hq-summary-table tr:eq(0) td:eq(1) a").html(dagNum);
+                $("#hq-total-table tr:eq(1) td:eq(0)").html(totalSize + "  P");
+                $("#hq-total-table tr:eq(1) td:eq(2)").html(percentage + "  %");
+                $("#hq-summary-table tr:eq(1) td:eq(0) a").html(dagNum);
                 $("#hq-summary-table tr:eq(1) td:eq(1) a").html(logNum);
-                $("#hq-summary-table tr:eq(2) td:eq(1) a").html(tableNum);
+                $("#hq-summary-table tr:eq(1) td:eq(2) a").html(tableNum);
             }
         }
     })
 }
 $(function () {
+    $("#contact-content").dialog("close");
+    $("#contact-link").on("click", function () {
+        $('#contact-content').dialog({
+            modal: true,
+        });
+        $("#contact-content").dialog("open");
+    });
+    drawTotalChart("index-total-graph");
+    drawTrendChart("index-trend-graph");
     $(".right-child").hide();
     $("#summary-div").show();
     $(".itemSpan").on("click", function () {
@@ -185,14 +207,14 @@ $(function () {
     })
 
     $("#choose-trend").on("click", function () {
-        drawTrendChart();
+        drawTrendChart("trend-graph");
         getProductData();
         $(".right-child[id!='trend-graph-div']").fadeOut("slow", function () {
             $(".right-child[id='trend-graph-div']").show();
         });
     })
     $("#choose-total-trend").on("click", function () {
-        drawTotalChart();
+        drawTotalChart("total-graph");
         $(".right-child[id!='total-graph-div']").fadeOut("slow", function () {
             $(".right-child[id='total-graph-div']").show();
         });

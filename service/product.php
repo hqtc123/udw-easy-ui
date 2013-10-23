@@ -14,6 +14,7 @@ $productName = $_GET["product"];
  * 各个产品线输入输出的表格
  */
 if ($productName == "all") {
+    $sort = isset($_POST['sort']) ? strval($_POST['sort']) : 'outputSize';
     //产品线总数目，暂时写死30
     $result["total"] = 30;
     $dateRs = $db->query('select DISTINCT date FROM output_size  ORDER BY date desc limit 1');
@@ -62,6 +63,27 @@ if ($productName == "all") {
         $newRow["inputDate"] = $date;
         $newRow["trend"] = '<a href="protrend.php?product=' . $newRow["product"] . '" target="_blank">趋势</a>';
         array_push($rows, $newRow);
+    }
+    if ($sort == "inputSize") {
+        for ($i = 0; $i < count($rows) - 1; $i++) {
+            for ($j = $i + 1; $j < count($rows); $j++) {
+                if ($rows[$i]["inputSize"] < $rows[$j]["inputSize"]) {
+                    $tmp = $rows[$i];
+                    $rows[$i] = $rows[$j];
+                    $rows[$j] = $tmp;
+                }
+            }
+        }
+    } else {
+        for ($i = 0; $i < count($rows) - 1; $i++) {
+            for ($j = $i + 1; $j < count($rows); $j++) {
+                if ($rows[$i]["outputSize"] < $rows[$j]["outputSize"]) {
+                    $tmp = $rows[$i];
+                    $rows[$i] = $rows[$j];
+                    $rows[$j] = $tmp;
+                }
+            }
+        }
     }
 
     $result["rows"] = $rows;

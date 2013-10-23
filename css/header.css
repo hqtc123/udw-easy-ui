@@ -22,7 +22,7 @@ body {
 
 #titleDiv #titleDiv-inner {
     color: #fdfdfd;
-    font-size: 24px;
+    font-size: 22px;
     padding-top: 5px;
 }
 
@@ -37,7 +37,7 @@ body {
 
 #linksDiv-inner a {
     text-decoration: none;
-    font-size: 14px;
+    font: 12px Georgia, Serif;
     color: #fdfdfd;
     margin-left: 20px;
 }
@@ -57,11 +57,13 @@ body {
     line-height: 20px;
     color: #fdfdfd;
 }
+
 .datagrid-row-over, .datagrid-header td.datagrid-header-over {
     background: #33a9d9;
     color: #404040;
     cursor: default;
 }
+
 .datagrid-row-selected {
     background: #33a9d9;
     color: #fff;

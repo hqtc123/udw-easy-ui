@@ -59,9 +59,14 @@
     height: 856px;
 }
 
+#summary-div {
+    height: 1086px;
+}
+
 #summary-div .panel {
-    margin-top: 36px;
-    margin-left: 80px;
+    margin-top: 16px;
+    margin-left: 36px;
+    padding-bottom: 10px;
 }
 
 #summary-div .panel-title {
@@ -82,15 +87,19 @@
     padding-left: 30px;
 }
 
+/*#hq-summary-table th, #hq-total-table th {*/
+/*float: left;*/
+/*}*/
+
 #hq-summary-table tr, #hq-total-table tr {
     height: 36px;
 }
 
 #hq-summary-table td, #hq-total-table td {
     font-size: 18px;
-    width: 300px;
+    width: 236px;
     border: 1px solid #ddd;
-    padding-left: 30px;
+    text-align: center;
 }
 
 #hq-summary-table td a {
@@ -100,6 +109,11 @@
 
 td span {
     font-size: 12px;
+}
+
+#index-total-graph, #index-trend-graph {
+    float: right;
+    margin-top: 20px;
 }
 
 #total-graph {
