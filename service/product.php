@@ -62,7 +62,8 @@ if ($productName == "all") {
         $newRow["outputDate"] = $date;
         $newRow["inputDate"] = $date;
         $newRow["trend"] = '<a href="protrend.php?product=' . $newRow["product"] . '" target="_blank">趋势</a>';
-        array_push($rows, $newRow);
+        if ($newRow["inputSize"] != 0 && $newRow["outputSize"] != 0)
+            array_push($rows, $newRow);
     }
     if ($sort == "inputSize") {
         for ($i = 0; $i < count($rows) - 1; $i++) {
@@ -85,9 +86,7 @@ if ($productName == "all") {
             }
         }
     }
-
-    $result["rows"] = $rows;
-    echo json_encode($result);
+    echo json_encode($rows);
 } /**
  * 每个产品线输入输出的趋势折线图
  */

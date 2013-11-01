@@ -60,13 +60,13 @@
 }
 
 #summary-div {
-    height: 1086px;
+    height: 1156px;
 }
 
 #summary-div .panel {
-    margin-top: 16px;
+    margin-top: 10px;
     margin-left: 36px;
-    padding-bottom: 10px;
+    padding-bottom: 3px;
 }
 
 #summary-div .panel-title {
@@ -118,7 +118,7 @@ td span {
 
 #total-graph {
     float: right;
-    padding-top: 60px;
+    padding-top: 20px;
 }
 
 #trend-graph {
@@ -159,6 +159,10 @@ td span {
     margin-top: 10px;
 }
 
+#summary-div>table {
+    margin-left: 100px;
+}
+
 #ff {
     margin-left: 100px;
 }
@@ -175,6 +179,10 @@ td span {
     box-shadow: 1px 1px 1px #aaa, -1px -1px 1px #aaa;
 }
 
+#hq-pie {
+    float: left;
+}
+
 #hq-bar {
     float: right;
     width: 818px;
@@ -186,3 +194,6 @@ td span {
     margin-left: -10px;
 }
 
+#total-graph-div {
+    height: 1000px;
+}

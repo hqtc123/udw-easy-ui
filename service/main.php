@@ -2,6 +2,7 @@
 require_once("Db.php");
 $db = Db::getInstance();
 $db->createCon();
+date_default_timezone_set("Asia/Shanghai");
 $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
 $rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
 $offset = ($page - 1) * $rows;
@@ -39,10 +40,16 @@ if ($_GET["action"] == "task") {
     $rs = $db->query('select count(distinct log_path) from input_config;');
     $row = mysql_fetch_row($rs);
     $result["logNum"] = $row[0];
+    $rs = $db->query('select count(distinct log_path) from input_config where log_type="BIGPIPE";');
+    $row = mysql_fetch_row($rs);
+    $result["logBigNum"] = $row[0];
 
     $rs = $db->query('select count(distinct table_path) from output_config;');
     $row = mysql_fetch_row($rs);
     $result["tableNum"] = $row[0];
+    $rs = $db->query('select count(distinct table_path) from output_config where table_type="BIGTABLE";');
+    $row = mysql_fetch_row($rs);
+    $result["tableBigNum"] = $row[0];
 
     $result["success"] = 1;
     echo json_encode($result);
@@ -120,6 +127,75 @@ if ($_GET["action"] == "task") {
     }
     $result["rows"] = $resultRows;
     echo json_encode($result);
+} elseif ($_GET["action"] == "table-date") {
+    $days = isset($_GET["days"]) ? $_GET["days"] : "days";
+    $product = isset($_GET["product"]) ? $_GET["product"] : "";
+    $tableName = isset($_GET["table-name"]) ? $_GET["table-name"] : "";
+
+    $sql = 'select distinct table_name from product_table;';
+    $rs = $db->query($sql);
+    $resultRows = array();
+
+    $newRow = array();
+    while ($row = mysql_fetch_array($rs)) {
+        $newRow["tableName"] = $row[0];
+        $newRs = $db->query("select * from product_table where table_name='" . $row[0] . "' order by date desc limit 1");
+        $row2 = mysql_fetch_array($newRs);
+        $newRow["product"] = $row2[1];
+        $startDate = substr($row2[3], 0, 4) . "-" . substr($row2[3], 4, 2) . "-" . substr($row2[3], 6, 2);
+        $endDate = substr($row2[4], 0, 4) . "-" . substr($row2[4], 4, 2) . "-" . substr($row2[4], 6, 2);
+        $newRow["period"] = $row2[3] . "—" . $row2[4];
+        $newRow["days"] = abs((strtotime($endDate) - strtotime($startDate)) / 3600 / 24);
+        array_push($resultRows, $newRow);
+    }
+    $result1 = array();
+    $result2 = array();
+    $result3 = array();
+    if ($days == "days") {
+        $result1 = $resultRows;
+    } elseif ($days == "days1") {
+        for ($i = 0; $i < count($resultRows); $i++) {
+            if ($resultRows[$i]["days"] < 184) {
+                array_push($result1, $resultRows[$i]);
+            }
+        }
+    } elseif ($days == "days2") {
+        for ($i = 0; $i < count($resultRows); $i++) {
+            if ($resultRows[$i]["days"] >= 184 && $resultRows[$i]["days"] <= 365) {
+                array_push($result1, $resultRows[$i]);
+            }
+        }
+    } elseif ($days == "days3") {
+        for ($i = 0; $i < count($resultRows); $i++) {
+            if ($resultRows[$i]["days"] > 365 && $resultRows[$i]["days"] <= 548) {
+                array_push($result1, $resultRows[$i]);
+            }
+        }
+    } else {
+        for ($i = 0; $i < count($resultRows); $i++) {
+            if ($resultRows[$i]["days"] > 548) {
+                array_push($result1, $resultRows[$i]);
+            }
+        }
+    }
+
+    for ($i = 0; $i < count($result1); $i++) {
+        if ($result1[$i]["product"] == null || $result1[$i]["product"] == "" || $result1[$i]["days"] == 0 || $result1[$i]["product"] == "globalps") {
+            continue;
+        }
+        if (preg_match("%" . $product . "%", $result1[$i]["product"])) {
+            array_push($result2, $result1[$i]);
+        }
+    }
+    for ($i = 0; $i < count($result2); $i++) {
+        if (preg_match("%" . $tableName . "%", $result2[$i]["tableName"])) {
+            array_push($result3, $result2[$i]);
+        }
+    }
+    $result["total"] = count($result3);
+
+    $result["rows"] = array_slice($result3, $offset, $rows);
+    echo json_encode($result);
 }
 $db->close();
-	
+exit();

@@ -8,6 +8,11 @@ function getProductData() {
         url: "service/product.php?product=all"
     })
 }
+function getProductSizeData() {
+    $("#product-size-dg").datagrid({
+        url: "service/prosize.php?action=size"
+    })
+}
 function drawTotalChart(id) {
     var chart;
     var dateArr = [];
@@ -62,7 +67,9 @@ function drawTotalChart(id) {
                     }
                 },
                 tooltip: {
-                    valueSuffix: " T"
+                    formatter: function () {
+                        return this.x + ":<br>" + this.y.toFixed(1)+" T";
+                    }
                 },
                 showEmpty: false,
                 series: [
@@ -134,7 +141,9 @@ function drawTrendChart(id) {
                     enabled: false
                 },
                 tooltip: {
-                    valueSuffix: " T"
+                    formatter: function () {
+                        return this.x + "<br>" + this.series.name+":"+this.y.toFixed(1)+" T";
+                    }
                 },
                 showEmpty: false,
                 series: [
@@ -154,6 +163,70 @@ function drawTrendChart(id) {
         }
     });
 }
+function drawSizePie() {
+    var dataArr = new Array();
+    $.ajax({
+        url: "service/prosize.php?action=pie",
+        dataType: "json",
+        success: function (data) {
+            for (var i = 0; i < data.length; i++) {
+                var tmp = new Array();
+                tmp[0] = data[i][1];
+                tmp[1] = parseFloat(data[i][0]);
+                dataArr[i] = tmp;
+            }
+
+            new Highcharts.Chart({
+                chart: {
+                    renderTo: 'hq-pie',
+                    backgroundColor: "transparent",
+                    plotBorderWidth: 0,
+                    plotShadow: false
+                },
+                title: {
+                    text: "各产品线大小比例",
+                    verticalAlign: 'bottom',
+                    y: 0
+                },
+                tooltip: {
+                    formatter: function () {
+                        return '<b>' + this.point.name + '</b>: ' + this.y + ' TB';
+                    }
+                },
+                plotOptions: {
+                    pie: {
+                        size: '80%',
+                        borderWidth: 1,
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            color: '#000',
+                            distance: 5,//通过设置这个属性，将每个小饼图的显示名称和每个饼图重叠
+                            style: {
+                                fontSize: '10px',
+                                lineHeight: '10px'
+                            },
+                            formatter: function () {
+                                return '<b>' + this.point.name + '</b>: ' + Highcharts.numberFormat(this.percentage, 2) + ' %';
+//                                return  '<span style="color:#00008B;">' + this.point.name + '</span>';
+                            }
+                        },
+                        padding: 20
+                    }
+                },
+                series: [
+                    {
+                        type: 'pie',
+                        name: "size",
+                        data: dataArr
+                    }
+                ]
+            });
+        }
+    })
+
+}
 function createSummary() {
     $.ajax({
         url: "service/main.php?action=summary",
@@ -163,23 +236,32 @@ function createSummary() {
                 var totalSize = (res.totalSize / 1024).toFixed(2);
                 var dagNum = res.dagNum;
                 var logNum = res.logNum;
+                var logBigNum = res.logBigNum;
+                var logLdmNum = logNum - logBigNum;
                 var tableNum = res.tableNum;
+                var tableBigNum = res.tableBigNum;
+                var tableSmallNum = tableNum - tableBigNum;
                 var percentage = ((totalSize / 35) * 100).toFixed(1);
 
                 $("#hq-total-table tr:eq(1) td:eq(0)").html(totalSize + "  P");
                 $("#hq-total-table tr:eq(1) td:eq(2)").html(percentage + "  %");
                 $("#hq-summary-table tr:eq(1) td:eq(0) a").html(dagNum);
                 $("#hq-summary-table tr:eq(1) td:eq(1) a").html(logNum);
+                $("#hq-summary-table tr:eq(1) td:eq(1) span").html(" (BIGPIPE:" + logBigNum + ",LDM:" + logLdmNum + ")");
                 $("#hq-summary-table tr:eq(1) td:eq(2) a").html(tableNum);
+                $("#hq-summary-table tr:eq(1) td:eq(2) span").html(" (BIG:" + tableBigNum + ",SMALL:" + tableSmallNum + ")");
             }
         }
+    })
+    $("#table-date-dg").datagrid({
+        url: "service/main.php?action=table-date"
     })
 }
 $(function () {
     $("#contact-content").dialog("close");
     $("#contact-link").on("click", function () {
         $('#contact-content').dialog({
-            modal: true,
+            modal: true
         });
         $("#contact-content").dialog("open");
     });
@@ -215,6 +297,8 @@ $(function () {
     })
     $("#choose-total-trend").on("click", function () {
         drawTotalChart("total-graph");
+        drawSizePie();
+        getProductSizeData();
         $(".right-child[id!='total-graph-div']").fadeOut("slow", function () {
             $(".right-child[id='total-graph-div']").show();
         });
@@ -237,5 +321,20 @@ $(function () {
         suffix += "&table-path=" + tablePath;
         suffix += "&log-path=" + logPath;
         getDataAjax("service/query.php" + suffix);
+    })
+
+    $("#index-query-button").on("click", function () {
+        var tableName = $("input[name='table-name2']").val().trim();
+        var product = $("input[name='product']").val().trim();
+        var days = $("input[name='days']").val().trim();
+        var suffix = "";
+        suffix += "&table-name=" + tableName;
+        suffix += "&product=" + product;
+        suffix += "&days=" + days;
+        suffix += "&page=" + 1;
+        suffix += "&rows=" + 10;
+        $("#table-date-dg").datagrid({
+            url: "service/main.php?action=table-date" + suffix
+        })
     })
 })
