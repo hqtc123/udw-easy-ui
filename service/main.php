@@ -65,13 +65,16 @@ if ($_GET["action"] == "task") {
     $resultRows = array();
 
     while ($row = mysql_fetch_array($rs)) {
+        $newRow["product"] = "";
         $newRow["dagname"] = $row[0];
-        $tableRs = $db->query('select output_table FROM output_config WHERE dagname="' . $row[0] . '"  LIMIT 1;');
-        $tableRow = mysql_fetch_array($tableRs);
-        $table = $tableRow[0];
-        $productRs = $db->query('select product FROM product_bigtable WHERE tablename="' . $table . '" UNION select product FROM product_smalltable WHERE tablename="' . $table . '";');
-        $productRow = mysql_fetch_array($productRs);
-        $newRow["product"] = $productRow[0];
+        $tableRs = $db->query('select output_table FROM output_config WHERE dagname="' . $row[0] . '";');
+        while ($tableRow = mysql_fetch_array($tableRs)) {
+            $table = $tableRow[0];
+            $productRs = $db->query('select product FROM product_bigtable WHERE tablename="' . $table . '" UNION select product FROM product_smalltable WHERE tablename="' . $table . '";');
+            $productRow = mysql_fetch_array($productRs);
+            if ($productRow[0] != null)
+                $newRow["product"] = $productRow[0];
+        }
         array_push($resultRows, $newRow);
     }
     $result["rows"] = $resultRows;
@@ -185,6 +188,91 @@ if ($_GET["action"] == "task") {
         }
         if (preg_match("%" . $product . "%", $result1[$i]["product"])) {
             array_push($result2, $result1[$i]);
+        }
+    }
+    for ($i = 0; $i < count($result2); $i++) {
+        if (preg_match("%" . $tableName . "%", $result2[$i]["tableName"])) {
+            array_push($result3, $result2[$i]);
+        }
+    }
+    $result["total"] = count($result3);
+
+    $result["rows"] = array_slice($result3, $offset, $rows);
+    echo json_encode($result);
+} elseif ($_GET["action"] == "res-estimate") {
+    $result = array();
+    $perSize = 0;
+    $rs = $db->query("select * from table_comp_size ");
+    while ($row = mysql_fetch_array($rs)) {
+        $perSize += $row[1] / $row[2];
+    }
+    echo $perSize;
+} elseif ($_GET["action"] == "all-add-estimate") {
+    $days = $_POST["days"];
+    $sql = 'select distinct output_table from output_config;';
+    $rs = $db->query($sql);
+    $result = 0;
+    while ($row = mysql_fetch_array($rs)) {
+        $newRs = $db->query("select * from product_table where table_name='" . $row[0] . "' order by date desc limit 1");
+        $row2 = mysql_fetch_array($newRs);
+        $compRs = $db->query("select * from table_comp_size where table_name='" . $row[0] . "'");
+        $rsRow = mysql_fetch_array($compRs);
+        $perSize = 0;
+        if ($rsRow[2] != null && $rsRow[2] != 0)
+            $perSize = $rsRow[1] / $rsRow[2];
+        $startDate = substr($row2[3], 0, 4) . "-" . substr($row2[3], 4, 2) . "-" . substr($row2[3], 6, 2);
+        $endDate = substr($row2[4], 0, 4) . "-" . substr($row2[4], 4, 2) . "-" . substr($row2[4], 6, 2);
+        $alreadyDays = abs((strtotime($endDate) - strtotime($startDate)) / 3600 / 24);
+        if ($alreadyDays < $days && $perSize > 0) {
+            $result += $perSize * ($days - $alreadyDays);
+        }
+    }
+    echo $result;
+} elseif ($_GET["action"] == "table-estimate") {
+    $product = isset($_GET["product"]) ? $_GET["product"] : "";
+    $tableName = isset($_GET["table-name"]) ? $_GET["table-name"] : "";
+
+    $sql = 'select distinct output_table from output_config;';
+    $rs = $db->query($sql);
+    $resultRows = array();
+
+    $toInject = 'var days=parseInt($(this).prev().val());
+                var aDays=$(this).parent().parent().prev().prev().children("div").html();
+                if(days>aDays){
+                    var perSize=parseFloat($(this).parent().parent().prev().children("div").html());
+                    var size=perSize*(days-aDays);
+                    $(this).parent().parent().next().children("div").html(size)
+                }
+                 else{
+                    alert("一般认为，你输入的天数应该是数字（小数将取整），而且大于表的已建天数。")
+                    $(this).parent().parent().next().children("div").html("输入合适天数")
+                 }';
+    $newRow = array();
+    while ($row = mysql_fetch_array($rs)) {
+        $newRow["tableName"] = $row[0];
+        $newRs = $db->query("select * from product_table where table_name='" . $row[0] . "' order by date desc limit 1");
+        $row2 = mysql_fetch_array($newRs);
+        $newRow["product"] = $row2[1];
+        $compRs = $db->query("select * from table_comp_size where table_name='" . $newRow["tableName"] . "'");
+        $rsRow = mysql_fetch_array($compRs);
+        if ($rsRow[2] != null && $rsRow[2] != 0)
+            $newRow["per_size"] = $rsRow[1] / $rsRow[2];
+        $startDate = substr($row2[3], 0, 4) . "-" . substr($row2[3], 4, 2) . "-" . substr($row2[3], 6, 2);
+        $endDate = substr($row2[4], 0, 4) . "-" . substr($row2[4], 4, 2) . "-" . substr($row2[4], 6, 2);
+        $newRow["already_days"] = abs((strtotime($endDate) - strtotime($startDate)) / 3600 / 24);
+        $newRow["input"] = "输入天数：<input type='text' style='width: 80px'><input onclick='" . $toInject . "' type='button' value='确定' class='estimate-btn' />";
+        $newRow["result"] = "待计算";
+        array_push($resultRows, $newRow);
+    }
+    $result2 = array();
+    $result3 = array();
+
+    for ($i = 0; $i < count($resultRows); $i++) {
+        if ($resultRows[$i]["product"] == null || $resultRows[$i]["product"] == "" || $resultRows[$i]["already_days"] == 0) {
+            continue;
+        }
+        if (preg_match("%" . $product . "%", $resultRows[$i]["product"])) {
+            array_push($result2, $resultRows[$i]);
         }
     }
     for ($i = 0; $i < count($result2); $i++) {

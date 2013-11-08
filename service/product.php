@@ -61,7 +61,7 @@ if ($productName == "all") {
         $newRow["inputSize"] = $inSize;
         $newRow["outputDate"] = $date;
         $newRow["inputDate"] = $date;
-        $newRow["trend"] = '<a href="protrend.php?product=' . $newRow["product"] . '" target="_blank">趋势</a>';
+        $newRow["trend"] = '<a class="cnm-class" href="protrend.php?product=' . $newRow["product"] . '" target="_blank">趋势</a>';
         if ($newRow["inputSize"] != 0 && $newRow["outputSize"] != 0)
             array_push($rows, $newRow);
     }

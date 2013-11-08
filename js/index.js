@@ -47,7 +47,7 @@ function drawTotalChart(id) {
 
                 xAxis: {
                     categories: dateArr,
-                    labels: {rotation: -30, align: 'right', style: { font: 'normal 10px Verdana, sans-serif'}}
+                    labels: {rotation: -30, step: 2, align: 'right', style: { font: 'normal 10px Verdana, sans-serif'}}
                 },
                 legend: {
                     enabled: false
@@ -68,7 +68,7 @@ function drawTotalChart(id) {
                 },
                 tooltip: {
                     formatter: function () {
-                        return this.x + ":<br>" + this.y.toFixed(1)+" T";
+                        return this.x + ":<br>" + this.y.toFixed(1) + " T";
                     }
                 },
                 showEmpty: false,
@@ -121,7 +121,7 @@ function drawTrendChart(id) {
 
                 xAxis: {
                     categories: dateArr,
-                    labels: {rotation: -30, align: 'right', style: { font: 'normal 10px Verdana, sans-serif'}}
+                    labels: {rotation: -30, step: 2, align: 'right', style: { font: 'normal 10px Verdana, sans-serif'}}
                 },
                 yAxis: {
                     title: {
@@ -142,7 +142,7 @@ function drawTrendChart(id) {
                 },
                 tooltip: {
                     formatter: function () {
-                        return this.x + "<br>" + this.series.name+":"+this.y.toFixed(1)+" T";
+                        return this.x + "<br>" + this.series.name + ":" + this.y.toFixed(1) + " T";
                     }
                 },
                 showEmpty: false,
@@ -258,6 +258,7 @@ function createSummary() {
     })
 }
 $(function () {
+    var sizePerDay = 0;
     $("#contact-content").dialog("close");
     $("#contact-link").on("click", function () {
         $('#contact-content').dialog({
@@ -303,8 +304,59 @@ $(function () {
             $(".right-child[id='total-graph-div']").show();
         });
     })
-    $("#hq-query-button").on("click", function () {
 
+    $("#choose-res-estimate").on("click", function () {
+        $.ajax({
+            url: "service/main.php?action=res-estimate",
+            success: function (data) {
+                sizePerDay = parseFloat(data).toFixed(2);
+                $("#per-day-td").html("UDW压缩后平均每天数据量：" + sizePerDay + " T");
+            }
+        });
+
+        $("#table-estimate-dg").datagrid({
+            url: "service/main.php?action=table-estimate"
+        })
+        $(".right-child[id!='res-estimate']").fadeOut("slow", function () {
+            $(".right-child[id='res-estimate']").show();
+        });
+    })
+//总体大小预估计算
+    $("#res-estimate-btn").on("click", function () {
+        if (sizePerDay == 0) {
+            alert("请稍候");
+            return
+        }
+        var days = $("#res-estimate-input").val();
+        if (isNaN(days) || days == "") {
+            alert("请您输入一个天数，整数型的，别的我还不会算")
+            return
+        }
+        var result = parseFloat(sizePerDay * days).toFixed(2);
+        $("#hq-res-estimate-table label").html(result + "  T")
+    })
+//总体大小增量预估计算
+    $("#res-estimate-add-btn").on("click", function () {
+        var days = $("#res-estimate-add-input").val();
+        if (isNaN(days) || days == "") {
+            alert("请您输入一个天数，整数型的，别的我还不会算")
+            return
+        }
+        $("#res-estimate-add-table label").html("计算中……")
+        $.ajax({
+            url: "service/main.php?action=all-add-estimate",
+            dataType: "json",
+            type: "POST",
+            data: {
+                "days": days
+            },
+            success: function (result) {
+                $("#res-estimate-add-table label").html(result + "  T")
+            }
+        })
+    })
+
+    $("#hq-query-button").on("click", function () {
         var dagName = $("input[name='dag-name']").val().trim();
         var logName = $("input[name='log-name']").val().trim();
         var tableName = $("input[name='table-name']").val().trim();
@@ -322,7 +374,7 @@ $(function () {
         suffix += "&log-path=" + logPath;
         getDataAjax("service/query.php" + suffix);
     })
-
+//首页summary-div的表，建设天数查询
     $("#index-query-button").on("click", function () {
         var tableName = $("input[name='table-name2']").val().trim();
         var product = $("input[name='product']").val().trim();
@@ -335,6 +387,19 @@ $(function () {
         suffix += "&rows=" + 10;
         $("#table-date-dg").datagrid({
             url: "service/main.php?action=table-date" + suffix
+        })
+    })
+    //每个表增量建设查询
+    $("#res-query-button").on("click", function () {
+        var tableName = $("input[name='table-name3']").val().trim();
+        var product = $("input[name='product2']").val().trim();
+        var suffix = "";
+        suffix += "&table-name=" + tableName;
+        suffix += "&product=" + product;
+        suffix += "&page=" + 1;
+        suffix += "&rows=" + 10;
+        $("#table-estimate-dg").datagrid({
+            url: "service/main.php?action=table-estimate" + suffix
         })
     })
 })

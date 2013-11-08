@@ -197,3 +197,17 @@ td span {
 #total-graph-div {
     height: 1000px;
 }
+
+#hq-res-estimate-table td, #res-estimate-add-table td {
+    width: 266px;
+    text-align: center;
+    border: 1px solid #c9c9c9;
+}
+
+#res-estimate .panel {
+    margin-bottom: 10px;
+}
+
+#res-estimate>table {
+    margin-left: 150px;
+}

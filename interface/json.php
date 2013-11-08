@@ -126,4 +126,49 @@ if ($req == "table") {
     $result["message"] = "ok";
     $result["data"] = $rows;
     echo json_encode($result);
+} elseif ($req == "new-path") {
+    $result = array();
+//    $file = fopen("path.txt", "w");
+    $newRow = array();
+    $rs = $db->query("SELECT output_table,table_path FROM output_config group by output_table");
+    while ($row = mysql_fetch_array($rs)) {
+        $newRow["name"] = $row[0];
+        $newRow["path"] = $row[1];
+        $rs2 = $db->query("select path from table_comp_size where table_name like '%" . $row[0] . "%' limit 1");
+        $row2 = mysql_fetch_array($rs2);
+        $newRow["comp_path"] = $row2[0];
+        if (strpos($newRow["name"], "event.") > 0) {
+            $pathArr = explode("/", $newRow["path"]);
+            $suffix = $pathArr[count($pathArr) - 1];
+            if ($newRow["comp_path"] == null) {
+                $smallRs = $db->query("select product from product_bigtable where tablename='" . $newRow["name"] . "' limit 1");
+                $smallRow = mysql_fetch_array($smallRs);
+                if ($smallRow == null) {
+                    echo $newRow["path"]."<br>";
+                    continue;
+                } //没有产品线
+                $newRow["comp_path"] = "/app/dt/udw/warehouse_compressed/" . $smallRow[0] . "/udw_event/" . $suffix . "/";
+            }
+            $pathArr = explode("/", $newRow["comp_path"]);
+            $newRow["new_path"] = "/app/dt/udw/warehouse/" . $pathArr[5] . "/udw_event/" . $suffix;
+        } else {
+            if ($newRow["comp_path"] == null) {
+                $smallRs = $db->query("select product from product_smalltable where tablename='" . $newRow["name"] . "' limit 1");
+                $smallRow = mysql_fetch_array($smallRs);
+                if ($smallRow == null) {
+                    echo $newRow["path"]."<br>";
+                    continue;
+                } //没有产品线
+                $newRow["comp_path"] = "/app/dt/udw/warehouse_compressed/" . $smallRow[0] . "/" . $newRow["name"] . "/";
+            }
+            $pathArr = explode("/", $newRow["comp_path"]);
+            $newRow["new_path"] = "/app/dt/udw/warehouse/" . $pathArr[5] . "/" . $pathArr[6];
+        }
+
+//        echo fwrite($file, $newRow["path"] . "  " . $newRow["comp_path"] . "  " . $newRow["new_path"] . "\r\n");
+
+        array_push($result, $newRow);
+    }
+//    fclose($file);
+//    echo json_encode($result);
 }

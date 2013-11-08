@@ -51,12 +51,12 @@
     </div>
     <div id="menuItem2" style="height: 150px">
         <div class="panel-header accordion-header" style="height: 16px; width: 178px;">
-            <div class="panel-title panel-with-icon">后续功能</div>
+            <div class="panel-title panel-with-icon">资源管理</div>
             <div class="panel-icon icon-reload"></div>
         </div>
         <ul class="toolMenu">
             <li>
-                <a id="choose-dag-list" class="itemSpan">敬请期待</a>
+                <a id="choose-res-estimate" class="itemSpan">资源预估</a>
             </li>
             <li>
                 <a id="choose-log-list" class="itemSpan">敬请期待</a>
@@ -68,9 +68,20 @@
     </div>
     <div id="menuItem3" style="height: 220px">
         <div class="panel-header accordion-header" style="height: 16px; width: 178px;">
-            <div class="panel-title panel-with-icon">敬请期待</div>
+            <div class="panel-title panel-with-icon">数据质量</div>
             <div class="panel-icon icon-reload"></div>
         </div>
+        <ul class="toolMenu">
+            <li>
+                <a href="http://szwg-qatest-dpf006.szwg01.baidu.com:8525/index.php" class="itemSpan">数据质量</a>
+            </li>
+            <li>
+                <a id="choose-log-list" class="itemSpan">敬请期待</a>
+            </li>
+            <li>
+                <a id="choose-table-list" class="itemSpan">敬请期待</a>
+            </li>
+        </ul>
     </div>
 </div>
 <div id="rightPanel">
@@ -297,7 +308,7 @@
            style="width:818px;height:320px;margin-top: 20px;margin-left: 60px"
            pagination="false" draggable="false"
            rownumbers="true" fitColumns="true" singleSelect="true"
-          >
+        >
         <thead>
         <tr>
             <th field="product" width="35">产品线</th>
@@ -308,6 +319,96 @@
         </thead>
         <tbody>
         </tbody>
+    </table>
+</div>
+<div id="res-estimate" class="right-child">
+    <div id="res-estimate-panel" class="easyui-panel" title="UDW资源预估" style="width:818px">
+        <table id="hq-res-estimate-table">
+            <thead>
+            <td id="per-day-td">UDW压缩后平均每天数据量：</td>
+            <td>输入天数：<input type="text" id="res-estimate-input"><input id="res-estimate-btn" type="button" value="确定">
+            </td>
+            <td>预估大小：<label>待估</label></td>
+            </thead>
+        </table>
+    </div>
+
+    <div id="res-estimate-add-panel" class="easyui-panel" title="UDW资源增量预估" style="width:818px">
+        <table id="res-estimate-add-table">
+            <thead>
+            <td id="per-day-add-td">计算把所有表建设到指定天数还需要的存储量</td>
+            <td>输入天数：<input type="text" id="res-estimate-add-input"><input id="res-estimate-add-btn" type="button"
+                                                                           value="确定">
+            </td>
+            <td>预估增加总量：<label>待估</label></td>
+            </thead>
+        </table>
+    </div>
+
+    <!--每个表预计时间-->
+    <table id="table-estimate-dg" title="各表建设资源增量预估" class="easyui-datagrid" style="width:818px;height:500px"
+           pagination="true" draggable="false"
+           pageSize="20"
+           rownumbers="true" fitColumns="true" singleSelect="false">
+        <thead>
+        <tr>
+            <th field="product" width="50">产品线</th>
+            <th field="tableName" width="100">表名</th>
+            <th field="already_days" width="45">已建天数</th>
+            <th field="per_size" width="110">压缩后每天平均大小(T)</th>
+            <th field="input" width="150">输入预估天数</th>
+            <th field="result" width="60">估计增加量(T)</th>
+        </tr>
+        </thead>
+        <tbody id="mainBody">
+
+        </tbody>
+
+        <form id="res-ff">
+            <table>
+                <tr>
+                    <td>产品线 :</td>
+                    <td><select class="easyui-combobox" value="" name="product2">
+                            <option value="">不限</option>
+                            <option value="map">map</option>
+                            <option value="baike">baike</option>
+                            <option value="ps">ps</option>
+                            <option value="clb">clb</option>
+                            <option value="NOVA">NOVA</option>
+                            <option value="wenku">wenku</option>
+                            <option value="hao123">hao123</option>
+                            <option value="pcs">pcs</option>
+                            <option value="tieba">tieba</option>
+                            <option value="image">image</option>
+                            <option value="iknow">iknow</option>
+                            <option value="news">news</option>
+                            <option value="weibo">weibo</option>
+                            <option value="appsearch">appsearch</option>
+                            <option value="wise">wise</option>
+                            <option value="baiduapp">baiduapp</option>
+                            <option value="chunlei">chunlei</option>
+                            <option value="uap">uap</option>
+                            <option value="bd_input">bd_input</option>
+                            <option value="netdisk">netdisk</option>
+                            <option value="pcbrowser">pcbrowser</option>
+                            <option value="pcime">pcime</option>
+                            <option value="fengchao">fengchao</option>
+                            <option value="globalps">globalps</option>
+                            <option value="browser">browser</option>
+                            <option value="music">music</option>
+                            <option value="ns">ns</option>
+                            <option value="CLOUD">CLOUD</option>
+                            <option value="share">share</option>
+                            <option value="sobar">sobar</option>
+                        </select></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td>表名 :</td>
+                    <td><input class="easyui-validatebox" type="text" name="table-name3"></input></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td><input type="button" value="查询" id="res-query-button"></td>
+                </tr>
+            </table>
+        </form>
     </table>
 </div>
 </div>
