@@ -87,7 +87,7 @@
 <div id="rightPanel">
 <div id="summary-div" class="right-child">
 
-    <div id="total-content" class="easyui-panel" title="UDW建设数据量" style="width:720px">
+    <div id="total-content" class="easyui-panel" title="UDW建设数据量" style="width:818px">
         <table id="hq-total-table">
             <thead>
             <td>UDW建设数据量</td>
@@ -101,12 +101,12 @@
                 <td></td>
             </tr>
         </table>
-        <div id="index-total-graph" style="width:660px;height:200px;margin-right: 36px">
+        <div id="index-total-graph" style="width:760px;height:200px;margin-right: 36px">
 
         </div>
     </div>
 
-    <div id="summary-content" class="easyui-panel" title="UDW总体情况" style="width:720px">
+    <div id="summary-content" class="easyui-panel" title="UDW总体情况" style="width:818px">
         <table id="hq-summary-table">
             <tr>
                 <td>DAG:任务数目</td>
@@ -120,19 +120,19 @@
             </tr>
         </table>
     </div>
-    <div id="in-trend-content" class="easyui-panel" title="每天总体输入输出" style="width:720px">
-        <div id="index-trend-graph" style="width:660px;height:200px;margin-right: 36px">
+    <div id="in-trend-content" class="easyui-panel" title="每天总体输入输出" style="width:818px">
+        <div id="index-trend-graph" style="width:760px;height:300px;margin-right: 36px">
 
         </div>
     </div>
-    <table id="table-date-dg" title="各表的建设时间" class="easyui-datagrid" style="width:720px;height:350px"
+    <table id="table-date-dg" title="各表的建设时间" class="easyui-datagrid" style="width:818px;height:350px"
            pagination="true" draggable="false"
            pageSize="10"
            rownumbers="true" fitColumns="true" singleSelect="true">
         <thead>
         <tr>
             <th field="product" width="60">产品线</th>
-            <th field="tableName" width="160">表名</th>
+            <th field="tableName" width="200">表名</th>
             <th field="period" width="120">建设时间段</th>
             <th field="days" width="60">建设天数</th>
         </tr>

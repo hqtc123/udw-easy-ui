@@ -1,0 +1,28 @@
+9EBA .START phpCAS-1.3.2 ****************** [CAS.php:450]
+9EBA .=> phpCAS::client('2.0', 'itebeta.baidu.com', 8100, '') [test.php:13]
+9EBA .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 8100, '', true) [CAS.php:347]
+9EBA .|    |    Starting a new session [Client.php:792]
+9EBA .|    <= ''
+9EBA .<= ''
+9EBA .=> phpCAS::setNoCasServerValidation() [test.php:22]
+9EBA .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+9EBA .<= ''
+9EBA .=> phpCAS::forceAuthentication() [test.php:25]
+9EBA .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+9EBA .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+9EBA .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+9EBA .|    |    |    |    no user found [Client.php:1375]
+9EBA .|    |    |    <= false
+9EBA .|    |    |    no ticket found [Client.php:1258]
+9EBA .|    |    <= false
+9EBA .|    |    => CAS_Client::redirectToCas(false) [Client.php:1092]
+9EBA .|    |    |    => CAS_Client::getServerLoginURL(false, false) [Client.php:1396]
+9EBA .|    |    |    |    => CAS_Client::getURL() [Client.php:328]
+9EBA .|    |    |    |    |    Final URI: http://localhost:8080/heqing02/statistics/test.php [Client.php:3071]
+9EBA .|    |    |    |    <= 'http://localhost:8080/heqing02/statistics/test.php'
+9EBA .|    |    |    <= 'https://itebeta.baidu.com:8100/login?service=http%3A%2F%2Flocalhost%3A8080%2Fheqing02%2Fstatistics%2Ftest.php'
+9EBA .|    |    |    Redirect to : https://itebeta.baidu.com:8100/login?service=http%3A%2F%2Flocalhost%3A8080%2Fheqing02%2Fstatistics%2Ftest.php [Client.php:1402]
+9EBA .|    |    |    exit()
+9EBA .|    |    |    -
+9EBA .|    |    -
+9EBA .|    -

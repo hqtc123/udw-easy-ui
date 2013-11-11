@@ -51,8 +51,6 @@
     width: 818px;
     height: 816px;
     margin-bottom: 10px;
-    background-color: #f5f5f5;
-    box-shadow: 1px 1px 3px #aaa, -1px -1px 3px #aaa;
 }
 
 #taskDiv {
@@ -60,23 +58,26 @@
 }
 
 #summary-div {
-    height: 1156px;
+    height: 1256px;
 }
 
 #summary-div .panel {
-    margin-top: 10px;
-    margin-left: 36px;
     padding-bottom: 3px;
+    margin-bottom: 15px;
 }
 
 #summary-div .panel-title {
     height: 20px;
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 14px;
     line-height: 18px;
     padding-top: 5px;
     padding-left: 10px;
     color: #fdfdfd;
+}
+
+#summary-div>table {
+    margin-top: -20px;
+    margin-bottom: 10px;
 }
 
 #summary-content {
@@ -97,7 +98,7 @@
 
 #hq-summary-table td, #hq-total-table td {
     font-size: 18px;
-    width: 236px;
+    width: 266px;
     border: 1px solid #ddd;
     text-align: center;
 }
@@ -141,12 +142,12 @@ td span {
 }
 
 .toolMenu li a:hover {
-    color: #33a9d9;
+    color: #0B2C45;
     text-decoration: underline;
 }
 
 .toolMenu li a.onSelect {
-    color: #0086c8;
+    color: #0a2a23;
 }
 
 #queryPanel {

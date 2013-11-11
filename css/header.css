@@ -2,13 +2,14 @@ body {
     padding: 0;
     margin: 0;
     background-color: #dcdcde;
+    font-family: "Helvetica Neue", "Hiragino Sans GB", "Segoe UI", "Microsoft Yahei", "微软雅黑", Tahoma, Arial, STHeiti, sans-serif;
 }
 
 #header {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #0075b7;
+    background-color: #0B2C45;
     z-index: 9999;
 }
 
@@ -21,8 +22,9 @@ body {
 }
 
 #titleDiv #titleDiv-inner {
-    color: #fdfdfd;
-    font-size: 22px;
+    color: #fff;
+    text-shadow: 1px 1px 2px #0B2C45;
+    font-size: 18px;
     padding-top: 5px;
 }
 
@@ -46,8 +48,30 @@ body {
     text-decoration: underline;
 }
 
+.panel {
+    outline: none;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    box-shadow: 0 1px 2px #b0b3b6;
+    -moz-box-shadow: 0 1px 2px #b0b3b6;
+    -webkit-box-shadow: 0 1px 2px #b0b3b6;
+    box-shadow: 0 1px 2px #b0b3b6;
+    -moz-box-shadow: 0 1px 2px #b0b3b6;
+    -webkit-box-shadow: 0 1px 2px #b0b3b6;
+    box-shadow: 0 1px 2px #b0b3b6;
+    -moz-box-shadow: 0 1px 2px #b0b3b6;
+    -webkit-box-shadow: 0 1px 2px #b0b3b6;
+}
+
 .panel-header {
-    background-color: #33a9d9;
+    background-color: #3e5f88;
     color: #fdfdfd;
 }
 
@@ -59,12 +83,16 @@ body {
 }
 
 .datagrid-row-over, .datagrid-header td.datagrid-header-over {
-    background: #33a9d9;
+    background: #7f9faa;
     color: #404040;
     cursor: default;
 }
 
 .datagrid-row-selected {
-    background: #33a9d9;
+    background: #3e5f88;
     color: #fff;
+}
+
+.window {
+    background-color: #3e5f88;
 }
