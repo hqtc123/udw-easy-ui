@@ -1,3 +1,4 @@
+<?php include_once('phpcas/authentication.php'); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +20,9 @@
         </div>
         <div id="linksDiv" style="width: 450px;height: 36px">
             <div id="linksDiv-inner">
-                <a href="index.php">Home</a>
+                <span>欢迎 ,<b id="account"><?php echo phpCas::getUser(); ?></b></span>
+                <a href="?logout=">退出</a>
+                <a href="index.php">首页</a>
             </div>
         </div>
     </div>

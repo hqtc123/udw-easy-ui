@@ -1,7 +1,7 @@
 body {
     padding: 0;
     margin: 0;
-    background-color: #dcdcde;
+    background: url(../image/back.png);
     font-family: "Helvetica Neue", "Hiragino Sans GB", "Segoe UI", "Microsoft Yahei", "微软雅黑", Tahoma, Arial, STHeiti, sans-serif;
 }
 
@@ -9,7 +9,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #0B2C45;
+    background-color: #2d4e67;
     z-index: 9999;
 }
 
@@ -44,6 +44,13 @@ body {
     margin-left: 20px;
 }
 
+#linksDiv-inner b {
+    color: #fdfdfd;
+}
+#linksDiv-inner span {
+    color: #fdfdfd;
+}
+
 #linksDiv-inner a:hover {
     text-decoration: underline;
 }
@@ -71,19 +78,19 @@ body {
 }
 
 .panel-header {
-    background-color: #3e5f88;
-    color: #fdfdfd;
+    background-color: #99ccff;
+    color: #666;
 }
 
 .panel-title, .panel-with-icon {
     font-size: 15px;
     font-weight: bold;
     line-height: 20px;
-    color: #fdfdfd;
+    color: #444;
 }
 
 .datagrid-row-over, .datagrid-header td.datagrid-header-over {
-    background: #7f9faa;
+    background: #99ccff;
     color: #404040;
     cursor: default;
 }
@@ -94,5 +101,5 @@ body {
 }
 
 .window {
-    background-color: #3e5f88;
+    background-color: #99ccff;
 }

@@ -1,10 +1,16 @@
 <?php
+/**
+ * Created by JetBrains PhpStorm.
+ * User: heqing02
+ * Date: 13-11-18
+ * Time: 上午10:16
+ * To change this template use File | Settings | File Templates.
+ */
 // Example for a simple client
-//phpinfo();
 // Load the settings from the central config file
-include_once('phpcas/config.php');
+include_once('config.php');
 // Load the CAS lib
-include_once($phpcas_path . '/CAS.php');
+include_once('CAS.php');
 
 // Uncomment to enable debugging
 phpCAS::setDebug();
@@ -20,7 +26,7 @@ phpCAS::client(CAS_VERSION_2_0, $cas_host, $cas_port, $cas_context);
 // THIS SETTING IS NOT RECOMMENDED FOR PRODUCTION.
 // VALIDATING THE CAS SERVER IS CRUCIAL TO THE SECURITY OF THE CAS PROTOCOL!
 phpCAS::setNoCasServerValidation();
-
+phpCAS::handleLogoutRequests();
 // force CAS authentication
 phpCAS::forceAuthentication();
 
@@ -34,20 +40,3 @@ if (isset($_REQUEST['logout'])) {
 
 // for this test, simply print that the authentication was successfull
 ?>
-<html>
-<head>
-    <title>phpCAS simple client</title>
-</head>
-<body>
-<?php
-
-?>
-<h1>Successfull Authentication!</h1>
-
-<p>the user's login is <b><?php echo phpCAS::getUser(); ?></b>.</p>
-
-<p>phpCAS version is <b><?php echo phpCAS::getVersion(); ?></b>.</p>
-
-<p><a href="?logout=">Logout</a></p>
-</body>
-</html>

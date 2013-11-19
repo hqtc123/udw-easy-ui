@@ -1,3 +1,4 @@
+<?php include_once('phpcas/authentication.php'); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,8 +22,9 @@
         </div>
         <div id="linksDiv" style="width: 450px;height: 36px">
             <div id="linksDiv-inner">
+                <b>欢迎 ,<?php echo phpCas::getUser(); ?></b>
+                <a href="?logout=">退出</a>
                 <a href="javascript:void(0)" id="contact-link">联系我们</a>
-                <a href=" javascript:void(0)">Home</a>
             </div>
         </div>
     </div>
@@ -35,8 +37,8 @@
             <div class="panel-icon icon-reload"></div>
         </div>
         <ul class="toolMenu">
-            <li>
-                <a id="choose-summary" class="itemSpan onSelect">UDW总体情况</a>
+            <li class="onSelect">
+                <a id="choose-summary" class="itemSpan">UDW总体情况</a>
             </li>
             <li>
                 <a id="choose-task" class="itemSpan">DAG任务流</a>
@@ -59,10 +61,10 @@
                 <a id="choose-res-estimate" class="itemSpan">资源预估</a>
             </li>
             <li>
-                <a id="choose-log-list" class="itemSpan">敬请期待</a>
+                <a id="choose-res-apply" class="itemSpan">资源申请 | 审批</a>
             </li>
             <li>
-                <a id="choose-table-list" class="itemSpan">敬请期待</a>
+                <a id="choose-res-change" class="itemSpan">资源变更记录</a>
             </li>
         </ul>
     </div>
@@ -85,6 +87,7 @@
     </div>
 </div>
 <div id="rightPanel">
+<!--首页-->
 <div id="summary-div" class="right-child">
 
     <div id="total-content" class="easyui-panel" title="UDW建设数据量" style="width:818px">
@@ -180,7 +183,7 @@
                         </select></td>
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td>表名 :</td>
-                    <td><input class="easyui-validatebox" type="text" name="table-name2"></input></td>
+                    <td><input class="easyui-validatebox" type="text" name="table-name2"></td>
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td>建设天数 :</td>
                     <td><select class="easyui-combobox" panelHeight="auto" value="" name="days">
@@ -197,6 +200,7 @@
         </form>
     </table>
 </div>
+<!--任务流-->
 <div id="taskDiv" class="right-child">
     <table id="dg" title="DAG:任务执行列表" class="easyui-datagrid" style="width:818px;height:500px"
            pagination="true" draggable="false"
@@ -222,11 +226,11 @@
             <table>
                 <tr>
                     <td>任务名 :</td>
-                    <td><input class="easyui-validatebox" type="text" name="dag-name"></input></td>
+                    <td><input class="easyui-validatebox" type="text" name="dag-name"/></td>
                 </tr>
                 <tr>
                     <td>日志名 :</td>
-                    <td><input class="easyui-validatebox" type="text" name="log-name"></input></td>
+                    <td><input class="easyui-validatebox" type="text" name="log-name"/></td>
                 </tr>
 
                 <tr>
@@ -241,11 +245,11 @@
                 </tr>
                 <tr>
                     <td>日志路径 :</td>
-                    <td><input class="easyui-validatebox" type="text" name="log-path"></input></td>
+                    <td><input class="easyui-validatebox" type="text" name="log-path"/></td>
                 </tr>
                 <tr>
                     <td>表名称 :</td>
-                    <td><input class="easyui-validatebox" type="text" name="table-name"></input></td>
+                    <td><input class="easyui-validatebox" type="text" name="table-name"/></td>
                 </tr>
                 <tr>
                     <td>表类型 :</td>
@@ -259,7 +263,7 @@
                 </tr>
                 <tr>
                     <td>表路径 :</td>
-                    <td><input class="easyui-validatebox" type="text" name="table-path"></input></td>
+                    <td><input class="easyui-validatebox" type="text" name="table-path"/></td>
                 </tr>
                 <tr>
                     <td>
@@ -321,6 +325,7 @@
         </tbody>
     </table>
 </div>
+<!--资源预估-->
 <div id="res-estimate" class="right-child">
     <div id="res-estimate-panel" class="easyui-panel" title="UDW资源预估" style="width:818px">
         <table id="hq-res-estimate-table">
@@ -403,13 +408,191 @@
                         </select></td>
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td>表名 :</td>
-                    <td><input class="easyui-validatebox" type="text" name="table-name3"></input></td>
+                    <td><input class="easyui-validatebox" type="text" name="table-name3"/></td>
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td><input type="button" value="查询" id="res-query-button"></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                 </tr>
             </table>
         </form>
     </table>
+</div>
+<!--资源申请部分-->
+<div id="res-apply" class="right-child" style="height: 900px">
+    <div class="easyui-panel" title="资源申请" style="width:818px">
+        <div class="easyui-tabs" style="width:600px;height:388px;margin-left: 100px">
+            <div title="申请存储资源" style="padding:10px 30px">
+                <form id="storage-form" method="post">
+                    <table>
+                        <tr>
+                            <td style="display: none"><input type="text" name="type" value="存储资源"></td>
+                            <td>集群 :</td>
+                            <td><input class="easyui-validatebox" type="text" name="cluster"
+                                       data-options="required:true"/></td>
+                        </tr>
+                        <tr>
+                            <td>存储目录 :</td>
+                            <td><input class="easyui-validatebox" type="text" name="req_str"
+                                       data-options="required:true"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>存储大小（T） :</td>
+                            <td><input class="easyui-numberbox" type="text" name="req_num"
+                                       data-options="required:true"/></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                详细说明 :多少份数据、每份数据多大;
+                                每份数据需要存储多少天、说明原因。
+                            </td>
+                            <td><textarea class="easyui-validatebox" required="true" name="reason"
+                                          style="height: 88px;width: 208px;resize: none"></textarea></td>
+                        </tr>
+
+                        <tr>
+                            <td>申请人邮箱(前缀) :</td>
+                            <td><input class="easyui-validatebox" type="text" name="mail"
+                                       data-options="required:true"/></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="submit" value="申请" id="storage-btn">
+                            </td>
+                            <td>
+                                <input type="button" value="重置" id="storage-reset-btn" onclick="resetStorageForm()">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div title="申请计算资源" style="padding:10px 30px">
+                <form id="calculate-form" method="post">
+                    <table>
+                        <tr>
+                            <td style="display: none"><input type="text" name="type" value="计算资源"></td>
+                            <td>集群 :</td>
+                            <td><input class="easyui-validatebox" type="text" name="cluster"
+                                       data-options="required:true"/></td>
+                        </tr>
+                        <tr>
+                            <td>队列 :</td>
+                            <td><input class="easyui-validatebox" type="text" name="req_str"
+                                       data-options="required:true"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>槽位（个） :</td>
+                            <td><input class="easyui-numberbox" type="text" name="req_num"
+                                       data-options="required:true"/></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                详细说明 :多少个任务、每个任务并发多少槽位、任务需要几点完成，说明原因。
+                            </td>
+                            <td><textarea class="easyui-validatebox" required="true" name="reason"
+                                          style="height: 88px;width: 208px;resize: none"
+                                    ></textarea></td>
+                        </tr>
+
+                        <tr>
+                            <td>申请人邮箱(前缀) :</td>
+                            <td><input class="easyui-validatebox" type="text" name="mail"
+                                       data-options="required:true"/></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="submit" value="申请" id="calculate-btn">
+                            </td>
+                            <td>
+                                <input type="button" value="重置" id="calculate-reset-btn" onclick="resetCalculateForm()">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <table id="apply-dg" title="资源申请列表" class="easyui-datagrid" style="width:818px;height:388px;"
+           pagination="true" draggable="false"
+           pageSize="10"
+           rownumbers="false" fitColumns="true" singleSelect="true">
+        <thead>
+        <tr>
+            <th field="id" width="15">编号</th>
+            <th field="type" width="20">类型</th>
+            <th field="cluster" width="30">集群</th>
+            <th field="req_str" width="50">队列/存储目录</th>
+            <th field="req_num" width="20">TB/槽位</th>
+            <th field="state" width="25">状态</th>
+            <th field="mail" width="35">申请人</th>
+            <th field="req_time" width="35">提交时间</th>
+            <th field="dealer" width="35">审批人</th>
+            <th field="deal_time" width="35">审批时间</th>
+            <th field="deal" width="20">操作</th>
+            <th field="deal_reason" width="30">审批理由</th>
+        </tr>
+        </thead>
+        <tbody id="mainBody">
+
+        </tbody>
+    </table>
+    <form id="deal-ff" style="float: left">
+        <table>
+            <tr>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>状态 :</td>
+                <td><select class="easyui-combobox" panelHeight="auto" value="" name="app-state">
+                        <option value="">不限</option>
+                        <option value="待审批">待审批</option>
+                        <option value="已通过">已通过</option>
+                        <option value="已撤回">已撤回</option>
+                    </select></td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>申请类型 :</td>
+                <td><select class="easyui-combobox" panelHeight="auto" value="" name="app-type">
+                        <option value="">不限</option>
+                        <option value="存储资源">存储资源</option>
+                        <option value="计算资源">计算资源</option>
+                    </select></td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td><input type="button" value="查询" id="deal-query-button"></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<!--资源变更记录-->
+<div id="res-change" class="right-child">
+    <table title="存储资源变更记录" class="easyui-treegrid" style="width:818px;height:360px"
+           data-options="
+            rownumbers: true,
+            pagination: true,
+            pageSize: 2,
+            pageList: [5,10,20],
+            idField: 'id',
+            treeField: 'name'"
+        >
+        <thead>
+        <tr>
+            <th field="id" width="100">目录序列</th>
+            <th field="date" width="100" align="right">日期</th>
+            <th field="add" width="100" align="right">增加(T)</th>
+            <th field="del" width="100" align="right">减少(T)</th>
+            <th field="before" width="100" align="right">变更前(T)</th>
+            <th field="after" width="100" align="right">变更后(T)</th>
+            <th field="remark" width="100" align="right">备注</th>
+        </tr>
+        </thead>
+    </table>
+    <div class="history-btn">
+        <input id="add-dir-btn" type="button" value="新增存储目录"/>
+        <input id="add-dir-his-btn" type="button" value="新增存储变更记录"/>
+    </div>
 </div>
 </div>
 </div>
@@ -427,10 +610,56 @@
             href="http://icafe.baidu.com/space/udw/issue/wall?spaceId=4254&cid=5&vid=0#tip=nofield&lane=&channel=">若有需求请移步icafe</a>
     </h3>
 </div>
+<div id="add-dir-win" class="easyui-window" title="添加存储目录" style="width:300px;height:210px;">
+    <form style="padding:10px 20px 10px 40px;">
+        <p>目录: <input type="text" id="dir-field"></p>
+
+        <p>集群: <input type="text" id="cluster-field"></p>
+
+        <p>大小: <input type="text" id="size-field"></p>
+
+        <div style="padding:5px;text-align:center;">
+            <a href="javascript:void(0)" id="add-dir-submit" class="easyui-linkbutton" icon="icon-ok">添加</a>
+            <a href="javascript:void(0)" id="add-dir-cancel" class="easyui-linkbutton" icon="icon-cancel">取消</a>
+        </div>
+    </form>
+</div>
+<div id="add-storage-change-win" class="easyui-window" title="添加存储变更记录" style="width:300px;height:360px;">
+    <form style="padding:10px 20px 10px 40px;">
+        <p>目录: <input type="text" id="storage-dir-field"></p>
+
+        <p>日期: <input type="text" id="storage-date-field"></p>
+
+        <p>添加: <input type="text" id="storage-add-field"></p>
+
+        <p>减少: <input type="text" id="storage-del-field"></p>
+
+        <p>变更前: <input type="text" id="storage-change-before"></p>
+
+        <p>变更后: <input type="text" id="storage-change-after"></p>
+
+        <p>备注: <input type="text" id="storage-remark-field"></p>
+
+        <div style="padding:5px;text-align:center;">
+            <a href="javascript:void(0)" id="add-storage-change-submit" class="easyui-linkbutton" icon="icon-ok">添加</a>
+            <a href="javascript:void(0)" id="add-storage-change-cancel" class="easyui-linkbutton"
+               icon="icon-cancel">取消</a>
+        </div>
+    </form>
+</div>
+<div style="position:fixed; z-index:100;right:0;bottom:25px;">
+    <img src="image/ds.gif">
+</div>
 <?php include_once("footer.html") ?>
 <script type="text/javascript">
     function resetQueryForm() {
         $("#ff").form("reset");
+    }
+    function resetStorageForm() {
+        $("#storage-form").form("reset");
+    }
+    function resetCalculateForm() {
+        $("#calculate-form").form("reset");
     }
 </script>
 </body>

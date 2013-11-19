@@ -239,9 +239,19 @@ if ($_GET["action"] == "task") {
     $toInject = 'var days=parseInt($(this).prev().val());
                 var aDays=$(this).parent().parent().prev().prev().children("div").html();
                 if(days>aDays){
+                    var nowSize=$(this).parent().parent().next().children("div").html();
+                    if(nowSize.trim()=="待计算"||nowSize.trim()=="输入合适天数"){
+                        nowSize=0;
+                    }
                     var perSize=parseFloat($(this).parent().parent().prev().children("div").html());
                     var size=perSize*(days-aDays);
-                    $(this).parent().parent().next().children("div").html(size)
+                    $(this).parent().parent().next().children("div").html(size);
+                    var totalR=$("span#total-result").html();
+                    if(typeof(totalR)!="undefined"){
+                        totalR-=nowSize;
+                        totalR+=size;
+                        $("span#total-result").html(totalR);
+                    }
                 }
                  else{
                     alert("一般认为，你输入的天数应该是数字（小数将取整），而且大于表的已建天数。")
@@ -271,7 +281,9 @@ if ($_GET["action"] == "task") {
         if ($resultRows[$i]["product"] == null || $resultRows[$i]["product"] == "" || $resultRows[$i]["already_days"] == 0) {
             continue;
         }
-        if (preg_match("%" . $product . "%", $resultRows[$i]["product"])) {
+        if ($product == "") {
+            $result2 = $resultRows;
+        } elseif ($product == $resultRows[$i]["product"]) {
             array_push($result2, $resultRows[$i]);
         }
     }
@@ -281,7 +293,14 @@ if ($_GET["action"] == "task") {
         }
     }
     $result["total"] = count($result3);
-
+    $pert = 0;
+    for ($i = 0; $i < $result["total"]; $i++) {
+        $pert += $result3[$i]["per_size"];
+    }
+    $pertRow["per_size"] = $pert;
+    $pertRow["tableName"] = "总和：";
+    $pertRow["result"] = "<span id='total-result'>0</span>";
+    array_push($result3, $pertRow);
     $result["rows"] = array_slice($result3, $offset, $rows);
     echo json_encode($result);
 }

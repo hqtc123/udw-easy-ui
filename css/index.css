@@ -72,12 +72,7 @@
     line-height: 18px;
     padding-top: 5px;
     padding-left: 10px;
-    color: #fdfdfd;
-}
-
-#summary-div>table {
-    margin-top: -20px;
-    margin-bottom: 10px;
+    color: #444;
 }
 
 #summary-content {
@@ -146,8 +141,12 @@ td span {
     text-decoration: underline;
 }
 
-.toolMenu li a.onSelect {
+.toolMenu li.onSelect a {
     color: #0a2a23;
+}
+
+.toolMenu li.onSelect {
+    background-color: #dcdcde;
 }
 
 #queryPanel {
@@ -162,6 +161,10 @@ td span {
 
 #summary-div>table {
     margin-left: 100px;
+    float: left;
+
+    margin-top: -10px;
+    margin-bottom: 10px;
 }
 
 #ff {
@@ -211,4 +214,53 @@ td span {
 
 #res-estimate>table {
     margin-left: 150px;
+}
+
+#trend-graph, #total-graph, #hq-pie {
+    background-color: #fafafa;
+}
+
+#storage-form, #calculate-form {
+    float: left;
+    width: 360px;
+    margin-left: 120px;
+}
+
+#storage-form td {
+    padding: 5px 0;
+    font-size: 16px;
+}
+
+#storage-form td input {
+    height: 22px;
+}
+
+#calculate-form td {
+    padding: 5px 0;
+    font-size: 16px;
+}
+
+#calculate-form td input {
+    height: 22px;
+}
+
+.tabs .tabs-title {
+    padding: 20px 36px;
+    font-size: 16px;
+}
+
+.validatebox-invalid {
+    background-image: none;
+    border-color: #cccccc;
+    background-color: transparent;
+    color: #404040;
+}
+
+#res-apply .panel {
+    margin-bottom: 10px;
+}
+
+.history-btn {
+    float: right;
+    padding: 5px 280px;
 }

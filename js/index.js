@@ -209,7 +209,6 @@ function drawSizePie() {
                             },
                             formatter: function () {
                                 return '<b>' + this.point.name + '</b>: ' + Highcharts.numberFormat(this.percentage, 2) + ' %';
-//                                return  '<span style="color:#00008B;">' + this.point.name + '</span>';
                             }
                         },
                         padding: 20
@@ -271,10 +270,12 @@ $(function () {
     $(".right-child").hide();
     $("#summary-div").show();
     $(".itemSpan").on("click", function () {
-        $(".itemSpan").removeClass("onSelect");
-        $(this).addClass("onSelect");
+        $(".itemSpan").parent("li").removeClass("onSelect");
+        $(this).parent("li").addClass("onSelect");
     })
     createSummary();
+//    左侧菜单栏点击事件处理
+
     $("#choose-summary").on("click", function () {
         createSummary();
         $(".right-child[id!='summary-div']").fadeOut("slow", function () {
@@ -321,6 +322,22 @@ $(function () {
             $(".right-child[id='res-estimate']").show();
         });
     })
+
+    $("#choose-res-apply").on("click", function () {
+        $("#apply-dg").datagrid({
+            url: "service/resources.php?action=all"
+        })
+        $(".right-child[id!='res-apply']").fadeOut("slow", function () {
+            $(".right-child[id='res-apply']").show();
+        });
+    })
+
+    $("#choose-res-change").on("click", function () {
+        $(".right-child[id!='res-change']").fadeOut("slow", function () {
+            $(".right-child[id='res-change']").show();
+        });
+    })
+
 //总体大小预估计算
     $("#res-estimate-btn").on("click", function () {
         if (sizePerDay == 0) {
@@ -400,6 +417,129 @@ $(function () {
         suffix += "&rows=" + 10;
         $("#table-estimate-dg").datagrid({
             url: "service/main.php?action=table-estimate" + suffix
+        })
+    })
+
+    //申请存储资源表单提交
+    $("#storage-form").form({
+        url: "service/resources.php?action=add",
+        onSubmit: function () {
+            return $(this).form('validate');
+        },
+        success: function (result) {
+            if (result == 1) {
+                alert("申请成功");
+                $("#storage-form").form("clear");
+                $("#apply-dg").datagrid({
+                    url: "service/resources.php?action=all"
+                })
+            }
+        }
+    })
+
+    $("#calculate-form").form({
+        url: "service/resources.php?action=add",
+        onSubmit: function () {
+            return $(this).form('validate');
+        },
+        success: function (result) {
+            if (result == 1) {
+                alert("申请成功");
+                $("#calculate-form").form("clear");
+                $("#apply-dg").datagrid({
+                    url: "service/resources.php?action=all"
+                })
+            }
+        }
+    })
+//资源查询的处理
+    $("#deal-query-button").on("click", function () {
+        var type = $("input[name='app-type']").val().trim();
+        var state = $("input[name='app-state']").val().trim();
+        $("#apply-dg").datagrid({
+            url: "service/resources.php?action=all" + "&type=" + type + "&state=" + state
+        })
+    });
+//    添加一条存储目录
+    $("#add-dir-win").window("close");
+    $("#add-dir-btn").on("click", function () {
+        $("#add-dir-win").window({
+            modal: true
+        });
+    })
+    $("#add-dir-cancel").on("click", function () {
+        $("#add-dir-win").window("close");
+    })
+    $("#add-dir-submit").on("click", function () {
+        var dir = $("#dir-field").val().trim();
+        var size = $("#size-field").val().trim();
+        var cluster = $("#cluster-field").val().trim();
+        if (dir == "" || size == "") {
+            alert("把该填的的都填上，好吧？")
+            return;
+        }
+        $.ajax({
+            url: "service/history.php?action=storage&task=add_dir",
+            type: "POST",
+            dataType: "json",
+            data: {
+                "dir": dir,
+                "size": size,
+                "cluster": cluster
+            },
+            success: function (json) {
+                if (json.success == 1) {
+                    alert("success")
+                    $("#add-dir-win").window("close");
+                } else {
+                    alert("目录已经存在或者size不对");
+                }
+            }
+        })
+    })
+//    添加存储变更记录
+    $("#add-storage-change-win").window("close");
+    $("#add-dir-his-btn").on("click", function () {
+        $("#add-storage-change-win").window({
+            modal: true
+        });
+    })
+    $("#add-storage-change-cancel").on("click", function () {
+        $("#add-storage-change-win").window("close");
+    })
+    $("#add-storage-change-submit").on("click", function () {
+        var dir = $("#storage-dir-field").val().trim();
+        var date = $("#storage-date-field").val().trim();
+        var del = $("#storage-del-field").val().trim();
+        var add = $("#storage-add-field").val().trim();
+        var before = $("#storage-change-before").val().trim();
+        var after = $("#storage-change-after").val().trim();
+        var remark = $("#storage-remark-field").val().trim();
+//        if (dir == "" || date == "") {
+//            alert("把该填的的都填上，好吧？")
+//            return;
+//        }
+        $.ajax({
+            url: "service/history.php?action=storage&task=add_storage_change",
+            type: "POST",
+            dataType: "json",
+            data: {
+                "dir": dir,
+                "date": date,
+                "del": del,
+                "add": add,
+                "before": before,
+                "after": after,
+                "remark": remark
+            },
+            success: function (json) {
+                if (json.success == 1) {
+                    alert("success")
+                    $("#add-storage-change-win").window("close");
+                } else {
+                    alert(json.error);
+                }
+            }
         })
     })
 })

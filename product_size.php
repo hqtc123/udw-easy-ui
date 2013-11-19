@@ -7,7 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
 if (isset($_GET["product"])) {
-    include_once("header.html");
+    include_once("header.php");
 }
 ?>
 <link rel="stylesheet" type="text/css" href="css/list.css">

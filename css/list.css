@@ -14,3 +14,14 @@
 .combo-panel {
     height: 66px;
 }
+
+#detail-form td {
+    width: 280px;
+    font-size: 16px;
+    height: 36px;
+    border-bottom: 1px #ccc solid;
+}
+
+#big-div{
+    background-color: #f6f6f6;
+}

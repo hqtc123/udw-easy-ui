@@ -7,7 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
 
-class Request {
+class ResApply {
     private $id;
     private $type;
     private $reqNum;
@@ -15,15 +15,62 @@ class Request {
     private $cluster;
     private $reason;
     private $state;
+    private $mail;
+    private $dealer;
+    private $reqTime;
+    private $dealTime;
 
-    function __construct($id, $cluster, $reason, $reqNum, $reqStr, $state, $type) {
+    function __construct($cluster, $reason, $reqNum, $reqStr, $type, $mail) {
         $this->cluster = $cluster;
-        $this->id = $id;
         $this->reason = $reason;
         $this->reqNum = $reqNum;
         $this->reqStr = $reqStr;
-        $this->state = $state;
+        $this->state = "待审批";
         $this->type = $type;
+        $this->mail = $mail;
+        $this->dealer = "-";
+    }
+
+    /**
+     * @param mixed $dealTime
+     */
+    public function setDealTime($dealTime) {
+        $this->dealTime = $dealTime;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDealTime() {
+        return $this->dealTime;
+    }
+
+    /**
+     * @param string $dealer
+     */
+    public function setDealer($dealer) {
+        $this->dealer = $dealer;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDealer() {
+        return $this->dealer;
+    }
+
+    /**
+     * @param mixed $reqTime
+     */
+    public function setReqTime($reqTime) {
+        $this->reqTime = $reqTime;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getReqTime() {
+        return $this->reqTime;
     }
 
     /**
@@ -117,17 +164,25 @@ class Request {
         return $this->type;
     }
 
+    /**
+     * @param mixed $mail
+     */
+    public function setMail($mail) {
+        $this->mail = $mail;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMail() {
+        return $this->mail;
+    }
+
 
     public function makeInsertSql() {
-        return "insert into request (type, req_num,req_str,cluster,reason,state) values ('" . $this->type
+        return "insert into res_apply (type, req_num,req_str,cluster,reason,state,mail,req_time,dealer) values ('" . $this->type
         . "','" . $this->reqNum . "','" . $this->reqStr . "','" . $this->cluster . "','" . $this->reason
-        . "','" . $this->state . "')";
+        . "','" . $this->state . "','" . $this->mail . "',now(),'" . $this->dealer . "')";
     }
 
-    public function makeUpdateSql() {
-        return "update request set type='" . $this->type . "', req_num='" . $this->reqNum . "',req_str='" . $this->reqStr
-        . "',cluster,reason,state) where ('" . $this->type
-        . "','" . $this->reqNum . "','" . $this->reqStr . "','" . $this->cluster . "','" . $this->reason
-        . "','" . $this->state . "')";
-    }
 }
