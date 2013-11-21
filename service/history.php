@@ -19,6 +19,12 @@ function has_child($cluster) {
     return $row[0] > 0 ? true : false;
 }
 
+function has_queue_child($cluster) {
+    $rs = mysql_query("select count(*) from calculate_queue where cluster='" . $cluster . "'");
+    $row = mysql_fetch_array($rs);
+    return $row[0] > 0 ? true : false;
+}
+
 $historyController = new HistoryController();
 if ($action == "storage") {
     if ($task == "tree") {
@@ -57,37 +63,106 @@ if ($action == "storage") {
             echo json_encode($result);
         }
     }
-} elseif ($action == "change") {
-    $dir = $_GET["dir"];
-    if ($task == "all") {
-        $allRs = $historyController->getAllChangesByDir($dir);
-        $result = array();
-        while ($row = mysql_fetch_array($allRs)) {
-            array_push($result, $row);
-        }
-        echo json_encode($result);
-    } elseif ($task == "save") {
-        $historyController->getStorageHistory()->setStorageDir($dir);
-        $historyController->getStorageHistory()->setDate($_REQUEST["date"]);
-        $historyController->getStorageHistory()->setAdd($_REQUEST["tadd"] == "" ? 0 : $_REQUEST["tadd"]);
-        $historyController->getStorageHistory()->setDel($_REQUEST["tdel"] == "" ? 0 : $_REQUEST["tdel"]);
-        $historyController->getStorageHistory()->setBefore($_REQUEST["tbefore"]);
-        $historyController->getStorageHistory()->setAfter($_REQUEST["tafter"]);
-        $historyController->getStorageHistory()->setRemark($_REQUEST["remark"]);
-        $rs = $historyController->addStorageHistory();
-        if ($rs == false) {
-            $json["success"] = 0;
-            $json["error"] = "添加失败，一些值必须数字";
-            echo json_encode($json);
+} elseif ($action == "calculate") {
+    if ($task == "tree") {
+        $id = isset($_REQUEST['id']) ? $_REQUEST['id'] : 1;
+        if ($id == 1) {
+            $result = array();
+            $rs = $db->query("select distinct(cluster) from calculate_queue order by cluster");
+            while ($row = mysql_fetch_array($rs)) {
+                $node = array();
+                $node["id"] = $row["cluster"];
+                $node["text"] = $row["cluster"];
+                $node['state'] = has_queue_child($row['cluster']) ? 'closed' : 'open';
+                array_push($result, $node);
+            }
+            echo json_encode($result);
         } else {
-            $historyController->updateSize($_POST["dir"], $_POST["after"]);
-            $json["success"] = 1;
-            echo json_encode($json);
+            $result = array();
+            $rs = $db->query("select queue from calculate_queue where cluster='" . $id . "'");
+            while ($row = mysql_fetch_array($rs)) {
+                $node["id"] = $row["queue"];
+                $node["text"] = $row["queue"];
+                $node['state'] = has_queue_child($row['queue']) ? 'closed' : 'open';
+                array_push($result, $node);
+            }
+            echo json_encode($result);
         }
-    } elseif ($task == "delete") {
-        $historyController->deleteStorageHistory($_REQUEST["id"]);
-    } elseif ($task == "update") {
-        $historyController->updateStorageHistory($_REQUEST["id"], $_REQUEST["date"], $_REQUEST["tadd"],
-            $_REQUEST["tdel"], $_REQUEST["tbefore"], $_REQUEST["tafter"], $_REQUEST["remark"]);
+    } elseif ($task == "add_queue") {
+        $rs = $db->query("insert into calculate_queue(queue,cluster) values ('" . $_POST["queue"]
+        . "','" . $_POST["cluster"] . " ')");
+        if ($rs == false) {
+            $result["success"] = 0;
+            echo json_encode($result);
+        } else {
+            $result["success"] = 1;
+            echo json_encode($result);
+        }
+    }
+} elseif ($action == "change") {
+    if (isset($_GET["dir"])) {
+        $dir = $_GET["dir"];
+        if ($task == "all") {
+            $allRs = $historyController->getAllChangesByDir($dir);
+            $result = array();
+            while ($row = mysql_fetch_array($allRs)) {
+                array_push($result, $row);
+            }
+            echo json_encode($result);
+        } elseif ($task == "save") {
+            $historyController->getStorageHistory()->setStorageDir($dir);
+            $historyController->getStorageHistory()->setDate($_REQUEST["date"]);
+            $historyController->getStorageHistory()->setAdd($_REQUEST["tadd"] == "" ? 0 : $_REQUEST["tadd"]);
+            $historyController->getStorageHistory()->setDel($_REQUEST["tdel"] == "" ? 0 : $_REQUEST["tdel"]);
+            $historyController->getStorageHistory()->setBefore($_REQUEST["tbefore"]);
+            $historyController->getStorageHistory()->setAfter($_REQUEST["tafter"]);
+            $historyController->getStorageHistory()->setRemark($_REQUEST["remark"]);
+            $rs = $historyController->addStorageHistory();
+            if ($rs == false) {
+                $json["success"] = 0;
+                $json["error"] = "添加失败，一些值必须数字";
+                echo json_encode($json);
+            } else {
+                $json["success"] = 1;
+                echo json_encode($json);
+            }
+        } elseif ($task == "delete") {
+            $historyController->deleteStorageHistory($_REQUEST["id"]);
+        } elseif ($task == "update") {
+            $historyController->updateStorageHistory($_REQUEST["id"], $_REQUEST["date"], $_REQUEST["tadd"],
+                $_REQUEST["tdel"], $_REQUEST["tbefore"], $_REQUEST["tafter"], $_REQUEST["remark"]);
+        }
+    } else {
+        $queue = $_GET["queue"];
+        if ($task == "all") {
+            $allRs = $historyController->getAllChangesByQueue($queue);
+            $result = array();
+            while ($row = mysql_fetch_array($allRs)) {
+                array_push($result, $row);
+            }
+            echo json_encode($result);
+        } elseif ($task == "save") {
+            $historyController->getCalculateHistory()->setQueue($queue);
+            $historyController->getCalculateHistory()->setDate($_REQUEST["date"]);
+            $historyController->getCalculateHistory()->setAdd($_REQUEST["tadd"] == "" ? 0 : $_REQUEST["tadd"]);
+            $historyController->getCalculateHistory()->setDel($_REQUEST["tdel"] == "" ? 0 : $_REQUEST["tdel"]);
+            $historyController->getCalculateHistory()->setBefore($_REQUEST["tbefore"]);
+            $historyController->getCalculateHistory()->setAfter($_REQUEST["tafter"]);
+            $historyController->getCalculateHistory()->setRemark($_REQUEST["remark"]);
+            $rs = $historyController->addCalculateHistory();
+            if ($rs == false) {
+                $json["success"] = 0;
+                $json["error"] = "添加失败，一些值必须数字";
+                echo json_encode($json);
+            } else {
+                $json["success"] = 1;
+                echo json_encode($json);
+            }
+        } elseif ($task == "delete") {
+            $historyController->deleteCalculateHistory($_REQUEST["id"]);
+        } elseif ($task == "update") {
+            $historyController->updateCalculateHistory($_REQUEST["id"], $_REQUEST["date"], $_REQUEST["tadd"],
+                $_REQUEST["tdel"], $_REQUEST["tbefore"], $_REQUEST["tafter"], $_REQUEST["remark"]);
+        }
     }
 }

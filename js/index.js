@@ -258,34 +258,58 @@ function createSummary() {
 }
 function showStorageAll(dir) {
     $("#storage-record-edg").edatagrid({
-        onAfterEdit: function () {
-            $("#storage-record-edg").edatagrid("reload");
-        },
         url: 'service/history.php?action=change&task=all&dir=' + dir,
         saveUrl: 'service/history.php?action=change&task=save&dir=' + dir,
         updateUrl: 'service/history.php?action=change&task=update&dir=' + dir,
         destroyUrl: 'service/history.php?action=change&task=delete&dir=' + dir,
         loadMsg: '',
-        height: 'auto',
         idField: "id",
         columns: [
             [
-                {field: 'date', title: '日期', width: 150, editor: {type: 'validatebox'}},
-                {field: 'tadd', title: '增加', width: 100, editor: {type: 'validatebox'}},
-                {field: 'tdel', title: '减少', width: 100, editor: {type: 'validatebox'}},
+                {field: 'date', title: '日期', width: 140, editor: {type: 'validatebox'}},
+                {field: 'tadd', title: '增加', width: 90, editor: {type: 'validatebox'}},
+                {field: 'tdel', title: '减少', width: 90, editor: {type: 'validatebox'}},
                 {field: 'tbefore', title: '变更前', width: 100, editor: {type: 'validatebox'}},
                 {field: 'tafter', title: '变更后', width: 100, editor: {type: 'validatebox'}},
-                {field: 'remark', title: '备注', width: 500, editor: {type: 'validatebox'}}
+                {field: 'remark', title: '备注', width: 566, editor: {type: 'validatebox'}}
             ]
         ]
     });
 }
-function initStorageTree() {
+function showCalculateAll(queue) {
+    $("#calculate-record-edg").edatagrid({
+        url: 'service/history.php?action=change&task=all&queue=' + queue,
+        saveUrl: 'service/history.php?action=change&task=save&queue=' + queue,
+        updateUrl: 'service/history.php?action=change&task=update&queue=' + queue,
+        destroyUrl: 'service/history.php?action=change&task=delete&queue=' + queue,
+        loadMsg: '',
+        idField: "id",
+        columns: [
+            [
+                {field: 'date', title: '日期', width: 140, editor: {type: 'validatebox'}},
+                {field: 'tadd', title: '增加', width: 90, editor: {type: 'validatebox'}},
+                {field: 'tdel', title: '减少', width: 90, editor: {type: 'validatebox'}},
+                {field: 'tbefore', title: '变更前', width: 100, editor: {type: 'validatebox'}},
+                {field: 'tafter', title: '变更后', width: 100, editor: {type: 'validatebox'}},
+                {field: 'remark', title: '备注', width: 566, editor: {type: 'validatebox'}}
+            ]
+        ]
+    });
+}
+function initTree() {
     $("#storage-left-tt").tree({
         url: "service/history.php?action=storage&task=tree",
         onClick: function (node) {
             if ($("#storage-left-tt").tree("isLeaf", node.target)) {
                 showStorageAll(node.text);
+            }
+        }
+    })
+    $("#calculate-left-tt").tree({
+        url: "service/history.php?action=calculate&task=tree",
+        onClick: function (node) {
+            if ($("#calculate-left-tt").tree("isLeaf", node.target)) {
+                showCalculateAll(node.text);
             }
         }
     })
@@ -368,7 +392,7 @@ $(function () {
     })
 
     $("#choose-res-change").on("click", function () {
-        initStorageTree();
+        initTree();
         $(".right-child[id!='res-change']").fadeOut("slow", function () {
             $(".right-child[id='res-change']").show();
         });
@@ -525,9 +549,45 @@ $(function () {
                 if (json.success == 1) {
                     alert("success")
                     $("#add-dir-win").window("close");
-                    initStorageTree();
+                    initTree();
                 } else {
-                    alert("目录已经存在或者size不对");
+                    alert("目录已经存在");
+                }
+            }
+        })
+    })
+//    添加一条计算队列
+    $("#add-queue-win").window("close");
+    $("#add-queue-btn").on("click", function () {
+        $("#add-queue-win").window({
+            modal: true
+        });
+    })
+    $("#add-queue-cancel").on("click", function () {
+        $("#add-queue-win").window("close");
+    })
+    $("#add-queue-submit").on("click", function () {
+        var queue = $("#queue-field").val().trim();
+        var cluster = $("#cluster2-field").val().trim();
+        if (queue == "" || cluster == "") {
+            alert("把该填的的都填上，好吧？")
+            return;
+        }
+        $.ajax({
+            url: "service/history.php?action=calculate&task=add_queue",
+            type: "POST",
+            dataType: "json",
+            data: {
+                "queue": queue,
+                "cluster": cluster
+            },
+            success: function (json) {
+                if (json.success == 1) {
+                    alert("success")
+                    $("#add-queue-win").window("close");
+                    initTree();
+                } else {
+                    alert("队列已存在");
                 }
             }
         })

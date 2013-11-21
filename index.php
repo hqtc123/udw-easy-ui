@@ -570,31 +570,58 @@
 </div>
 <!--资源变更记录-->
 <div id="res-change" class="right-child">
-    <div class="easyui-panel" title="存储资源变更记录" style="width:818px;height:366px;padding:10px;">
+    <!--    //存储资源变更记录-->
+    <div class="easyui-panel" title="存储资源变更记录" style="width:818px;height:396px;padding:10px;margin-bottom: 10px">
         <div class="easyui-layout" data-options="fit:true">
-            <div data-options="region:'west',split:true" style="width:150px;padding:10px">
+            <div title="集群-存储目录" data-options="region:'west',split:true" style="width:150px;padding:10px">
                 <ul id="storage-left-tt" class="easyui-tree"></ul>
                 <input id="add-dir-btn" type="button" value="添加目录">
             </div>
             <div data-options="region:'center'" style="padding:10px">
                 <table id="storage-record-edg" fitColumns="true" title="存储资源变更记录"
-                       singleSelect="true" toolbar="#edit-toolbar"
-                       style="width: 600px;height: 286px">
+                       singleSelect="true" toolbar="#edit-toolbar" rownumbers="true"
+                       style="width: 636px;height: 316px">
                 </table>
             </div>
         </div>
     </div>
-
     <div id="edit-toolbar" style="display: none">
         <a id="add-change" href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add"
-           plain="true" onclick="javascript:$('#storage-record-edg').edatagrid('addRow')">New</a>
+           plain="true" onclick="javascript:$('#storage-record-edg').edatagrid('addRow',0)">New</a>
         <a id="remove-change" href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove"
-           plain="true" onclick="javascript:$('#storage-record-edg').edatagrid('destroyRow')">Delete</a>
+           plain="true" onclick="deleteStorageRow()">Delete</a>
         <a id="save-change" href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-save"
-           plain="true" onclick="javascript:$('#storage-record-edg').edatagrid('saveRow')">Save</a>
+           plain="true" onclick="saveStorageRow()">Save</a>
         <a id="cancel-change" href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-undo"
            plain="true" onclick="javascript:$('#storage-record-edg').edatagrid('cancelRow')">Cancel</a>
     </div>
+
+    <!--    计算资源变更记录-->
+    <div class="easyui-panel" title="计算资源变更记录" style="width:818px;height:396px;padding:10px;">
+        <div class="easyui-layout" data-options="fit:true">
+            <div title="集群-队列" data-options="region:'west',split:true" style="width:150px;padding:10px">
+                <ul id="calculate-left-tt" class="easyui-tree"></ul>
+                <input id="add-queue-btn" type="button" value="添加队列">
+            </div>
+            <div data-options="region:'center'" style="padding:10px">
+                <table id="calculate-record-edg" fitColumns="true" title="计算资源变更记录"
+                       singleSelect="true" toolbar="#edit-toolbar-cal" rownumbers="true"
+                       style="width: 636px;height: 316px">
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id="edit-toolbar-cal" style="display: none">
+        <a id="add-change" href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add"
+           plain="true" onclick="javascript:$('#calculate-record-edg').edatagrid('addRow',0)">New</a>
+        <a id="remove-change" href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove"
+           plain="true" onclick="deleteCalculateRow()">Delete</a>
+        <a id="save-change" href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-save"
+           plain="true" onclick="saveCalculateRow()">Save</a>
+        <a id="cancel-change" href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-undo"
+           plain="true" onclick="javascript:$('#storage-calculate-edg').edatagrid('cancelRow')">Cancel</a>
+    </div>
+
 </div>
 </div>
 </div>
@@ -624,6 +651,18 @@
         </div>
     </form>
 </div>
+<div id="add-queue-win" class="easyui-window" title="添加计算队列" style="width:300px;height:210px;">
+    <form style="padding:10px 20px 10px 40px;">
+        <p>队列: <input type="text" id="queue-field"></p>
+
+        <p>集群: <input type="text" id="cluster2-field"></p>
+
+        <div style="padding:5px;text-align:center;">
+            <a href="javascript:void(0)" id="add-queue-submit" class="easyui-linkbutton" icon="icon-ok">添加</a>
+            <a href="javascript:void(0)" id="add-queue-cancel" class="easyui-linkbutton" icon="icon-cancel">取消</a>
+        </div>
+    </form>
+</div>
 <div style="position:fixed; z-index:100;right:0;bottom:25px;">
     <img src="image/ds.gif">
 </div>
@@ -637,6 +676,22 @@
     }
     function resetCalculateForm() {
         $("#calculate-form").form("reset");
+    }
+    function saveStorageRow() {
+        $('#storage-record-edg').edatagrid('saveRow');
+        setTimeout('$("#storage-record-edg").edatagrid("reload");', 500);
+    }
+    function deleteStorageRow() {
+        $('#storage-record-edg').edatagrid('destroyRow');
+        setTimeout('$("#storage-record-edg").edatagrid("reload");', 500);
+    }
+    function saveCalculateRow() {
+        $('#calculate-record-edg').edatagrid('saveRow');
+        setTimeout('$("#calculate-record-edg").edatagrid("reload");', 500);
+    }
+    function deleteCalculateRow() {
+        $('#calculate-record-edg').edatagrid('destroyRow');
+        setTimeout('$("#calculate-record-edg").edatagrid("reload");', 500);
     }
 </script>
 </body>

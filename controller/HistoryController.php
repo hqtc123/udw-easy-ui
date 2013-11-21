@@ -8,7 +8,11 @@
  */
 require_once("../model/StorageDir.php");
 require_once("../model/StorageHistory.php");
+require_once("../model/CalculateQueue.php");
+require_once("../model/CalculateHistory.php");
 class HistoryController {
+    private $calculateQueue;
+    private $calculateHistory;
     private $storageDir;
     private $storageHistory;
     private $db;
@@ -18,6 +22,36 @@ class HistoryController {
         $this->db->createCon();
         $this->storageDir = new StorageDir();
         $this->storageHistory = new StorageHistory();
+        $this->calculateQueue = new CalculateQueue();
+        $this->calculateHistory = new CalculateHistory();
+    }
+
+    /**
+     * @param \CalculateHistory $calculateHistory
+     */
+    public function setCalculateHistory($calculateHistory) {
+        $this->calculateHistory = $calculateHistory;
+    }
+
+    /**
+     * @return \CalculateHistory
+     */
+    public function getCalculateHistory() {
+        return $this->calculateHistory;
+    }
+
+    /**
+     * @param \CalculateQueue $calculateQueue
+     */
+    public function setCalculateQueue($calculateQueue) {
+        $this->calculateQueue = $calculateQueue;
+    }
+
+    /**
+     * @return \CalculateQueue
+     */
+    public function getCalculateQueue() {
+        return $this->calculateQueue;
     }
 
     /**
@@ -47,14 +81,6 @@ class HistoryController {
         . "," . $this->getStorageHistory()->getAfter() . ",'" . $this->getStorageHistory()->getRemark() . "')");
     }
 
-    public function getSizeByDir($dir) {
-        return $this->db->query("select size from storage_dir where storage_dir='" . $dir . "'");
-    }
-
-    public function updateSize($dir, $size) {
-        return $this->db->query("update  storage_dir set size=" . $size . " where storage_dir='" . $dir . "'");
-    }
-
     public function getAllDirs() {
         return $this->db->query("select * from storage_dir order by storage_dir");
     }
@@ -63,16 +89,8 @@ class HistoryController {
         return $this->db->query("select * from storage_history where storage_dir='" . $dir . "' order by id desc");
     }
 
-    public function deleteDir($dir) {
-        return $this->db->query("delete from storage_dir where storage_dir='" . $dir . "'");
-    }
-
-    public function updateDir($oldDir, $newDir, $cluster) {
-        return $this->db->query("update storage_dir set storage_dir='" . $newDir . "',cluster='" . $cluster . "' where storage_dir='" . $oldDir . "'");
-    }
-
     public function getAllChangesByDir($dir) {
-        return $this->db->query("select * from storage_history where storage_dir='" . $dir . "' order by id desc");
+        return $this->db->query("select * from storage_history where storage_dir='" . $dir . "' order by date desc");
     }
 
     public function deleteStorageHistory($id) {
@@ -86,5 +104,25 @@ class HistoryController {
 
     public function getAllCluster() {
         return $this->db->query("select distinct(cluster) from storage_dir");
+    }
+
+    public function getAllChangesByQueue($queue) {
+        return $this->db->query("select * from calculate_history where queue='" . $queue . "' order by date desc");
+    }
+
+    public function addCalculateHistory() {
+        return $this->db->query("insert into calculate_history(queue,date,tadd,tdel,tbefore,tafter,remark) values
+        ('" . $this->calculateHistory->getQueue() . "','" . $this->calculateHistory->getDate() . "',"
+        . $this->calculateHistory->getAdd() . "," . $this->calculateHistory->getDel() . "," . $this->calculateHistory->getBefore()
+        . "," . $this->calculateHistory->getAfter() . ",'" . $this->calculateHistory->getRemark() . "')");
+    }
+
+    public function deleteCalculateHistory($id) {
+        return $this->db->query("delete from calculate_history where id=" . $id . ";");
+    }
+
+    public function updateCalculateHistory($id, $date, $tadd, $tdel, $tbefore, $tafter, $remark) {
+        return $this->db->query("update calculate_history set date='" . $date . "',tadd=" . $tadd . ",tdel=" . $tdel
+        . ",tbefore=" . $tbefore . ",tafter=" . $tafter . ",remark='" . $remark . "' where id=" . $id . ";");
     }
 }
