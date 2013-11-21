@@ -11,6 +11,8 @@
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="js/jquery.edatagrid.js"></script>
+    <script type="text/javascript" src="js/datagrid-detailview.js"></script>
     <script type="text/javascript" src="js/highcharts.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
 </head>
@@ -568,30 +570,30 @@
 </div>
 <!--资源变更记录-->
 <div id="res-change" class="right-child">
-    <table title="存储资源变更记录" class="easyui-treegrid" style="width:818px;height:360px"
-           data-options="
-            rownumbers: true,
-            pagination: true,
-            pageSize: 2,
-            pageList: [5,10,20],
-            idField: 'id',
-            treeField: 'name'"
-        >
-        <thead>
-        <tr>
-            <th field="id" width="100">目录序列</th>
-            <th field="date" width="100" align="right">日期</th>
-            <th field="add" width="100" align="right">增加(T)</th>
-            <th field="del" width="100" align="right">减少(T)</th>
-            <th field="before" width="100" align="right">变更前(T)</th>
-            <th field="after" width="100" align="right">变更后(T)</th>
-            <th field="remark" width="100" align="right">备注</th>
-        </tr>
-        </thead>
-    </table>
-    <div class="history-btn">
-        <input id="add-dir-btn" type="button" value="新增存储目录"/>
-        <input id="add-dir-his-btn" type="button" value="新增存储变更记录"/>
+    <div class="easyui-panel" title="存储资源变更记录" style="width:818px;height:366px;padding:10px;">
+        <div class="easyui-layout" data-options="fit:true">
+            <div data-options="region:'west',split:true" style="width:150px;padding:10px">
+                <ul id="storage-left-tt" class="easyui-tree"></ul>
+                <input id="add-dir-btn" type="button" value="添加目录">
+            </div>
+            <div data-options="region:'center'" style="padding:10px">
+                <table id="storage-record-edg" fitColumns="true" title="存储资源变更记录"
+                       singleSelect="true" toolbar="#edit-toolbar"
+                       style="width: 600px;height: 286px">
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="edit-toolbar" style="display: none">
+        <a id="add-change" href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add"
+           plain="true" onclick="javascript:$('#storage-record-edg').edatagrid('addRow')">New</a>
+        <a id="remove-change" href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove"
+           plain="true" onclick="javascript:$('#storage-record-edg').edatagrid('destroyRow')">Delete</a>
+        <a id="save-change" href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-save"
+           plain="true" onclick="javascript:$('#storage-record-edg').edatagrid('saveRow')">Save</a>
+        <a id="cancel-change" href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-undo"
+           plain="true" onclick="javascript:$('#storage-record-edg').edatagrid('cancelRow')">Cancel</a>
     </div>
 </div>
 </div>
@@ -616,34 +618,9 @@
 
         <p>集群: <input type="text" id="cluster-field"></p>
 
-        <p>大小: <input type="text" id="size-field"></p>
-
         <div style="padding:5px;text-align:center;">
             <a href="javascript:void(0)" id="add-dir-submit" class="easyui-linkbutton" icon="icon-ok">添加</a>
             <a href="javascript:void(0)" id="add-dir-cancel" class="easyui-linkbutton" icon="icon-cancel">取消</a>
-        </div>
-    </form>
-</div>
-<div id="add-storage-change-win" class="easyui-window" title="添加存储变更记录" style="width:300px;height:360px;">
-    <form style="padding:10px 20px 10px 40px;">
-        <p>目录: <input type="text" id="storage-dir-field"></p>
-
-        <p>日期: <input type="text" id="storage-date-field"></p>
-
-        <p>添加: <input type="text" id="storage-add-field"></p>
-
-        <p>减少: <input type="text" id="storage-del-field"></p>
-
-        <p>变更前: <input type="text" id="storage-change-before"></p>
-
-        <p>变更后: <input type="text" id="storage-change-after"></p>
-
-        <p>备注: <input type="text" id="storage-remark-field"></p>
-
-        <div style="padding:5px;text-align:center;">
-            <a href="javascript:void(0)" id="add-storage-change-submit" class="easyui-linkbutton" icon="icon-ok">添加</a>
-            <a href="javascript:void(0)" id="add-storage-change-cancel" class="easyui-linkbutton"
-               icon="icon-cancel">取消</a>
         </div>
     </form>
 </div>

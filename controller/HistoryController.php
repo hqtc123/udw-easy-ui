@@ -35,8 +35,8 @@ class HistoryController {
     }
 
     public function addStorageDir() {
-        return $this->db->query("insert into storage_dir(storage_dir,size,cluster) values
-        ('" . $this->storageDir->getDir() . "'," . $this->storageDir->getSize() . ",'"
+        return $this->db->query("insert into storage_dir(storage_dir,cluster) values
+        ('" . $this->storageDir->getDir() . "','"
         . $this->getStorageDir()->getCluster() . "')");
     }
 
@@ -53,5 +53,38 @@ class HistoryController {
 
     public function updateSize($dir, $size) {
         return $this->db->query("update  storage_dir set size=" . $size . " where storage_dir='" . $dir . "'");
+    }
+
+    public function getAllDirs() {
+        return $this->db->query("select * from storage_dir order by storage_dir");
+    }
+
+    public function getItemByDir($dir) {
+        return $this->db->query("select * from storage_history where storage_dir='" . $dir . "' order by id desc");
+    }
+
+    public function deleteDir($dir) {
+        return $this->db->query("delete from storage_dir where storage_dir='" . $dir . "'");
+    }
+
+    public function updateDir($oldDir, $newDir, $cluster) {
+        return $this->db->query("update storage_dir set storage_dir='" . $newDir . "',cluster='" . $cluster . "' where storage_dir='" . $oldDir . "'");
+    }
+
+    public function getAllChangesByDir($dir) {
+        return $this->db->query("select * from storage_history where storage_dir='" . $dir . "' order by id desc");
+    }
+
+    public function deleteStorageHistory($id) {
+        return $this->db->query("delete from storage_history where id=" . $id . ";");
+    }
+
+    public function updateStorageHistory($id, $date, $tadd, $tdel, $tbefore, $tafter, $remark) {
+        return $this->db->query("update storage_history set date='" . $date . "',tadd=" . $tadd . ",tdel=" . $tdel
+        . ",tbefore=" . $tbefore . ",tafter=" . $tafter . ",remark='" . $remark . "' where id=" . $id . ";");
+    }
+
+    public function getAllCluster() {
+        return $this->db->query("select distinct(cluster) from storage_dir");
     }
 }

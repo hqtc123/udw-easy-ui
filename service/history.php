@@ -13,42 +13,67 @@ $db->createCon();
 
 $action = $_GET["action"];
 $task = $_GET["task"];
+function has_child($cluster) {
+    $rs = mysql_query("select count(*) from storage_dir where cluster='" . $cluster . "'");
+    $row = mysql_fetch_array($rs);
+    return $row[0] > 0 ? true : false;
+}
 
 $historyController = new HistoryController();
 if ($action == "storage") {
-    if ($task == "add_dir") {
-        $dir = $_POST["dir"];
-        $size = $_POST["size"];
-        $historyController->getStorageDir()->setDir($dir);
-        $historyController->getStorageDir()->setSize($size);
-        $historyController->getStorageDir()->setCluster($_POST["cluster"]);
+    if ($task == "tree") {
+        $id = isset($_REQUEST['id']) ? $_REQUEST['id'] : 1;
+        if ($id == 1) {
+            $result = array();
+            $rs = $historyController->getAllCluster();
+            while ($row = mysql_fetch_array($rs)) {
+                $node = array();
+                $node["id"] = $row["cluster"];
+                $node["text"] = $row["cluster"];
+                $node['state'] = has_child($row['cluster']) ? 'closed' : 'open';
+                array_push($result, $node);
+            }
+            echo json_encode($result);
+        } else {
+            $result = array();
+            $rs = mysql_query("select storage_dir from storage_dir where cluster='" . $id . "'");
+            while ($row = mysql_fetch_array($rs)) {
+                $node["id"] = $row["storage_dir"];
+                $node["text"] = $row["storage_dir"];
+                $node['state'] = has_child($row['storage_dir']) ? 'closed' : 'open';
+                array_push($result, $node);
+            }
+            echo json_encode($result);
+        }
+    } elseif ($task == "add_dir") {
+        $historyController->getStorageDir()->setDir($_REQUEST["storage_dir"]);
+        $historyController->getStorageDir()->setCluster($_REQUEST["cluster"]);
         $rs = $historyController->addStorageDir();
         if ($rs == false) {
-            $json["success"] = 0;
-            echo json_encode($json);
-        } else {
-            $json["success"] = 1;
-            echo json_encode($json);
-        }
-    } else {
-        $add = $_POST["add"] == "" ? 0 : $_POST["add"];
-        $del = $_POST["del"] == "" ? 0 : $_POST["del"];
-        $sizeRs = $historyController->getSizeByDir($_POST["dir"]);
-        $sizeRow = mysql_fetch_array($sizeRs);
-        if ($sizeRow["size"] == null) {
             $result["success"] = 0;
-            $result["error"] = "此目录没有找到。";
             echo json_encode($result);
-            return;
+        } else {
+            $result["success"] = 1;
+            echo json_encode($result);
         }
-        $historyController->getStorageHistory()->setStorageDir($_POST["dir"]);
-        $historyController->getStorageHistory()->setDate($_POST["date"]);
-        $historyController->getStorageHistory()->setAdd($add);
-        $historyController->getStorageHistory()->setDel($del);
-        $historyController->getStorageHistory()->setBefore($_POST["before"]);
-        $historyController->getStorageHistory()->setAfter($_POST["after"]);
-        $historyController->getStorageHistory()->setRemark($_POST["remark"]);
-
+    }
+} elseif ($action == "change") {
+    $dir = $_GET["dir"];
+    if ($task == "all") {
+        $allRs = $historyController->getAllChangesByDir($dir);
+        $result = array();
+        while ($row = mysql_fetch_array($allRs)) {
+            array_push($result, $row);
+        }
+        echo json_encode($result);
+    } elseif ($task == "save") {
+        $historyController->getStorageHistory()->setStorageDir($dir);
+        $historyController->getStorageHistory()->setDate($_REQUEST["date"]);
+        $historyController->getStorageHistory()->setAdd($_REQUEST["tadd"] == "" ? 0 : $_REQUEST["tadd"]);
+        $historyController->getStorageHistory()->setDel($_REQUEST["tdel"] == "" ? 0 : $_REQUEST["tdel"]);
+        $historyController->getStorageHistory()->setBefore($_REQUEST["tbefore"]);
+        $historyController->getStorageHistory()->setAfter($_REQUEST["tafter"]);
+        $historyController->getStorageHistory()->setRemark($_REQUEST["remark"]);
         $rs = $historyController->addStorageHistory();
         if ($rs == false) {
             $json["success"] = 0;
@@ -59,8 +84,10 @@ if ($action == "storage") {
             $json["success"] = 1;
             echo json_encode($json);
         }
-//        $historyController->getStorageHistory()->setBefore($sizeRow["size"]);
-//        $after = $historyController->getStorageHistory()->getBefore() + $add - $del;
-//        $historyController->getStorageHistory()->setAfter($after);
+    } elseif ($task == "delete") {
+        $historyController->deleteStorageHistory($_REQUEST["id"]);
+    } elseif ($task == "update") {
+        $historyController->updateStorageHistory($_REQUEST["id"], $_REQUEST["date"], $_REQUEST["tadd"],
+            $_REQUEST["tdel"], $_REQUEST["tbefore"], $_REQUEST["tafter"], $_REQUEST["remark"]);
     }
 }

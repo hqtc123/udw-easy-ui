@@ -256,6 +256,41 @@ function createSummary() {
         url: "service/main.php?action=table-date"
     })
 }
+function showStorageAll(dir) {
+    $("#storage-record-edg").edatagrid({
+        onAfterEdit: function () {
+            $("#storage-record-edg").edatagrid("reload");
+        },
+        url: 'service/history.php?action=change&task=all&dir=' + dir,
+        saveUrl: 'service/history.php?action=change&task=save&dir=' + dir,
+        updateUrl: 'service/history.php?action=change&task=update&dir=' + dir,
+        destroyUrl: 'service/history.php?action=change&task=delete&dir=' + dir,
+        loadMsg: '',
+        height: 'auto',
+        idField: "id",
+        columns: [
+            [
+                {field: 'date', title: '日期', width: 150, editor: {type: 'validatebox'}},
+                {field: 'tadd', title: '增加', width: 100, editor: {type: 'validatebox'}},
+                {field: 'tdel', title: '减少', width: 100, editor: {type: 'validatebox'}},
+                {field: 'tbefore', title: '变更前', width: 100, editor: {type: 'validatebox'}},
+                {field: 'tafter', title: '变更后', width: 100, editor: {type: 'validatebox'}},
+                {field: 'remark', title: '备注', width: 500, editor: {type: 'validatebox'}}
+            ]
+        ]
+    });
+}
+function initStorageTree() {
+    $("#storage-left-tt").tree({
+        url: "service/history.php?action=storage&task=tree",
+        onClick: function (node) {
+            if ($("#storage-left-tt").tree("isLeaf", node.target)) {
+                showStorageAll(node.text);
+            }
+        }
+    })
+}
+//加载 ……
 $(function () {
     var sizePerDay = 0;
     $("#contact-content").dialog("close");
@@ -333,6 +368,7 @@ $(function () {
     })
 
     $("#choose-res-change").on("click", function () {
+        initStorageTree();
         $(".right-child[id!='res-change']").fadeOut("slow", function () {
             $(".right-child[id='res-change']").show();
         });
@@ -472,9 +508,8 @@ $(function () {
     })
     $("#add-dir-submit").on("click", function () {
         var dir = $("#dir-field").val().trim();
-        var size = $("#size-field").val().trim();
         var cluster = $("#cluster-field").val().trim();
-        if (dir == "" || size == "") {
+        if (dir == "" || cluster == "") {
             alert("把该填的的都填上，好吧？")
             return;
         }
@@ -483,63 +518,19 @@ $(function () {
             type: "POST",
             dataType: "json",
             data: {
-                "dir": dir,
-                "size": size,
+                "storage_dir": dir,
                 "cluster": cluster
             },
             success: function (json) {
                 if (json.success == 1) {
                     alert("success")
                     $("#add-dir-win").window("close");
+                    initStorageTree();
                 } else {
                     alert("目录已经存在或者size不对");
                 }
             }
         })
     })
-//    添加存储变更记录
-    $("#add-storage-change-win").window("close");
-    $("#add-dir-his-btn").on("click", function () {
-        $("#add-storage-change-win").window({
-            modal: true
-        });
-    })
-    $("#add-storage-change-cancel").on("click", function () {
-        $("#add-storage-change-win").window("close");
-    })
-    $("#add-storage-change-submit").on("click", function () {
-        var dir = $("#storage-dir-field").val().trim();
-        var date = $("#storage-date-field").val().trim();
-        var del = $("#storage-del-field").val().trim();
-        var add = $("#storage-add-field").val().trim();
-        var before = $("#storage-change-before").val().trim();
-        var after = $("#storage-change-after").val().trim();
-        var remark = $("#storage-remark-field").val().trim();
-//        if (dir == "" || date == "") {
-//            alert("把该填的的都填上，好吧？")
-//            return;
-//        }
-        $.ajax({
-            url: "service/history.php?action=storage&task=add_storage_change",
-            type: "POST",
-            dataType: "json",
-            data: {
-                "dir": dir,
-                "date": date,
-                "del": del,
-                "add": add,
-                "before": before,
-                "after": after,
-                "remark": remark
-            },
-            success: function (json) {
-                if (json.success == 1) {
-                    alert("success")
-                    $("#add-storage-change-win").window("close");
-                } else {
-                    alert(json.error);
-                }
-            }
-        })
-    })
+
 })
