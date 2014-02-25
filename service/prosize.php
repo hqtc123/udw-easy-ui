@@ -56,7 +56,7 @@ if ($_GET["action"] == "pie") {
 } elseif ($_GET["action"] == "per") {
     $productName = $_GET["product"];
     $rows = array();
-    $dateRs = $db->query('select DISTINCT date FROM product_table  ORDER BY date');
+    $dateRs = $db->query('select DISTINCT date FROM product_table  ORDER BY date desc limit 36 ');
     while ($dateRow = mysql_fetch_row($dateRs)) {
         $newRow["date"] = $dateRow[0];
         $outSize = 0;
@@ -66,7 +66,7 @@ if ($_GET["action"] == "pie") {
         $newRow["size"] = $sizeRow[0];
         array_push($rows, $newRow);
     }
-    echo json_encode($rows);
+    echo json_encode(array_reverse($rows));
 }
 $db->close();
 exit();

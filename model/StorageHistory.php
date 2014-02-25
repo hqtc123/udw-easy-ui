@@ -16,6 +16,21 @@ class StorageHistory {
     private $before;
     private $after;
     private $remark;
+    private $cluster;
+
+    /**
+     * @param mixed $cluster
+     */
+    public function setCluster($cluster) {
+        $this->cluster = $cluster;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCluster() {
+        return $this->cluster;
+    }
 
     function __construct() {
     }

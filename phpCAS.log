@@ -10141,3 +10141,2877 @@ B489 .|    |    <= true
 B489 .|    |    no need to authenticate [Client.php:1085]
 B489 .|    <= true
 B489 .<= ''
+4123 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+4123 .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [authentication.php:19]
+4123 .|    => CAS_Client::__construct('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:347]
+4123 .|    |    Starting a new session [Client.php:792]
+4123 .|    <= ''
+4123 .<= ''
+4123 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+4123 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+4123 .<= ''
+4123 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+4123 .|    Not a logout request [Client.php:1469]
+4123 .<= ''
+4123 .=> phpCAS::forceAuthentication() [authentication.php:31]
+4123 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+4123 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+4123 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+4123 .|    |    |    |    user = `heqing02' [Client.php:1365]
+4123 .|    |    |    <= true
+4123 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+4123 .|    |    <= true
+4123 .|    |    no need to authenticate [Client.php:1085]
+4123 .|    <= true
+4123 .<= ''
+0CFE .START phpCAS-1.3.2 ****************** [CAS.php:450]
+0CFE .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [authentication.php:19]
+0CFE .|    => CAS_Client::__construct('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:347]
+0CFE .|    |    Starting a new session [Client.php:792]
+0CFE .|    <= ''
+0CFE .<= ''
+0CFE .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+0CFE .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+0CFE .<= ''
+0CFE .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+0CFE .|    Not a logout request [Client.php:1469]
+0CFE .<= ''
+0CFE .=> phpCAS::forceAuthentication() [authentication.php:31]
+0CFE .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+0CFE .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+0CFE .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+0CFE .|    |    |    |    user = `heqing02' [Client.php:1365]
+0CFE .|    |    |    <= true
+0CFE .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+0CFE .|    |    <= true
+0CFE .|    |    no need to authenticate [Client.php:1085]
+0CFE .|    <= true
+0CFE .<= ''
+104B .START phpCAS-1.3.2 ****************** [CAS.php:450]
+104B .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [authentication.php:19]
+104B .|    => CAS_Client::__construct('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:347]
+104B .|    |    Starting a new session [Client.php:792]
+104B .|    <= ''
+104B .<= ''
+104B .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+104B .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+104B .<= ''
+104B .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+104B .|    Not a logout request [Client.php:1469]
+104B .<= ''
+104B .=> phpCAS::forceAuthentication() [authentication.php:31]
+104B .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+104B .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+104B .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+104B .|    |    |    |    user = `heqing02' [Client.php:1365]
+104B .|    |    |    <= true
+104B .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+104B .|    |    <= true
+104B .|    |    no need to authenticate [Client.php:1085]
+104B .|    <= true
+104B .<= ''
+D49E .START phpCAS-1.3.2 ****************** [CAS.php:450]
+D49E .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [authentication.php:19]
+D49E .|    => CAS_Client::__construct('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:347]
+D49E .|    |    Starting a new session [Client.php:792]
+D49E .|    <= ''
+D49E .<= ''
+D49E .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+D49E .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+D49E .<= ''
+D49E .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+D49E .|    Not a logout request [Client.php:1469]
+D49E .<= ''
+D49E .=> phpCAS::forceAuthentication() [authentication.php:31]
+D49E .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+D49E .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+D49E .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+D49E .|    |    |    |    user = `heqing02' [Client.php:1365]
+D49E .|    |    |    <= true
+D49E .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+D49E .|    |    <= true
+D49E .|    |    no need to authenticate [Client.php:1085]
+D49E .|    <= true
+D49E .<= ''
+A6DF .START phpCAS-1.3.2 ****************** [CAS.php:450]
+A6DF .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [authentication.php:19]
+A6DF .|    => CAS_Client::__construct('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:347]
+A6DF .|    |    Starting a new session [Client.php:792]
+A6DF .|    <= ''
+A6DF .<= ''
+A6DF .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+A6DF .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+A6DF .<= ''
+A6DF .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+A6DF .|    Not a logout request [Client.php:1469]
+A6DF .<= ''
+A6DF .=> phpCAS::forceAuthentication() [authentication.php:31]
+A6DF .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+A6DF .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+A6DF .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+A6DF .|    |    |    |    user = `heqing02' [Client.php:1365]
+A6DF .|    |    |    <= true
+A6DF .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+A6DF .|    |    <= true
+A6DF .|    |    no need to authenticate [Client.php:1085]
+A6DF .|    <= true
+A6DF .<= ''
+9F87 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+9F87 .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [authentication.php:19]
+9F87 .|    => CAS_Client::__construct('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:347]
+9F87 .|    |    Starting a new session [Client.php:792]
+9F87 .|    <= ''
+9F87 .<= ''
+9F87 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+9F87 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+9F87 .<= ''
+9F87 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+9F87 .|    Not a logout request [Client.php:1469]
+9F87 .<= ''
+9F87 .=> phpCAS::forceAuthentication() [authentication.php:31]
+9F87 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+9F87 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+9F87 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+9F87 .|    |    |    |    user = `heqing02' [Client.php:1365]
+9F87 .|    |    |    <= true
+9F87 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+9F87 .|    |    <= true
+9F87 .|    |    no need to authenticate [Client.php:1085]
+9F87 .|    <= true
+9F87 .<= ''
+2BA0 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+2BA0 .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [authentication.php:19]
+2BA0 .|    => CAS_Client::__construct('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:347]
+2BA0 .|    |    Starting a new session [Client.php:792]
+2BA0 .|    <= ''
+2BA0 .<= ''
+2BA0 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+2BA0 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+2BA0 .<= ''
+2BA0 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+2BA0 .|    Not a logout request [Client.php:1469]
+2BA0 .<= ''
+2BA0 .=> phpCAS::forceAuthentication() [authentication.php:31]
+2BA0 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+2BA0 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+2BA0 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+2BA0 .|    |    |    |    user = `heqing02' [Client.php:1365]
+2BA0 .|    |    |    <= true
+2BA0 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+2BA0 .|    |    <= true
+2BA0 .|    |    no need to authenticate [Client.php:1085]
+2BA0 .|    <= true
+2BA0 .<= ''
+9556 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+9556 .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [authentication.php:19]
+9556 .|    => CAS_Client::__construct('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:347]
+9556 .|    |    Starting a new session [Client.php:792]
+9556 .|    <= ''
+9556 .<= ''
+9556 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+9556 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+9556 .<= ''
+9556 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+9556 .|    Not a logout request [Client.php:1469]
+9556 .<= ''
+9556 .=> phpCAS::forceAuthentication() [authentication.php:31]
+9556 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+9556 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+9556 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+9556 .|    |    |    |    user = `heqing02' [Client.php:1365]
+9556 .|    |    |    <= true
+9556 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+9556 .|    |    <= true
+9556 .|    |    no need to authenticate [Client.php:1085]
+9556 .|    <= true
+9556 .<= ''
+048F .START phpCAS-1.3.2 ****************** [CAS.php:450]
+048F .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [authentication.php:19]
+048F .|    => CAS_Client::__construct('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:347]
+048F .|    |    Starting a new session [Client.php:792]
+048F .|    <= ''
+048F .<= ''
+048F .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+048F .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+048F .<= ''
+048F .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+048F .|    Not a logout request [Client.php:1469]
+048F .<= ''
+048F .=> phpCAS::forceAuthentication() [authentication.php:31]
+048F .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+048F .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+048F .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+048F .|    |    |    |    user = `heqing02' [Client.php:1365]
+048F .|    |    |    <= true
+048F .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+048F .|    |    <= true
+048F .|    |    no need to authenticate [Client.php:1085]
+048F .|    <= true
+048F .<= ''
+A4E2 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+A4E2 .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [authentication.php:19]
+A4E2 .|    => CAS_Client::__construct('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:347]
+A4E2 .|    |    Starting a new session [Client.php:792]
+A4E2 .|    <= ''
+A4E2 .<= ''
+A4E2 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+A4E2 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+A4E2 .<= ''
+A4E2 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+A4E2 .|    Not a logout request [Client.php:1469]
+A4E2 .<= ''
+A4E2 .=> phpCAS::forceAuthentication() [authentication.php:31]
+A4E2 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+A4E2 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+A4E2 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+A4E2 .|    |    |    |    user = `heqing02' [Client.php:1365]
+A4E2 .|    |    |    <= true
+A4E2 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+A4E2 .|    |    <= true
+A4E2 .|    |    no need to authenticate [Client.php:1085]
+A4E2 .|    <= true
+A4E2 .<= ''
+4B55 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+4B55 .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [authentication.php:19]
+4B55 .|    => CAS_Client::__construct('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:347]
+4B55 .|    |    Starting a new session [Client.php:792]
+4B55 .|    <= ''
+4B55 .<= ''
+4B55 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+4B55 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+4B55 .<= ''
+4B55 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+4B55 .|    Not a logout request [Client.php:1469]
+4B55 .<= ''
+4B55 .=> phpCAS::forceAuthentication() [authentication.php:31]
+4B55 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+4B55 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+4B55 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+4B55 .|    |    |    |    user = `heqing02' [Client.php:1365]
+4B55 .|    |    |    <= true
+4B55 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+4B55 .|    |    <= true
+4B55 .|    |    no need to authenticate [Client.php:1085]
+4B55 .|    <= true
+4B55 .<= ''
+9F13 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+9F13 .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [authentication.php:19]
+9F13 .|    => CAS_Client::__construct('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:347]
+9F13 .|    |    Starting a new session [Client.php:792]
+9F13 .|    <= ''
+9F13 .<= ''
+9F13 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+9F13 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+9F13 .<= ''
+9F13 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+9F13 .|    Not a logout request [Client.php:1469]
+9F13 .<= ''
+9F13 .=> phpCAS::forceAuthentication() [authentication.php:31]
+9F13 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+9F13 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+9F13 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+9F13 .|    |    |    |    user = `heqing02' [Client.php:1365]
+9F13 .|    |    |    <= true
+9F13 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+9F13 .|    |    <= true
+9F13 .|    |    no need to authenticate [Client.php:1085]
+9F13 .|    <= true
+9F13 .<= ''
+743B .START phpCAS-1.3.2 ****************** [CAS.php:450]
+743B .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [authentication.php:19]
+743B .|    => CAS_Client::__construct('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:347]
+743B .|    |    Starting a new session [Client.php:792]
+743B .|    <= ''
+743B .<= ''
+743B .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+743B .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+743B .<= ''
+743B .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+743B .|    Not a logout request [Client.php:1469]
+743B .<= ''
+743B .=> phpCAS::forceAuthentication() [authentication.php:31]
+743B .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+743B .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+743B .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+743B .|    |    |    |    user = `heqing02' [Client.php:1365]
+743B .|    |    |    <= true
+743B .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+743B .|    |    <= true
+743B .|    |    no need to authenticate [Client.php:1085]
+743B .|    <= true
+743B .<= ''
+38BF .START phpCAS-1.3.2 ****************** [CAS.php:450]
+38BF .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [authentication.php:19]
+38BF .|    => CAS_Client::__construct('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:347]
+38BF .|    |    Starting a new session [Client.php:792]
+38BF .|    <= ''
+38BF .<= ''
+38BF .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+38BF .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+38BF .<= ''
+38BF .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+38BF .|    Not a logout request [Client.php:1469]
+38BF .<= ''
+38BF .=> phpCAS::forceAuthentication() [authentication.php:31]
+38BF .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+38BF .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+38BF .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+38BF .|    |    |    |    user = `heqing02' [Client.php:1365]
+38BF .|    |    |    <= true
+38BF .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+38BF .|    |    <= true
+38BF .|    |    no need to authenticate [Client.php:1085]
+38BF .|    <= true
+38BF .<= ''
+5EFE .START phpCAS-1.3.2 ****************** [CAS.php:450]
+5EFE .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [authentication.php:19]
+5EFE .|    => CAS_Client::__construct('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:347]
+5EFE .|    |    Starting a new session [Client.php:792]
+5EFE .|    <= ''
+5EFE .<= ''
+5EFE .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+5EFE .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+5EFE .<= ''
+5EFE .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+5EFE .|    Not a logout request [Client.php:1469]
+5EFE .<= ''
+5EFE .=> phpCAS::forceAuthentication() [authentication.php:31]
+5EFE .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+5EFE .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+5EFE .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+5EFE .|    |    |    |    user = `heqing02' [Client.php:1365]
+5EFE .|    |    |    <= true
+5EFE .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+5EFE .|    |    <= true
+5EFE .|    |    no need to authenticate [Client.php:1085]
+5EFE .|    <= true
+5EFE .<= ''
+8252 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+8252 .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [authentication.php:19]
+8252 .|    => CAS_Client::__construct('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:347]
+8252 .|    |    Starting a new session [Client.php:792]
+8252 .|    <= ''
+8252 .<= ''
+8252 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+8252 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+8252 .<= ''
+8252 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+8252 .|    Not a logout request [Client.php:1469]
+8252 .<= ''
+8252 .=> phpCAS::forceAuthentication() [authentication.php:31]
+8252 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+8252 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+8252 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+8252 .|    |    |    |    user = `heqing02' [Client.php:1365]
+8252 .|    |    |    <= true
+8252 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+8252 .|    |    <= true
+8252 .|    |    no need to authenticate [Client.php:1085]
+8252 .|    <= true
+8252 .<= ''
+FD58 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+FD58 .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [authentication.php:19]
+FD58 .|    => CAS_Client::__construct('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:347]
+FD58 .|    |    Starting a new session [Client.php:792]
+FD58 .|    <= ''
+FD58 .<= ''
+FD58 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+FD58 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+FD58 .<= ''
+FD58 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+FD58 .|    Not a logout request [Client.php:1469]
+FD58 .<= ''
+FD58 .=> phpCAS::forceAuthentication() [authentication.php:31]
+FD58 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+FD58 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+FD58 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+FD58 .|    |    |    |    user = `heqing02' [Client.php:1365]
+FD58 .|    |    |    <= true
+FD58 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+FD58 .|    |    <= true
+FD58 .|    |    no need to authenticate [Client.php:1085]
+FD58 .|    <= true
+FD58 .<= ''
+EA92 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+EA92 .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [authentication.php:19]
+EA92 .|    => CAS_Client::__construct('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:347]
+EA92 .|    |    Starting a new session [Client.php:792]
+EA92 .|    <= ''
+EA92 .<= ''
+EA92 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+EA92 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+EA92 .<= ''
+EA92 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+EA92 .|    Not a logout request [Client.php:1469]
+EA92 .<= ''
+EA92 .=> phpCAS::forceAuthentication() [authentication.php:31]
+EA92 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+EA92 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+EA92 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+EA92 .|    |    |    |    user = `heqing02' [Client.php:1365]
+EA92 .|    |    |    <= true
+EA92 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+EA92 .|    |    <= true
+EA92 .|    |    no need to authenticate [Client.php:1085]
+EA92 .|    <= true
+EA92 .<= ''
+F854 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+F854 .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [authentication.php:19]
+F854 .|    => CAS_Client::__construct('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:347]
+F854 .|    |    Starting a new session [Client.php:792]
+F854 .|    <= ''
+F854 .<= ''
+F854 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+F854 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+F854 .<= ''
+F854 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+F854 .|    Not a logout request [Client.php:1469]
+F854 .<= ''
+F854 .=> phpCAS::forceAuthentication() [authentication.php:31]
+F854 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+F854 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+F854 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+F854 .|    |    |    |    user = `heqing02' [Client.php:1365]
+F854 .|    |    |    <= true
+F854 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+F854 .|    |    <= true
+F854 .|    |    no need to authenticate [Client.php:1085]
+F854 .|    <= true
+F854 .<= ''
+0F1B .START phpCAS-1.3.2 ****************** [CAS.php:450]
+0F1B .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [authentication.php:19]
+0F1B .|    => CAS_Client::__construct('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:347]
+0F1B .|    |    Starting a new session [Client.php:792]
+0F1B .|    <= ''
+0F1B .<= ''
+0F1B .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+0F1B .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+0F1B .<= ''
+0F1B .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+0F1B .|    Not a logout request [Client.php:1469]
+0F1B .<= ''
+0F1B .=> phpCAS::forceAuthentication() [authentication.php:31]
+0F1B .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+0F1B .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+0F1B .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+0F1B .|    |    |    |    user = `heqing02' [Client.php:1365]
+0F1B .|    |    |    <= true
+0F1B .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+0F1B .|    |    <= true
+0F1B .|    |    no need to authenticate [Client.php:1085]
+0F1B .|    <= true
+0F1B .<= ''
+2F44 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+2F44 .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [authentication.php:19]
+2F44 .|    => CAS_Client::__construct('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:347]
+2F44 .|    |    Starting a new session [Client.php:792]
+2F44 .|    <= ''
+2F44 .<= ''
+2F44 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+2F44 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+2F44 .<= ''
+2F44 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+2F44 .|    Not a logout request [Client.php:1469]
+2F44 .<= ''
+2F44 .=> phpCAS::forceAuthentication() [authentication.php:31]
+2F44 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+2F44 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+2F44 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+2F44 .|    |    |    |    user = `heqing02' [Client.php:1365]
+2F44 .|    |    |    <= true
+2F44 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+2F44 .|    |    <= true
+2F44 .|    |    no need to authenticate [Client.php:1085]
+2F44 .|    <= true
+2F44 .<= ''
+5071 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+5071 .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [authentication.php:19]
+5071 .|    => CAS_Client::__construct('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:347]
+5071 .|    |    Starting a new session [Client.php:792]
+5071 .|    <= ''
+5071 .<= ''
+5071 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+5071 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+5071 .<= ''
+5071 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+5071 .|    Not a logout request [Client.php:1469]
+5071 .<= ''
+5071 .=> phpCAS::forceAuthentication() [authentication.php:31]
+5071 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+5071 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+5071 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+5071 .|    |    |    |    user = `heqing02' [Client.php:1365]
+5071 .|    |    |    <= true
+5071 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+5071 .|    |    <= true
+5071 .|    |    no need to authenticate [Client.php:1085]
+5071 .|    <= true
+5071 .<= ''
+B32C .START phpCAS-1.3.2 ****************** [CAS.php:450]
+B32C .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [authentication.php:19]
+B32C .|    => CAS_Client::__construct('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:347]
+B32C .|    |    Starting a new session [Client.php:792]
+B32C .|    <= ''
+B32C .<= ''
+B32C .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+B32C .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+B32C .<= ''
+B32C .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+B32C .|    Not a logout request [Client.php:1469]
+B32C .<= ''
+B32C .=> phpCAS::forceAuthentication() [authentication.php:31]
+B32C .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+B32C .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+B32C .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+B32C .|    |    |    |    user = `heqing02' [Client.php:1365]
+B32C .|    |    |    <= true
+B32C .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+B32C .|    |    <= true
+B32C .|    |    no need to authenticate [Client.php:1085]
+B32C .|    <= true
+B32C .<= ''
+8936 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+8936 .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [authentication.php:19]
+8936 .|    => CAS_Client::__construct('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:347]
+8936 .|    |    Starting a new session [Client.php:792]
+8936 .|    <= ''
+8936 .<= ''
+8936 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+8936 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+8936 .<= ''
+8936 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+8936 .|    Not a logout request [Client.php:1469]
+8936 .<= ''
+8936 .=> phpCAS::forceAuthentication() [authentication.php:31]
+8936 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+8936 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+8936 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+8936 .|    |    |    |    user = `heqing02' [Client.php:1365]
+8936 .|    |    |    <= true
+8936 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+8936 .|    |    <= true
+8936 .|    |    no need to authenticate [Client.php:1085]
+8936 .|    <= true
+8936 .<= ''
+4A08 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+4A08 .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [authentication.php:19]
+4A08 .|    => CAS_Client::__construct('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:347]
+4A08 .|    |    Starting a new session [Client.php:792]
+4A08 .|    <= ''
+4A08 .<= ''
+4A08 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+4A08 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+4A08 .<= ''
+4A08 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+4A08 .|    Not a logout request [Client.php:1469]
+4A08 .<= ''
+4A08 .=> phpCAS::forceAuthentication() [authentication.php:31]
+4A08 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+4A08 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+4A08 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+4A08 .|    |    |    |    user = `heqing02' [Client.php:1365]
+4A08 .|    |    |    <= true
+4A08 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+4A08 .|    |    <= true
+4A08 .|    |    no need to authenticate [Client.php:1085]
+4A08 .|    <= true
+4A08 .<= ''
+9533 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+9533 .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [authentication.php:19]
+9533 .|    => CAS_Client::__construct('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:347]
+9533 .|    |    Starting a new session [Client.php:792]
+9533 .|    <= ''
+9533 .<= ''
+9533 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+9533 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+9533 .<= ''
+9533 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+9533 .|    Not a logout request [Client.php:1469]
+9533 .<= ''
+9533 .=> phpCAS::forceAuthentication() [authentication.php:31]
+9533 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+9533 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+9533 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+9533 .|    |    |    |    user = `heqing02' [Client.php:1365]
+9533 .|    |    |    <= true
+9533 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+9533 .|    |    <= true
+9533 .|    |    no need to authenticate [Client.php:1085]
+9533 .|    <= true
+9533 .<= ''
+23E4 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+23E4 .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [authentication.php:19]
+23E4 .|    => CAS_Client::__construct('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:347]
+23E4 .|    |    Starting a new session [Client.php:792]
+23E4 .|    <= ''
+23E4 .<= ''
+23E4 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+23E4 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+23E4 .<= ''
+23E4 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+23E4 .|    Not a logout request [Client.php:1469]
+23E4 .<= ''
+23E4 .=> phpCAS::forceAuthentication() [authentication.php:31]
+23E4 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+23E4 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+23E4 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+23E4 .|    |    |    |    user = `heqing02' [Client.php:1365]
+23E4 .|    |    |    <= true
+23E4 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+23E4 .|    |    <= true
+23E4 .|    |    no need to authenticate [Client.php:1085]
+23E4 .|    <= true
+23E4 .<= ''
+29C8 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+29C8 .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [authentication.php:19]
+29C8 .|    => CAS_Client::__construct('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:347]
+29C8 .|    |    Starting a new session [Client.php:792]
+29C8 .|    <= ''
+29C8 .<= ''
+29C8 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+29C8 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+29C8 .<= ''
+29C8 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+29C8 .|    Not a logout request [Client.php:1469]
+29C8 .<= ''
+29C8 .=> phpCAS::forceAuthentication() [authentication.php:31]
+29C8 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+29C8 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+29C8 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+29C8 .|    |    |    |    user = `heqing02' [Client.php:1365]
+29C8 .|    |    |    <= true
+29C8 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+29C8 .|    |    <= true
+29C8 .|    |    no need to authenticate [Client.php:1085]
+29C8 .|    <= true
+29C8 .<= ''
+FE9E .START phpCAS-1.3.2 ****************** [CAS.php:450]
+FE9E .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [authentication.php:19]
+FE9E .|    => CAS_Client::__construct('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:347]
+FE9E .|    |    Starting a new session [Client.php:792]
+FE9E .|    <= ''
+FE9E .<= ''
+FE9E .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+FE9E .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+FE9E .<= ''
+FE9E .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+FE9E .|    Not a logout request [Client.php:1469]
+FE9E .<= ''
+FE9E .=> phpCAS::forceAuthentication() [authentication.php:31]
+FE9E .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+FE9E .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+FE9E .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+FE9E .|    |    |    |    user = `heqing02' [Client.php:1365]
+FE9E .|    |    |    <= true
+FE9E .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+FE9E .|    |    <= true
+FE9E .|    |    no need to authenticate [Client.php:1085]
+FE9E .|    <= true
+FE9E .<= ''
+F0DE .START phpCAS-1.3.2 ****************** [CAS.php:450]
+F0DE .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [authentication.php:19]
+F0DE .|    => CAS_Client::__construct('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:347]
+F0DE .|    |    Starting a new session [Client.php:792]
+F0DE .|    <= ''
+F0DE .<= ''
+F0DE .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+F0DE .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+F0DE .<= ''
+F0DE .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+F0DE .|    Not a logout request [Client.php:1469]
+F0DE .<= ''
+F0DE .=> phpCAS::forceAuthentication() [authentication.php:31]
+F0DE .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+F0DE .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+F0DE .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+F0DE .|    |    |    |    user = `heqing02' [Client.php:1365]
+F0DE .|    |    |    <= true
+F0DE .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+F0DE .|    |    <= true
+F0DE .|    |    no need to authenticate [Client.php:1085]
+F0DE .|    <= true
+F0DE .<= ''
+C318 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+C318 .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [authentication.php:19]
+C318 .|    => CAS_Client::__construct('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:347]
+C318 .|    |    Starting a new session [Client.php:792]
+C318 .|    <= ''
+C318 .<= ''
+C318 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+C318 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+C318 .<= ''
+C318 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+C318 .|    Not a logout request [Client.php:1469]
+C318 .<= ''
+C318 .=> phpCAS::forceAuthentication() [authentication.php:31]
+C318 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+C318 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+C318 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+C318 .|    |    |    |    user = `heqing02' [Client.php:1365]
+C318 .|    |    |    <= true
+C318 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+C318 .|    |    <= true
+C318 .|    |    no need to authenticate [Client.php:1085]
+C318 .|    <= true
+C318 .<= ''
+EF58 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+EF58 .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [authentication.php:19]
+EF58 .|    => CAS_Client::__construct('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:347]
+EF58 .|    |    Starting a new session [Client.php:792]
+EF58 .|    <= ''
+EF58 .<= ''
+EF58 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+EF58 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+EF58 .<= ''
+EF58 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+EF58 .|    Not a logout request [Client.php:1469]
+EF58 .<= ''
+EF58 .=> phpCAS::forceAuthentication() [authentication.php:31]
+EF58 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+EF58 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+EF58 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+EF58 .|    |    |    |    no user found [Client.php:1375]
+EF58 .|    |    |    <= false
+EF58 .|    |    |    no ticket found [Client.php:1258]
+EF58 .|    |    <= false
+EF58 .|    |    => CAS_Client::redirectToCas(false) [Client.php:1092]
+EF58 .|    |    |    => CAS_Client::getServerLoginURL(false, false) [Client.php:1396]
+EF58 .|    |    |    |    => CAS_Client::getURL() [Client.php:328]
+EF58 .|    |    |    |    |    Final URI: http://localhost:8080/heqing02/statistics/index.php [Client.php:3071]
+EF58 .|    |    |    |    <= 'http://localhost:8080/heqing02/statistics/index.php'
+EF58 .|    |    |    <= 'https://uuap.baidu.com/login?service=http%3A%2F%2Flocalhost%3A8080%2Fheqing02%2Fstatistics%2Findex.php'
+EF58 .|    |    |    Redirect to : https://uuap.baidu.com/login?service=http%3A%2F%2Flocalhost%3A8080%2Fheqing02%2Fstatistics%2Findex.php [Client.php:1402]
+EF58 .|    |    |    exit()
+EF58 .|    |    |    -
+EF58 .|    |    -
+EF58 .|    -
+4F72 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+4F72 .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [authentication.php:19]
+4F72 .|    => CAS_Client::__construct('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:347]
+4F72 .|    |    Starting a new session [Client.php:792]
+4F72 .|    <= ''
+4F72 .<= ''
+4F72 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+4F72 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+4F72 .<= ''
+4F72 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+4F72 .|    Not a logout request [Client.php:1469]
+4F72 .<= ''
+4F72 .=> phpCAS::forceAuthentication() [authentication.php:31]
+4F72 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+4F72 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+4F72 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+4F72 .|    |    |    |    no user found [Client.php:1375]
+4F72 .|    |    |    <= false
+4F72 .|    |    |    no ticket found [Client.php:1258]
+4F72 .|    |    <= false
+4F72 .|    |    => CAS_Client::redirectToCas(false) [Client.php:1092]
+4F72 .|    |    |    => CAS_Client::getServerLoginURL(false, false) [Client.php:1396]
+4F72 .|    |    |    |    => CAS_Client::getURL() [Client.php:328]
+4F72 .|    |    |    |    |    Final URI: http://localhost:8080/heqing02/statistics/index.php [Client.php:3071]
+4F72 .|    |    |    |    <= 'http://localhost:8080/heqing02/statistics/index.php'
+4F72 .|    |    |    <= 'https://uuap.baidu.com/login?service=http%3A%2F%2Flocalhost%3A8080%2Fheqing02%2Fstatistics%2Findex.php'
+4F72 .|    |    |    Redirect to : https://uuap.baidu.com/login?service=http%3A%2F%2Flocalhost%3A8080%2Fheqing02%2Fstatistics%2Findex.php [Client.php:1402]
+4F72 .|    |    |    exit()
+4F72 .|    |    |    -
+4F72 .|    |    -
+4F72 .|    -
+E254 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+E254 .=> phpCAS::client('2.0', 'itbeta.baidu.com', 443, '') [authentication.php:19]
+E254 .|    => CAS_Client::__construct('2.0', false, 'itbeta.baidu.com', 443, '', true) [CAS.php:347]
+E254 .|    |    Starting a new session [Client.php:792]
+E254 .|    <= ''
+E254 .<= ''
+E254 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+E254 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+E254 .<= ''
+E254 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+E254 .|    Not a logout request [Client.php:1469]
+E254 .<= ''
+E254 .=> phpCAS::forceAuthentication() [authentication.php:31]
+E254 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+E254 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+E254 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+E254 .|    |    |    |    no user found [Client.php:1375]
+E254 .|    |    |    <= false
+E254 .|    |    |    no ticket found [Client.php:1258]
+E254 .|    |    <= false
+E254 .|    |    => CAS_Client::redirectToCas(false) [Client.php:1092]
+E254 .|    |    |    => CAS_Client::getServerLoginURL(false, false) [Client.php:1396]
+E254 .|    |    |    |    => CAS_Client::getURL() [Client.php:328]
+E254 .|    |    |    |    |    Final URI: http://localhost:8080/heqing02/statistics/index.php [Client.php:3071]
+E254 .|    |    |    |    <= 'http://localhost:8080/heqing02/statistics/index.php'
+E254 .|    |    |    <= 'https://itbeta.baidu.com/login?service=http%3A%2F%2Flocalhost%3A8080%2Fheqing02%2Fstatistics%2Findex.php'
+E254 .|    |    |    Redirect to : https://itbeta.baidu.com/login?service=http%3A%2F%2Flocalhost%3A8080%2Fheqing02%2Fstatistics%2Findex.php [Client.php:1402]
+E254 .|    |    |    exit()
+E254 .|    |    |    -
+E254 .|    |    -
+E254 .|    -
+7E6B .START phpCAS-1.3.2 ****************** [CAS.php:450]
+7E6B .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+7E6B .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+7E6B .|    |    Starting a new session [Client.php:792]
+7E6B .|    <= ''
+7E6B .<= ''
+7E6B .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+7E6B .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+7E6B .<= ''
+7E6B .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+7E6B .|    Not a logout request [Client.php:1469]
+7E6B .<= ''
+7E6B .=> phpCAS::forceAuthentication() [authentication.php:31]
+7E6B .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+7E6B .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+7E6B .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+7E6B .|    |    |    |    no user found [Client.php:1375]
+7E6B .|    |    |    <= false
+7E6B .|    |    |    no ticket found [Client.php:1258]
+7E6B .|    |    <= false
+7E6B .|    |    => CAS_Client::redirectToCas(false) [Client.php:1092]
+7E6B .|    |    |    => CAS_Client::getServerLoginURL(false, false) [Client.php:1396]
+7E6B .|    |    |    |    => CAS_Client::getURL() [Client.php:328]
+7E6B .|    |    |    |    |    Final URI: http://localhost:8080/heqing02/statistics/index.php [Client.php:3071]
+7E6B .|    |    |    |    <= 'http://localhost:8080/heqing02/statistics/index.php'
+7E6B .|    |    |    <= 'https://itebeta.baidu.com/login?service=http%3A%2F%2Flocalhost%3A8080%2Fheqing02%2Fstatistics%2Findex.php'
+7E6B .|    |    |    Redirect to : https://itebeta.baidu.com/login?service=http%3A%2F%2Flocalhost%3A8080%2Fheqing02%2Fstatistics%2Findex.php [Client.php:1402]
+7E6B .|    |    |    exit()
+7E6B .|    |    |    -
+7E6B .|    |    -
+7E6B .|    -
+5CC2 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+5CC2 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+5CC2 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+5CC2 .|    |    Starting a new session [Client.php:792]
+5CC2 .|    |    Ticket 'ST-49988-gyc0QVPxYHPg0qJbS7Ba-uuap' found [Client.php:870]
+5CC2 .|    <= ''
+5CC2 .<= ''
+5CC2 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+5CC2 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+5CC2 .<= ''
+5CC2 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+5CC2 .|    Not a logout request [Client.php:1469]
+5CC2 .<= ''
+5CC2 .=> phpCAS::forceAuthentication() [authentication.php:31]
+5CC2 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+5CC2 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+5CC2 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+5CC2 .|    |    |    |    no user found [Client.php:1375]
+5CC2 .|    |    |    <= false
+5CC2 .|    |    |    CAS 2.0 ticket `ST-49988-gyc0QVPxYHPg0qJbS7Ba-uuap' is present [Client.php:1223]
+5CC2 .|    |    |    => CAS_Client::validateCAS20('', NULL, NULL) [Client.php:1224]
+5CC2 .|    |    |    |     [Client.php:2747]
+5CC2 .|    |    |    |    => CAS_Client::getServerServiceValidateURL() [Client.php:2753]
+5CC2 .|    |    |    |    |    => CAS_Client::getURL() [Client.php:417]
+5CC2 .|    |    |    |    |    |    Final URI: http://localhost:8080/heqing02/statistics/index.php [Client.php:3071]
+5CC2 .|    |    |    |    |    <= 'http://localhost:8080/heqing02/statistics/index.php'
+5CC2 .|    |    |    |    <= 'https://itebeta.baidu.com/serviceValidate?service=http%3A%2F%2Flocalhost%3A8080%2Fheqing02%2Fstatistics%2Findex.php'
+5CC2 .|    |    |    |    => CAS_Client::_readURL('https://itebeta.baidu.com/serviceValidate?service=http%3A%2F%2Flocalhost%3A8080%2Fheqing02%2Fstatistics%2Findex.php&ticket=ST-49988-gyc0QVPxYHPg0qJbS7Ba-uuap', NULL, NULL, NULL) [Client.php:2762]
+5CC2 .|    |    |    |    |    => CAS_Request_CurlRequest::sendRequest() [AbstractRequest.php:220]
+5CC2 .|    |    |    |    |    |    Response Body: 
+5CC2 .|    |    |    |    |    |    <cas:serviceResponse xmlns:cas='http://www.yale.edu/tp/cas'>
+5CC2 .|    |    |    |    |    |    	<cas:authenticationSuccess>
+5CC2 .|    |    |    |    |    |    		<cas:user>heqing02</cas:user>
+5CC2 .|    |    |    |    |    |    
+5CC2 .|    |    |    |    |    |    
+5CC2 .|    |    |    |    |    |    	</cas:authenticationSuccess>
+5CC2 .|    |    |    |    |    |    </cas:serviceResponse>
+5CC2 .|    |    |    |    |    |     [CurlRequest.php:82]
+5CC2 .|    |    |    |    |    <= true
+5CC2 .|    |    |    |    <= true
+5CC2 .|    |    |    |    => CAS_Client::_readExtraAttributesCas20(DOMNodeList) [Client.php:2813]
+5CC2 .|    |    |    |    |    Testing for rubycas style attributes [Client.php:2923]
+5CC2 .|    |    |    |    <= ''
+5CC2 .|    |    |    |    Storing Proxy List [Client.php:2822]
+5CC2 .|    |    |    |    => CAS_ProxyChain_AllowedList::isProxyListAllowed(array ()) [Client.php:2825]
+5CC2 .|    |    |    |    |    No proxies were found in the response [AllowedList.php:81]
+5CC2 .|    |    |    |    <= true
+5CC2 .|    |    |    |    => CAS_Client::_renameSession('ST-49988-gyc0QVPxYHPg0qJbS7Ba-uuap') [Client.php:2856]
+5CC2 .|    |    |    |    |    Session ID: ST-49988-gyc0QVPxYHPg0qJbS7Ba-uuap [Client.php:3180]
+5CC2 .|    |    |    |    |    Restoring old session vars [Client.php:3183]
+5CC2 .|    |    |    |    <= ''
+5CC2 .|    |    |    <= true
+5CC2 .|    |    |    CAS 2.0 ticket `ST-49988-gyc0QVPxYHPg0qJbS7Ba-uuap' was validated [Client.php:1225]
+5CC2 .|    |    |    => CAS_Client::getURL() [Client.php:1279]
+5CC2 .|    |    |    <= 'http://localhost:8080/heqing02/statistics/index.php'
+5CC2 .|    |    |    Prepare redirect to : http://localhost:8080/heqing02/statistics/index.php [Client.php:1279]
+5CC2 .|    |    |    => CAS_Client::getURL() [Client.php:1280]
+5CC2 .|    |    |    <= 'http://localhost:8080/heqing02/statistics/index.php'
+5CC2 .|    |    |    exit()
+5CC2 .|    |    |    -
+5CC2 .|    |    -
+5CC2 .|    -
+4DCD .START phpCAS-1.3.2 ****************** [CAS.php:450]
+4DCD .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+4DCD .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+4DCD .|    |    Starting a new session [Client.php:792]
+4DCD .|    <= ''
+4DCD .<= ''
+4DCD .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+4DCD .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+4DCD .<= ''
+4DCD .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+4DCD .|    Not a logout request [Client.php:1469]
+4DCD .<= ''
+4DCD .=> phpCAS::forceAuthentication() [authentication.php:31]
+4DCD .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+4DCD .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+4DCD .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+4DCD .|    |    |    |    user = `heqing02' [Client.php:1365]
+4DCD .|    |    |    <= true
+4DCD .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+4DCD .|    |    <= true
+4DCD .|    |    no need to authenticate [Client.php:1085]
+4DCD .|    <= true
+4DCD .<= ''
+B125 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+B125 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+B125 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+B125 .|    |    Starting a new session [Client.php:792]
+B125 .|    <= ''
+B125 .<= ''
+B125 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+B125 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+B125 .<= ''
+B125 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+B125 .|    Not a logout request [Client.php:1469]
+B125 .<= ''
+B125 .=> phpCAS::forceAuthentication() [authentication.php:31]
+B125 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+B125 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+B125 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+B125 .|    |    |    |    user = `heqing02' [Client.php:1365]
+B125 .|    |    |    <= true
+B125 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+B125 .|    |    <= true
+B125 .|    |    no need to authenticate [Client.php:1085]
+B125 .|    <= true
+B125 .<= ''
+8D79 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+8D79 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+8D79 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+8D79 .|    |    Starting a new session [Client.php:792]
+8D79 .|    <= ''
+8D79 .<= ''
+8D79 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+8D79 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+8D79 .<= ''
+8D79 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+8D79 .|    Not a logout request [Client.php:1469]
+8D79 .<= ''
+8D79 .=> phpCAS::forceAuthentication() [authentication.php:31]
+8D79 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+8D79 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+8D79 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+8D79 .|    |    |    |    user = `heqing02' [Client.php:1365]
+8D79 .|    |    |    <= true
+8D79 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+8D79 .|    |    <= true
+8D79 .|    |    no need to authenticate [Client.php:1085]
+8D79 .|    <= true
+8D79 .<= ''
+8842 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+8842 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+8842 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+8842 .|    |    Starting a new session [Client.php:792]
+8842 .|    <= ''
+8842 .<= ''
+8842 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+8842 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+8842 .<= ''
+8842 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+8842 .|    Not a logout request [Client.php:1469]
+8842 .<= ''
+8842 .=> phpCAS::forceAuthentication() [authentication.php:31]
+8842 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+8842 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+8842 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+8842 .|    |    |    |    user = `heqing02' [Client.php:1365]
+8842 .|    |    |    <= true
+8842 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+8842 .|    |    <= true
+8842 .|    |    no need to authenticate [Client.php:1085]
+8842 .|    <= true
+8842 .<= ''
+407E .START phpCAS-1.3.2 ****************** [CAS.php:450]
+407E .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+407E .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+407E .|    |    Starting a new session [Client.php:792]
+407E .|    <= ''
+407E .<= ''
+407E .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+407E .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+407E .<= ''
+407E .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+407E .|    Not a logout request [Client.php:1469]
+407E .<= ''
+407E .=> phpCAS::forceAuthentication() [authentication.php:31]
+407E .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+407E .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+407E .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+407E .|    |    |    |    user = `heqing02' [Client.php:1365]
+407E .|    |    |    <= true
+407E .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+407E .|    |    <= true
+407E .|    |    no need to authenticate [Client.php:1085]
+407E .|    <= true
+407E .<= ''
+8B17 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+8B17 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+8B17 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+8B17 .|    |    Starting a new session [Client.php:792]
+8B17 .|    <= ''
+8B17 .<= ''
+8B17 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+8B17 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+8B17 .<= ''
+8B17 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+8B17 .|    Not a logout request [Client.php:1469]
+8B17 .<= ''
+8B17 .=> phpCAS::forceAuthentication() [authentication.php:31]
+8B17 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+8B17 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+8B17 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+8B17 .|    |    |    |    user = `heqing02' [Client.php:1365]
+8B17 .|    |    |    <= true
+8B17 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+8B17 .|    |    <= true
+8B17 .|    |    no need to authenticate [Client.php:1085]
+8B17 .|    <= true
+8B17 .<= ''
+A049 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+A049 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+A049 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+A049 .|    |    Starting a new session [Client.php:792]
+A049 .|    <= ''
+A049 .<= ''
+A049 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+A049 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+A049 .<= ''
+A049 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+A049 .|    Not a logout request [Client.php:1469]
+A049 .<= ''
+A049 .=> phpCAS::forceAuthentication() [authentication.php:31]
+A049 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+A049 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+A049 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+A049 .|    |    |    |    user = `heqing02' [Client.php:1365]
+A049 .|    |    |    <= true
+A049 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+A049 .|    |    <= true
+A049 .|    |    no need to authenticate [Client.php:1085]
+A049 .|    <= true
+A049 .<= ''
+1C5E .START phpCAS-1.3.2 ****************** [CAS.php:450]
+1C5E .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+1C5E .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+1C5E .|    |    Starting a new session [Client.php:792]
+1C5E .|    <= ''
+1C5E .<= ''
+1C5E .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+1C5E .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+1C5E .<= ''
+1C5E .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+1C5E .|    Not a logout request [Client.php:1469]
+1C5E .<= ''
+1C5E .=> phpCAS::forceAuthentication() [authentication.php:31]
+1C5E .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+1C5E .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+1C5E .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+1C5E .|    |    |    |    user = `heqing02' [Client.php:1365]
+1C5E .|    |    |    <= true
+1C5E .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+1C5E .|    |    <= true
+1C5E .|    |    no need to authenticate [Client.php:1085]
+1C5E .|    <= true
+1C5E .<= ''
+B2FB .START phpCAS-1.3.2 ****************** [CAS.php:450]
+B2FB .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+B2FB .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+B2FB .|    |    Starting a new session [Client.php:792]
+B2FB .|    <= ''
+B2FB .<= ''
+B2FB .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+B2FB .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+B2FB .<= ''
+B2FB .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+B2FB .|    Not a logout request [Client.php:1469]
+B2FB .<= ''
+B2FB .=> phpCAS::forceAuthentication() [authentication.php:31]
+B2FB .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+B2FB .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+B2FB .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+B2FB .|    |    |    |    user = `heqing02' [Client.php:1365]
+B2FB .|    |    |    <= true
+B2FB .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+B2FB .|    |    <= true
+B2FB .|    |    no need to authenticate [Client.php:1085]
+B2FB .|    <= true
+B2FB .<= ''
+6251 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+6251 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+6251 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+6251 .|    |    Starting a new session [Client.php:792]
+6251 .|    <= ''
+6251 .<= ''
+6251 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+6251 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+6251 .<= ''
+6251 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+6251 .|    Not a logout request [Client.php:1469]
+6251 .<= ''
+6251 .=> phpCAS::forceAuthentication() [authentication.php:31]
+6251 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+6251 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+6251 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+6251 .|    |    |    |    user = `heqing02' [Client.php:1365]
+6251 .|    |    |    <= true
+6251 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+6251 .|    |    <= true
+6251 .|    |    no need to authenticate [Client.php:1085]
+6251 .|    <= true
+6251 .<= ''
+740C .START phpCAS-1.3.2 ****************** [CAS.php:450]
+740C .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+740C .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+740C .|    |    Starting a new session [Client.php:792]
+740C .|    <= ''
+740C .<= ''
+740C .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+740C .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+740C .<= ''
+740C .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+740C .|    Not a logout request [Client.php:1469]
+740C .<= ''
+740C .=> phpCAS::forceAuthentication() [authentication.php:31]
+740C .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+740C .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+740C .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+740C .|    |    |    |    user = `heqing02' [Client.php:1365]
+740C .|    |    |    <= true
+740C .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+740C .|    |    <= true
+740C .|    |    no need to authenticate [Client.php:1085]
+740C .|    <= true
+740C .<= ''
+EFD9 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+EFD9 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+EFD9 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+EFD9 .|    |    Starting a new session [Client.php:792]
+EFD9 .|    <= ''
+EFD9 .<= ''
+EFD9 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+EFD9 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+EFD9 .<= ''
+EFD9 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+EFD9 .|    Not a logout request [Client.php:1469]
+EFD9 .<= ''
+EFD9 .=> phpCAS::forceAuthentication() [authentication.php:31]
+EFD9 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+EFD9 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+EFD9 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+EFD9 .|    |    |    |    user = `heqing02' [Client.php:1365]
+EFD9 .|    |    |    <= true
+EFD9 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+EFD9 .|    |    <= true
+EFD9 .|    |    no need to authenticate [Client.php:1085]
+EFD9 .|    <= true
+EFD9 .<= ''
+1ADB .START phpCAS-1.3.2 ****************** [CAS.php:450]
+1ADB .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+1ADB .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+1ADB .|    |    Starting a new session [Client.php:792]
+1ADB .|    <= ''
+1ADB .<= ''
+1ADB .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+1ADB .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+1ADB .<= ''
+1ADB .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+1ADB .|    Not a logout request [Client.php:1469]
+1ADB .<= ''
+1ADB .=> phpCAS::forceAuthentication() [authentication.php:31]
+1ADB .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+1ADB .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+1ADB .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+1ADB .|    |    |    |    user = `heqing02' [Client.php:1365]
+1ADB .|    |    |    <= true
+1ADB .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+1ADB .|    |    <= true
+1ADB .|    |    no need to authenticate [Client.php:1085]
+1ADB .|    <= true
+1ADB .<= ''
+C1E4 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+C1E4 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+C1E4 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+C1E4 .|    |    Starting a new session [Client.php:792]
+C1E4 .|    <= ''
+C1E4 .<= ''
+C1E4 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+C1E4 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+C1E4 .<= ''
+C1E4 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+C1E4 .|    Not a logout request [Client.php:1469]
+C1E4 .<= ''
+C1E4 .=> phpCAS::forceAuthentication() [authentication.php:31]
+C1E4 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+C1E4 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+C1E4 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+C1E4 .|    |    |    |    user = `heqing02' [Client.php:1365]
+C1E4 .|    |    |    <= true
+C1E4 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+C1E4 .|    |    <= true
+C1E4 .|    |    no need to authenticate [Client.php:1085]
+C1E4 .|    <= true
+C1E4 .<= ''
+1727 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+1727 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+1727 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+1727 .|    |    Starting a new session [Client.php:792]
+1727 .|    <= ''
+1727 .<= ''
+1727 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+1727 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+1727 .<= ''
+1727 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+1727 .|    Not a logout request [Client.php:1469]
+1727 .<= ''
+1727 .=> phpCAS::forceAuthentication() [authentication.php:31]
+1727 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+1727 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+1727 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+1727 .|    |    |    |    user = `heqing02' [Client.php:1365]
+1727 .|    |    |    <= true
+1727 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+1727 .|    |    <= true
+1727 .|    |    no need to authenticate [Client.php:1085]
+1727 .|    <= true
+1727 .<= ''
+DBB1 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+DBB1 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+DBB1 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+DBB1 .|    |    Starting a new session [Client.php:792]
+DBB1 .|    <= ''
+DBB1 .<= ''
+DBB1 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+DBB1 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+DBB1 .<= ''
+DBB1 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+DBB1 .|    Not a logout request [Client.php:1469]
+DBB1 .<= ''
+DBB1 .=> phpCAS::forceAuthentication() [authentication.php:31]
+DBB1 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+DBB1 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+DBB1 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+DBB1 .|    |    |    |    user = `heqing02' [Client.php:1365]
+DBB1 .|    |    |    <= true
+DBB1 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+DBB1 .|    |    <= true
+DBB1 .|    |    no need to authenticate [Client.php:1085]
+DBB1 .|    <= true
+DBB1 .<= ''
+19F4 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+19F4 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+19F4 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+19F4 .|    |    Starting a new session [Client.php:792]
+19F4 .|    <= ''
+19F4 .<= ''
+19F4 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+19F4 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+19F4 .<= ''
+19F4 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+19F4 .|    Not a logout request [Client.php:1469]
+19F4 .<= ''
+19F4 .=> phpCAS::forceAuthentication() [authentication.php:31]
+19F4 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+19F4 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+19F4 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+19F4 .|    |    |    |    user = `heqing02' [Client.php:1365]
+19F4 .|    |    |    <= true
+19F4 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+19F4 .|    |    <= true
+19F4 .|    |    no need to authenticate [Client.php:1085]
+19F4 .|    <= true
+19F4 .<= ''
+B4D9 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+B4D9 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+B4D9 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+B4D9 .|    |    Starting a new session [Client.php:792]
+B4D9 .|    <= ''
+B4D9 .<= ''
+B4D9 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+B4D9 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+B4D9 .<= ''
+B4D9 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+B4D9 .|    Not a logout request [Client.php:1469]
+B4D9 .<= ''
+B4D9 .=> phpCAS::forceAuthentication() [authentication.php:31]
+B4D9 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+B4D9 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+B4D9 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+B4D9 .|    |    |    |    user = `heqing02' [Client.php:1365]
+B4D9 .|    |    |    <= true
+B4D9 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+B4D9 .|    |    <= true
+B4D9 .|    |    no need to authenticate [Client.php:1085]
+B4D9 .|    <= true
+B4D9 .<= ''
+9E00 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+9E00 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+9E00 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+9E00 .|    |    Starting a new session [Client.php:792]
+9E00 .|    <= ''
+9E00 .<= ''
+9E00 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+9E00 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+9E00 .<= ''
+9E00 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+9E00 .|    Not a logout request [Client.php:1469]
+9E00 .<= ''
+9E00 .=> phpCAS::forceAuthentication() [authentication.php:31]
+9E00 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+9E00 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+9E00 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+9E00 .|    |    |    |    user = `heqing02' [Client.php:1365]
+9E00 .|    |    |    <= true
+9E00 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+9E00 .|    |    <= true
+9E00 .|    |    no need to authenticate [Client.php:1085]
+9E00 .|    <= true
+9E00 .<= ''
+F656 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+F656 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+F656 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+F656 .|    |    Starting a new session [Client.php:792]
+F656 .|    <= ''
+F656 .<= ''
+F656 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+F656 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+F656 .<= ''
+F656 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+F656 .|    Not a logout request [Client.php:1469]
+F656 .<= ''
+F656 .=> phpCAS::forceAuthentication() [authentication.php:31]
+F656 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+F656 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+F656 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+F656 .|    |    |    |    user = `heqing02' [Client.php:1365]
+F656 .|    |    |    <= true
+F656 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+F656 .|    |    <= true
+F656 .|    |    no need to authenticate [Client.php:1085]
+F656 .|    <= true
+F656 .<= ''
+FFD9 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+FFD9 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+FFD9 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+FFD9 .|    |    Starting a new session [Client.php:792]
+FFD9 .|    <= ''
+FFD9 .<= ''
+FFD9 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+FFD9 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+FFD9 .<= ''
+FFD9 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+FFD9 .|    Not a logout request [Client.php:1469]
+FFD9 .<= ''
+FFD9 .=> phpCAS::forceAuthentication() [authentication.php:31]
+FFD9 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+FFD9 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+FFD9 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+FFD9 .|    |    |    |    user = `heqing02' [Client.php:1365]
+FFD9 .|    |    |    <= true
+FFD9 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+FFD9 .|    |    <= true
+FFD9 .|    |    no need to authenticate [Client.php:1085]
+FFD9 .|    <= true
+FFD9 .<= ''
+5E8E .START phpCAS-1.3.2 ****************** [CAS.php:450]
+5E8E .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+5E8E .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+5E8E .|    |    Starting a new session [Client.php:792]
+5E8E .|    <= ''
+5E8E .<= ''
+5E8E .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+5E8E .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+5E8E .<= ''
+5E8E .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+5E8E .|    Not a logout request [Client.php:1469]
+5E8E .<= ''
+5E8E .=> phpCAS::forceAuthentication() [authentication.php:31]
+5E8E .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+5E8E .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+5E8E .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+5E8E .|    |    |    |    user = `heqing02' [Client.php:1365]
+5E8E .|    |    |    <= true
+5E8E .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+5E8E .|    |    <= true
+5E8E .|    |    no need to authenticate [Client.php:1085]
+5E8E .|    <= true
+5E8E .<= ''
+DE9F .START phpCAS-1.3.2 ****************** [CAS.php:450]
+DE9F .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+DE9F .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+DE9F .|    |    Starting a new session [Client.php:792]
+DE9F .|    <= ''
+DE9F .<= ''
+DE9F .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+DE9F .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+DE9F .<= ''
+DE9F .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+DE9F .|    Not a logout request [Client.php:1469]
+DE9F .<= ''
+DE9F .=> phpCAS::forceAuthentication() [authentication.php:31]
+DE9F .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+DE9F .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+DE9F .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+DE9F .|    |    |    |    user = `heqing02' [Client.php:1365]
+DE9F .|    |    |    <= true
+DE9F .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+DE9F .|    |    <= true
+DE9F .|    |    no need to authenticate [Client.php:1085]
+DE9F .|    <= true
+DE9F .<= ''
+F0BA .START phpCAS-1.3.2 ****************** [CAS.php:450]
+F0BA .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+F0BA .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+F0BA .|    |    Starting a new session [Client.php:792]
+F0BA .|    <= ''
+F0BA .<= ''
+F0BA .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+F0BA .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+F0BA .<= ''
+F0BA .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+F0BA .|    Not a logout request [Client.php:1469]
+F0BA .<= ''
+F0BA .=> phpCAS::forceAuthentication() [authentication.php:31]
+F0BA .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+F0BA .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+F0BA .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+F0BA .|    |    |    |    user = `heqing02' [Client.php:1365]
+F0BA .|    |    |    <= true
+F0BA .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+F0BA .|    |    <= true
+F0BA .|    |    no need to authenticate [Client.php:1085]
+F0BA .|    <= true
+F0BA .<= ''
+6588 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+6588 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+6588 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+6588 .|    |    Starting a new session [Client.php:792]
+6588 .|    <= ''
+6588 .<= ''
+6588 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+6588 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+6588 .<= ''
+6588 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+6588 .|    Not a logout request [Client.php:1469]
+6588 .<= ''
+6588 .=> phpCAS::forceAuthentication() [authentication.php:31]
+6588 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+6588 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+6588 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+6588 .|    |    |    |    no user found [Client.php:1375]
+6588 .|    |    |    <= false
+6588 .|    |    |    no ticket found [Client.php:1258]
+6588 .|    |    <= false
+6588 .|    |    => CAS_Client::redirectToCas(false) [Client.php:1092]
+6588 .|    |    |    => CAS_Client::getServerLoginURL(false, false) [Client.php:1396]
+6588 .|    |    |    |    => CAS_Client::getURL() [Client.php:328]
+6588 .|    |    |    |    |    Final URI: http://localhost:8080/heqing02/statistics/index.php [Client.php:3071]
+6588 .|    |    |    |    <= 'http://localhost:8080/heqing02/statistics/index.php'
+6588 .|    |    |    <= 'https://itebeta.baidu.com/login?service=http%3A%2F%2Flocalhost%3A8080%2Fheqing02%2Fstatistics%2Findex.php'
+6588 .|    |    |    Redirect to : https://itebeta.baidu.com/login?service=http%3A%2F%2Flocalhost%3A8080%2Fheqing02%2Fstatistics%2Findex.php [Client.php:1402]
+6588 .|    |    |    exit()
+6588 .|    |    |    -
+6588 .|    |    -
+6588 .|    -
+D351 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+D351 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+D351 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+D351 .|    |    Starting a new session [Client.php:792]
+D351 .|    |    Ticket 'ST-50228-TrhYKvKWFyb4761FcaHS-uuap' found [Client.php:870]
+D351 .|    <= ''
+D351 .<= ''
+D351 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+D351 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+D351 .<= ''
+D351 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+D351 .|    Not a logout request [Client.php:1469]
+D351 .<= ''
+D351 .=> phpCAS::forceAuthentication() [authentication.php:31]
+D351 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+D351 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+D351 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+D351 .|    |    |    |    no user found [Client.php:1375]
+D351 .|    |    |    <= false
+D351 .|    |    |    CAS 2.0 ticket `ST-50228-TrhYKvKWFyb4761FcaHS-uuap' is present [Client.php:1223]
+D351 .|    |    |    => CAS_Client::validateCAS20('', NULL, NULL) [Client.php:1224]
+D351 .|    |    |    |     [Client.php:2747]
+D351 .|    |    |    |    => CAS_Client::getServerServiceValidateURL() [Client.php:2753]
+D351 .|    |    |    |    |    => CAS_Client::getURL() [Client.php:417]
+D351 .|    |    |    |    |    |    Final URI: http://localhost:8080/heqing02/statistics/index.php [Client.php:3071]
+D351 .|    |    |    |    |    <= 'http://localhost:8080/heqing02/statistics/index.php'
+D351 .|    |    |    |    <= 'https://itebeta.baidu.com/serviceValidate?service=http%3A%2F%2Flocalhost%3A8080%2Fheqing02%2Fstatistics%2Findex.php'
+D351 .|    |    |    |    => CAS_Client::_readURL('https://itebeta.baidu.com/serviceValidate?service=http%3A%2F%2Flocalhost%3A8080%2Fheqing02%2Fstatistics%2Findex.php&ticket=ST-50228-TrhYKvKWFyb4761FcaHS-uuap', NULL, NULL, NULL) [Client.php:2762]
+D351 .|    |    |    |    |    => CAS_Request_CurlRequest::sendRequest() [AbstractRequest.php:220]
+D351 .|    |    |    |    |    |    Response Body: 
+D351 .|    |    |    |    |    |    <cas:serviceResponse xmlns:cas='http://www.yale.edu/tp/cas'>
+D351 .|    |    |    |    |    |    	<cas:authenticationSuccess>
+D351 .|    |    |    |    |    |    		<cas:user>heqing02</cas:user>
+D351 .|    |    |    |    |    |    
+D351 .|    |    |    |    |    |    
+D351 .|    |    |    |    |    |    	</cas:authenticationSuccess>
+D351 .|    |    |    |    |    |    </cas:serviceResponse>
+D351 .|    |    |    |    |    |     [CurlRequest.php:82]
+D351 .|    |    |    |    |    <= true
+D351 .|    |    |    |    <= true
+D351 .|    |    |    |    => CAS_Client::_readExtraAttributesCas20(DOMNodeList) [Client.php:2813]
+D351 .|    |    |    |    |    Testing for rubycas style attributes [Client.php:2923]
+D351 .|    |    |    |    <= ''
+D351 .|    |    |    |    Storing Proxy List [Client.php:2822]
+D351 .|    |    |    |    => CAS_ProxyChain_AllowedList::isProxyListAllowed(array ()) [Client.php:2825]
+D351 .|    |    |    |    |    No proxies were found in the response [AllowedList.php:81]
+D351 .|    |    |    |    <= true
+D351 .|    |    |    |    => CAS_Client::_renameSession('ST-50228-TrhYKvKWFyb4761FcaHS-uuap') [Client.php:2856]
+D351 .|    |    |    |    |    Session ID: ST-50228-TrhYKvKWFyb4761FcaHS-uuap [Client.php:3180]
+D351 .|    |    |    |    |    Restoring old session vars [Client.php:3183]
+D351 .|    |    |    |    <= ''
+D351 .|    |    |    <= true
+D351 .|    |    |    CAS 2.0 ticket `ST-50228-TrhYKvKWFyb4761FcaHS-uuap' was validated [Client.php:1225]
+D351 .|    |    |    => CAS_Client::getURL() [Client.php:1279]
+D351 .|    |    |    <= 'http://localhost:8080/heqing02/statistics/index.php'
+D351 .|    |    |    Prepare redirect to : http://localhost:8080/heqing02/statistics/index.php [Client.php:1279]
+D351 .|    |    |    => CAS_Client::getURL() [Client.php:1280]
+D351 .|    |    |    <= 'http://localhost:8080/heqing02/statistics/index.php'
+D351 .|    |    |    exit()
+D351 .|    |    |    -
+D351 .|    |    -
+D351 .|    -
+9D1C .START phpCAS-1.3.2 ****************** [CAS.php:450]
+9D1C .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+9D1C .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+9D1C .|    |    Starting a new session [Client.php:792]
+9D1C .|    <= ''
+9D1C .<= ''
+9D1C .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+9D1C .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+9D1C .<= ''
+9D1C .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+9D1C .|    Not a logout request [Client.php:1469]
+9D1C .<= ''
+9D1C .=> phpCAS::forceAuthentication() [authentication.php:31]
+9D1C .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+9D1C .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+9D1C .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+9D1C .|    |    |    |    user = `heqing02' [Client.php:1365]
+9D1C .|    |    |    <= true
+9D1C .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+9D1C .|    |    <= true
+9D1C .|    |    no need to authenticate [Client.php:1085]
+9D1C .|    <= true
+9D1C .<= ''
+67DC .START phpCAS-1.3.2 ****************** [CAS.php:450]
+67DC .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+67DC .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+67DC .|    |    Starting a new session [Client.php:792]
+67DC .|    <= ''
+67DC .<= ''
+67DC .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+67DC .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+67DC .<= ''
+67DC .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+67DC .|    Not a logout request [Client.php:1469]
+67DC .<= ''
+67DC .=> phpCAS::forceAuthentication() [authentication.php:31]
+67DC .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+67DC .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+67DC .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+67DC .|    |    |    |    user = `heqing02' [Client.php:1365]
+67DC .|    |    |    <= true
+67DC .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+67DC .|    |    <= true
+67DC .|    |    no need to authenticate [Client.php:1085]
+67DC .|    <= true
+67DC .<= ''
+EDD0 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+EDD0 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+EDD0 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+EDD0 .|    |    Starting a new session [Client.php:792]
+EDD0 .|    <= ''
+EDD0 .<= ''
+EDD0 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+EDD0 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+EDD0 .<= ''
+EDD0 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+EDD0 .|    Not a logout request [Client.php:1469]
+EDD0 .<= ''
+EDD0 .=> phpCAS::forceAuthentication() [authentication.php:31]
+EDD0 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+EDD0 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+EDD0 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+EDD0 .|    |    |    |    user = `heqing02' [Client.php:1365]
+EDD0 .|    |    |    <= true
+EDD0 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+EDD0 .|    |    <= true
+EDD0 .|    |    no need to authenticate [Client.php:1085]
+EDD0 .|    <= true
+EDD0 .<= ''
+5943 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+5943 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+5943 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+5943 .|    |    Starting a new session [Client.php:792]
+5943 .|    <= ''
+5943 .<= ''
+5943 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+5943 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+5943 .<= ''
+5943 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+5943 .|    Not a logout request [Client.php:1469]
+5943 .<= ''
+5943 .=> phpCAS::forceAuthentication() [authentication.php:31]
+5943 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+5943 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+5943 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+5943 .|    |    |    |    user = `heqing02' [Client.php:1365]
+5943 .|    |    |    <= true
+5943 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+5943 .|    |    <= true
+5943 .|    |    no need to authenticate [Client.php:1085]
+5943 .|    <= true
+5943 .<= ''
+202B .START phpCAS-1.3.2 ****************** [CAS.php:450]
+202B .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+202B .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+202B .|    |    Starting a new session [Client.php:792]
+202B .|    <= ''
+202B .<= ''
+202B .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+202B .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+202B .<= ''
+202B .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+202B .|    Not a logout request [Client.php:1469]
+202B .<= ''
+202B .=> phpCAS::forceAuthentication() [authentication.php:31]
+202B .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+202B .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+202B .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+202B .|    |    |    |    user = `heqing02' [Client.php:1365]
+202B .|    |    |    <= true
+202B .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+202B .|    |    <= true
+202B .|    |    no need to authenticate [Client.php:1085]
+202B .|    <= true
+202B .<= ''
+4A08 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+4A08 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+4A08 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+4A08 .|    |    Starting a new session [Client.php:792]
+4A08 .|    <= ''
+4A08 .<= ''
+4A08 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+4A08 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+4A08 .<= ''
+4A08 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+4A08 .|    Not a logout request [Client.php:1469]
+4A08 .<= ''
+4A08 .=> phpCAS::forceAuthentication() [authentication.php:31]
+4A08 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+4A08 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+4A08 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+4A08 .|    |    |    |    user = `heqing02' [Client.php:1365]
+4A08 .|    |    |    <= true
+4A08 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+4A08 .|    |    <= true
+4A08 .|    |    no need to authenticate [Client.php:1085]
+4A08 .|    <= true
+4A08 .<= ''
+0AC6 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+0AC6 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+0AC6 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+0AC6 .|    |    Starting a new session [Client.php:792]
+0AC6 .|    <= ''
+0AC6 .<= ''
+0AC6 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+0AC6 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+0AC6 .<= ''
+0AC6 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+0AC6 .|    Not a logout request [Client.php:1469]
+0AC6 .<= ''
+0AC6 .=> phpCAS::forceAuthentication() [authentication.php:31]
+0AC6 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+0AC6 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+0AC6 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+0AC6 .|    |    |    |    no user found [Client.php:1375]
+0AC6 .|    |    |    <= false
+0AC6 .|    |    |    no ticket found [Client.php:1258]
+0AC6 .|    |    <= false
+0AC6 .|    |    => CAS_Client::redirectToCas(false) [Client.php:1092]
+0AC6 .|    |    |    => CAS_Client::getServerLoginURL(false, false) [Client.php:1396]
+0AC6 .|    |    |    |    => CAS_Client::getURL() [Client.php:328]
+0AC6 .|    |    |    |    |    Final URI: http://localhost:8080/heqing02/statistics/index.php [Client.php:3071]
+0AC6 .|    |    |    |    <= 'http://localhost:8080/heqing02/statistics/index.php'
+0AC6 .|    |    |    <= 'https://itebeta.baidu.com/login?service=http%3A%2F%2Flocalhost%3A8080%2Fheqing02%2Fstatistics%2Findex.php'
+0AC6 .|    |    |    Redirect to : https://itebeta.baidu.com/login?service=http%3A%2F%2Flocalhost%3A8080%2Fheqing02%2Fstatistics%2Findex.php [Client.php:1402]
+0AC6 .|    |    |    exit()
+0AC6 .|    |    |    -
+0AC6 .|    |    -
+0AC6 .|    -
+6699 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+6699 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+6699 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+6699 .|    |    Starting a new session [Client.php:792]
+6699 .|    |    Ticket 'ST-964-tXvfzk0ile7CkcPiNMDY-uuap' found [Client.php:870]
+6699 .|    <= ''
+6699 .<= ''
+6699 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+6699 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+6699 .<= ''
+6699 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+6699 .|    Not a logout request [Client.php:1469]
+6699 .<= ''
+6699 .=> phpCAS::forceAuthentication() [authentication.php:31]
+6699 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+6699 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+6699 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+6699 .|    |    |    |    no user found [Client.php:1375]
+6699 .|    |    |    <= false
+6699 .|    |    |    CAS 2.0 ticket `ST-964-tXvfzk0ile7CkcPiNMDY-uuap' is present [Client.php:1223]
+6699 .|    |    |    => CAS_Client::validateCAS20('', NULL, NULL) [Client.php:1224]
+6699 .|    |    |    |     [Client.php:2747]
+6699 .|    |    |    |    => CAS_Client::getServerServiceValidateURL() [Client.php:2753]
+6699 .|    |    |    |    |    => CAS_Client::getURL() [Client.php:417]
+6699 .|    |    |    |    |    |    Final URI: http://localhost:8080/heqing02/statistics/index.php [Client.php:3071]
+6699 .|    |    |    |    |    <= 'http://localhost:8080/heqing02/statistics/index.php'
+6699 .|    |    |    |    <= 'https://itebeta.baidu.com/serviceValidate?service=http%3A%2F%2Flocalhost%3A8080%2Fheqing02%2Fstatistics%2Findex.php'
+6699 .|    |    |    |    => CAS_Client::_readURL('https://itebeta.baidu.com/serviceValidate?service=http%3A%2F%2Flocalhost%3A8080%2Fheqing02%2Fstatistics%2Findex.php&ticket=ST-964-tXvfzk0ile7CkcPiNMDY-uuap', NULL, NULL, NULL) [Client.php:2762]
+6699 .|    |    |    |    |    => CAS_Request_CurlRequest::sendRequest() [AbstractRequest.php:220]
+6699 .|    |    |    |    |    |    Response Body: 
+6699 .|    |    |    |    |    |    <cas:serviceResponse xmlns:cas='http://www.yale.edu/tp/cas'>
+6699 .|    |    |    |    |    |    	<cas:authenticationSuccess>
+6699 .|    |    |    |    |    |    		<cas:user>heqing02</cas:user>
+6699 .|    |    |    |    |    |    
+6699 .|    |    |    |    |    |    
+6699 .|    |    |    |    |    |    	</cas:authenticationSuccess>
+6699 .|    |    |    |    |    |    </cas:serviceResponse>
+6699 .|    |    |    |    |    |     [CurlRequest.php:82]
+6699 .|    |    |    |    |    <= true
+6699 .|    |    |    |    <= true
+6699 .|    |    |    |    => CAS_Client::_readExtraAttributesCas20(DOMNodeList) [Client.php:2813]
+6699 .|    |    |    |    |    Testing for rubycas style attributes [Client.php:2923]
+6699 .|    |    |    |    <= ''
+6699 .|    |    |    |    Storing Proxy List [Client.php:2822]
+6699 .|    |    |    |    => CAS_ProxyChain_AllowedList::isProxyListAllowed(array ()) [Client.php:2825]
+6699 .|    |    |    |    |    No proxies were found in the response [AllowedList.php:81]
+6699 .|    |    |    |    <= true
+6699 .|    |    |    |    => CAS_Client::_renameSession('ST-964-tXvfzk0ile7CkcPiNMDY-uuap') [Client.php:2856]
+6699 .|    |    |    |    |    Session ID: ST-964-tXvfzk0ile7CkcPiNMDY-uuap [Client.php:3180]
+6699 .|    |    |    |    |    Restoring old session vars [Client.php:3183]
+6699 .|    |    |    |    <= ''
+6699 .|    |    |    <= true
+6699 .|    |    |    CAS 2.0 ticket `ST-964-tXvfzk0ile7CkcPiNMDY-uuap' was validated [Client.php:1225]
+6699 .|    |    |    => CAS_Client::getURL() [Client.php:1279]
+6699 .|    |    |    <= 'http://localhost:8080/heqing02/statistics/index.php'
+6699 .|    |    |    Prepare redirect to : http://localhost:8080/heqing02/statistics/index.php [Client.php:1279]
+6699 .|    |    |    => CAS_Client::getURL() [Client.php:1280]
+6699 .|    |    |    <= 'http://localhost:8080/heqing02/statistics/index.php'
+6699 .|    |    |    exit()
+6699 .|    |    |    -
+6699 .|    |    -
+6699 .|    -
+B9C6 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+B9C6 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+B9C6 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+B9C6 .|    |    Starting a new session [Client.php:792]
+B9C6 .|    <= ''
+B9C6 .<= ''
+B9C6 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+B9C6 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+B9C6 .<= ''
+B9C6 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+B9C6 .|    Not a logout request [Client.php:1469]
+B9C6 .<= ''
+B9C6 .=> phpCAS::forceAuthentication() [authentication.php:31]
+B9C6 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+B9C6 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+B9C6 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+B9C6 .|    |    |    |    user = `heqing02' [Client.php:1365]
+B9C6 .|    |    |    <= true
+B9C6 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+B9C6 .|    |    <= true
+B9C6 .|    |    no need to authenticate [Client.php:1085]
+B9C6 .|    <= true
+B9C6 .<= ''
+E8B5 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+E8B5 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+E8B5 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+E8B5 .|    |    Starting a new session [Client.php:792]
+E8B5 .|    <= ''
+E8B5 .<= ''
+E8B5 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+E8B5 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+E8B5 .<= ''
+E8B5 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+E8B5 .|    Not a logout request [Client.php:1469]
+E8B5 .<= ''
+E8B5 .=> phpCAS::forceAuthentication() [authentication.php:31]
+E8B5 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+E8B5 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+E8B5 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+E8B5 .|    |    |    |    user = `heqing02' [Client.php:1365]
+E8B5 .|    |    |    <= true
+E8B5 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+E8B5 .|    |    <= true
+E8B5 .|    |    no need to authenticate [Client.php:1085]
+E8B5 .|    <= true
+E8B5 .<= ''
+8FEB .START phpCAS-1.3.2 ****************** [CAS.php:450]
+8FEB .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+8FEB .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+8FEB .|    |    Starting a new session [Client.php:792]
+8FEB .|    <= ''
+8FEB .<= ''
+8FEB .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+8FEB .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+8FEB .<= ''
+8FEB .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+8FEB .|    Not a logout request [Client.php:1469]
+8FEB .<= ''
+8FEB .=> phpCAS::forceAuthentication() [authentication.php:31]
+8FEB .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+8FEB .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+8FEB .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+8FEB .|    |    |    |    user = `heqing02' [Client.php:1365]
+8FEB .|    |    |    <= true
+8FEB .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+8FEB .|    |    <= true
+8FEB .|    |    no need to authenticate [Client.php:1085]
+8FEB .|    <= true
+8FEB .<= ''
+74BC .START phpCAS-1.3.2 ****************** [CAS.php:450]
+74BC .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+74BC .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+74BC .|    |    Starting a new session [Client.php:792]
+74BC .|    <= ''
+74BC .<= ''
+74BC .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+74BC .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+74BC .<= ''
+74BC .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+74BC .|    Not a logout request [Client.php:1469]
+74BC .<= ''
+74BC .=> phpCAS::forceAuthentication() [authentication.php:31]
+74BC .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+74BC .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+74BC .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+74BC .|    |    |    |    user = `heqing02' [Client.php:1365]
+74BC .|    |    |    <= true
+74BC .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+74BC .|    |    <= true
+74BC .|    |    no need to authenticate [Client.php:1085]
+74BC .|    <= true
+74BC .<= ''
+07A4 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+07A4 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+07A4 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+07A4 .|    |    Starting a new session [Client.php:792]
+07A4 .|    <= ''
+07A4 .<= ''
+07A4 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+07A4 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+07A4 .<= ''
+07A4 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+07A4 .|    Not a logout request [Client.php:1469]
+07A4 .<= ''
+07A4 .=> phpCAS::forceAuthentication() [authentication.php:31]
+07A4 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+07A4 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+07A4 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+07A4 .|    |    |    |    no user found [Client.php:1375]
+07A4 .|    |    |    <= false
+07A4 .|    |    |    no ticket found [Client.php:1258]
+07A4 .|    |    <= false
+07A4 .|    |    => CAS_Client::redirectToCas(false) [Client.php:1092]
+07A4 .|    |    |    => CAS_Client::getServerLoginURL(false, false) [Client.php:1396]
+07A4 .|    |    |    |    => CAS_Client::getURL() [Client.php:328]
+07A4 .|    |    |    |    |    Final URI: http://localhost:8080/heqing02/statistics/index.php [Client.php:3071]
+07A4 .|    |    |    |    <= 'http://localhost:8080/heqing02/statistics/index.php'
+07A4 .|    |    |    <= 'https://itebeta.baidu.com/login?service=http%3A%2F%2Flocalhost%3A8080%2Fheqing02%2Fstatistics%2Findex.php'
+07A4 .|    |    |    Redirect to : https://itebeta.baidu.com/login?service=http%3A%2F%2Flocalhost%3A8080%2Fheqing02%2Fstatistics%2Findex.php [Client.php:1402]
+07A4 .|    |    |    exit()
+07A4 .|    |    |    -
+07A4 .|    |    -
+07A4 .|    -
+A569 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+A569 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+A569 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+A569 .|    |    Starting a new session [Client.php:792]
+A569 .|    |    Ticket 'ST-8222-1LdKFp9zbTMkHy4pPEn1-uuap' found [Client.php:870]
+A569 .|    <= ''
+A569 .<= ''
+A569 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+A569 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+A569 .<= ''
+A569 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+A569 .|    Not a logout request [Client.php:1469]
+A569 .<= ''
+A569 .=> phpCAS::forceAuthentication() [authentication.php:31]
+A569 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+A569 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+A569 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+A569 .|    |    |    |    no user found [Client.php:1375]
+A569 .|    |    |    <= false
+A569 .|    |    |    CAS 2.0 ticket `ST-8222-1LdKFp9zbTMkHy4pPEn1-uuap' is present [Client.php:1223]
+A569 .|    |    |    => CAS_Client::validateCAS20('', NULL, NULL) [Client.php:1224]
+A569 .|    |    |    |     [Client.php:2747]
+A569 .|    |    |    |    => CAS_Client::getServerServiceValidateURL() [Client.php:2753]
+A569 .|    |    |    |    |    => CAS_Client::getURL() [Client.php:417]
+A569 .|    |    |    |    |    |    Final URI: http://localhost:8080/heqing02/statistics/index.php [Client.php:3071]
+A569 .|    |    |    |    |    <= 'http://localhost:8080/heqing02/statistics/index.php'
+A569 .|    |    |    |    <= 'https://itebeta.baidu.com/serviceValidate?service=http%3A%2F%2Flocalhost%3A8080%2Fheqing02%2Fstatistics%2Findex.php'
+A569 .|    |    |    |    => CAS_Client::_readURL('https://itebeta.baidu.com/serviceValidate?service=http%3A%2F%2Flocalhost%3A8080%2Fheqing02%2Fstatistics%2Findex.php&ticket=ST-8222-1LdKFp9zbTMkHy4pPEn1-uuap', NULL, NULL, NULL) [Client.php:2762]
+A569 .|    |    |    |    |    => CAS_Request_CurlRequest::sendRequest() [AbstractRequest.php:220]
+A569 .|    |    |    |    |    |    Response Body: 
+A569 .|    |    |    |    |    |    <cas:serviceResponse xmlns:cas='http://www.yale.edu/tp/cas'>
+A569 .|    |    |    |    |    |    	<cas:authenticationSuccess>
+A569 .|    |    |    |    |    |    		<cas:user>heqing02</cas:user>
+A569 .|    |    |    |    |    |    
+A569 .|    |    |    |    |    |    
+A569 .|    |    |    |    |    |    	</cas:authenticationSuccess>
+A569 .|    |    |    |    |    |    </cas:serviceResponse>
+A569 .|    |    |    |    |    |     [CurlRequest.php:82]
+A569 .|    |    |    |    |    <= true
+A569 .|    |    |    |    <= true
+A569 .|    |    |    |    => CAS_Client::_readExtraAttributesCas20(DOMNodeList) [Client.php:2813]
+A569 .|    |    |    |    |    Testing for rubycas style attributes [Client.php:2923]
+A569 .|    |    |    |    <= ''
+A569 .|    |    |    |    Storing Proxy List [Client.php:2822]
+A569 .|    |    |    |    => CAS_ProxyChain_AllowedList::isProxyListAllowed(array ()) [Client.php:2825]
+A569 .|    |    |    |    |    No proxies were found in the response [AllowedList.php:81]
+A569 .|    |    |    |    <= true
+A569 .|    |    |    |    => CAS_Client::_renameSession('ST-8222-1LdKFp9zbTMkHy4pPEn1-uuap') [Client.php:2856]
+A569 .|    |    |    |    |    Session ID: ST-8222-1LdKFp9zbTMkHy4pPEn1-uuap [Client.php:3180]
+A569 .|    |    |    |    |    Restoring old session vars [Client.php:3183]
+A569 .|    |    |    |    <= ''
+A569 .|    |    |    <= true
+A569 .|    |    |    CAS 2.0 ticket `ST-8222-1LdKFp9zbTMkHy4pPEn1-uuap' was validated [Client.php:1225]
+A569 .|    |    |    => CAS_Client::getURL() [Client.php:1279]
+A569 .|    |    |    <= 'http://localhost:8080/heqing02/statistics/index.php'
+A569 .|    |    |    Prepare redirect to : http://localhost:8080/heqing02/statistics/index.php [Client.php:1279]
+A569 .|    |    |    => CAS_Client::getURL() [Client.php:1280]
+A569 .|    |    |    <= 'http://localhost:8080/heqing02/statistics/index.php'
+A569 .|    |    |    exit()
+A569 .|    |    |    -
+A569 .|    |    -
+A569 .|    -
+1CAA .START phpCAS-1.3.2 ****************** [CAS.php:450]
+1CAA .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+1CAA .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+1CAA .|    |    Starting a new session [Client.php:792]
+1CAA .|    <= ''
+1CAA .<= ''
+1CAA .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+1CAA .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+1CAA .<= ''
+1CAA .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+1CAA .|    Not a logout request [Client.php:1469]
+1CAA .<= ''
+1CAA .=> phpCAS::forceAuthentication() [authentication.php:31]
+1CAA .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+1CAA .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+1CAA .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+1CAA .|    |    |    |    user = `heqing02' [Client.php:1365]
+1CAA .|    |    |    <= true
+1CAA .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+1CAA .|    |    <= true
+1CAA .|    |    no need to authenticate [Client.php:1085]
+1CAA .|    <= true
+1CAA .<= ''
+0090 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+0090 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+0090 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+0090 .|    |    Starting a new session [Client.php:792]
+0090 .|    <= ''
+0090 .<= ''
+0090 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+0090 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+0090 .<= ''
+0090 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+0090 .|    Not a logout request [Client.php:1469]
+0090 .<= ''
+0090 .=> phpCAS::forceAuthentication() [authentication.php:31]
+0090 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+0090 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+0090 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+0090 .|    |    |    |    user = `heqing02' [Client.php:1365]
+0090 .|    |    |    <= true
+0090 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+0090 .|    |    <= true
+0090 .|    |    no need to authenticate [Client.php:1085]
+0090 .|    <= true
+0090 .<= ''
+4370 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+4370 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+4370 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+4370 .|    |    Starting a new session [Client.php:792]
+4370 .|    <= ''
+4370 .<= ''
+4370 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+4370 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+4370 .<= ''
+4370 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+4370 .|    Not a logout request [Client.php:1469]
+4370 .<= ''
+4370 .=> phpCAS::forceAuthentication() [authentication.php:31]
+4370 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+4370 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+4370 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+4370 .|    |    |    |    user = `heqing02' [Client.php:1365]
+4370 .|    |    |    <= true
+4370 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+4370 .|    |    <= true
+4370 .|    |    no need to authenticate [Client.php:1085]
+4370 .|    <= true
+4370 .<= ''
+DCB2 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+DCB2 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+DCB2 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+DCB2 .|    |    Starting a new session [Client.php:792]
+DCB2 .|    <= ''
+DCB2 .<= ''
+DCB2 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+DCB2 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+DCB2 .<= ''
+DCB2 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+DCB2 .|    Not a logout request [Client.php:1469]
+DCB2 .<= ''
+DCB2 .=> phpCAS::forceAuthentication() [authentication.php:31]
+DCB2 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+DCB2 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+DCB2 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+DCB2 .|    |    |    |    user = `heqing02' [Client.php:1365]
+DCB2 .|    |    |    <= true
+DCB2 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+DCB2 .|    |    <= true
+DCB2 .|    |    no need to authenticate [Client.php:1085]
+DCB2 .|    <= true
+DCB2 .<= ''
+71FB .START phpCAS-1.3.2 ****************** [CAS.php:450]
+71FB .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+71FB .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+71FB .|    |    Starting a new session [Client.php:792]
+71FB .|    <= ''
+71FB .<= ''
+71FB .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+71FB .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+71FB .<= ''
+71FB .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+71FB .|    Not a logout request [Client.php:1469]
+71FB .<= ''
+71FB .=> phpCAS::forceAuthentication() [authentication.php:31]
+71FB .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+71FB .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+71FB .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+71FB .|    |    |    |    no user found [Client.php:1375]
+71FB .|    |    |    <= false
+71FB .|    |    |    no ticket found [Client.php:1258]
+71FB .|    |    <= false
+71FB .|    |    => CAS_Client::redirectToCas(false) [Client.php:1092]
+71FB .|    |    |    => CAS_Client::getServerLoginURL(false, false) [Client.php:1396]
+71FB .|    |    |    |    => CAS_Client::getURL() [Client.php:328]
+71FB .|    |    |    |    |    Final URI: http://localhost:8080/heqing02/statistics/index.php [Client.php:3071]
+71FB .|    |    |    |    <= 'http://localhost:8080/heqing02/statistics/index.php'
+71FB .|    |    |    <= 'https://itebeta.baidu.com/login?service=http%3A%2F%2Flocalhost%3A8080%2Fheqing02%2Fstatistics%2Findex.php'
+71FB .|    |    |    Redirect to : https://itebeta.baidu.com/login?service=http%3A%2F%2Flocalhost%3A8080%2Fheqing02%2Fstatistics%2Findex.php [Client.php:1402]
+71FB .|    |    |    exit()
+71FB .|    |    |    -
+71FB .|    |    -
+71FB .|    -
+7C57 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+7C57 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+7C57 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+7C57 .|    |    Starting a new session [Client.php:792]
+7C57 .|    <= ''
+7C57 .<= ''
+7C57 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+7C57 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+7C57 .<= ''
+7C57 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+7C57 .|    Not a logout request [Client.php:1469]
+7C57 .<= ''
+7C57 .=> phpCAS::forceAuthentication() [authentication.php:31]
+7C57 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+7C57 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+7C57 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+7C57 .|    |    |    |    no user found [Client.php:1375]
+7C57 .|    |    |    <= false
+7C57 .|    |    |    no ticket found [Client.php:1258]
+7C57 .|    |    <= false
+7C57 .|    |    => CAS_Client::redirectToCas(false) [Client.php:1092]
+7C57 .|    |    |    => CAS_Client::getServerLoginURL(false, false) [Client.php:1396]
+7C57 .|    |    |    |    => CAS_Client::getURL() [Client.php:328]
+7C57 .|    |    |    |    |    Final URI: http://localhost:8080/heqing02/statistics/index.php [Client.php:3071]
+7C57 .|    |    |    |    <= 'http://localhost:8080/heqing02/statistics/index.php'
+7C57 .|    |    |    <= 'https://itebeta.baidu.com/login?service=http%3A%2F%2Flocalhost%3A8080%2Fheqing02%2Fstatistics%2Findex.php'
+7C57 .|    |    |    Redirect to : https://itebeta.baidu.com/login?service=http%3A%2F%2Flocalhost%3A8080%2Fheqing02%2Fstatistics%2Findex.php [Client.php:1402]
+7C57 .|    |    |    exit()
+7C57 .|    |    |    -
+7C57 .|    |    -
+7C57 .|    -
+3878 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+3878 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+3878 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+3878 .|    |    Starting a new session [Client.php:792]
+3878 .|    |    Ticket 'ST-22025-dBmsYdeplgmJe0j2C2Md-uuap' found [Client.php:870]
+3878 .|    <= ''
+3878 .<= ''
+3878 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+3878 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+3878 .<= ''
+3878 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+3878 .|    Not a logout request [Client.php:1469]
+3878 .<= ''
+3878 .=> phpCAS::forceAuthentication() [authentication.php:31]
+3878 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+3878 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+3878 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+3878 .|    |    |    |    no user found [Client.php:1375]
+3878 .|    |    |    <= false
+3878 .|    |    |    CAS 2.0 ticket `ST-22025-dBmsYdeplgmJe0j2C2Md-uuap' is present [Client.php:1223]
+3878 .|    |    |    => CAS_Client::validateCAS20('', NULL, NULL) [Client.php:1224]
+3878 .|    |    |    |     [Client.php:2747]
+3878 .|    |    |    |    => CAS_Client::getServerServiceValidateURL() [Client.php:2753]
+3878 .|    |    |    |    |    => CAS_Client::getURL() [Client.php:417]
+3878 .|    |    |    |    |    |    Final URI: http://localhost:8080/heqing02/statistics/index.php [Client.php:3071]
+3878 .|    |    |    |    |    <= 'http://localhost:8080/heqing02/statistics/index.php'
+3878 .|    |    |    |    <= 'https://itebeta.baidu.com/serviceValidate?service=http%3A%2F%2Flocalhost%3A8080%2Fheqing02%2Fstatistics%2Findex.php'
+3878 .|    |    |    |    => CAS_Client::_readURL('https://itebeta.baidu.com/serviceValidate?service=http%3A%2F%2Flocalhost%3A8080%2Fheqing02%2Fstatistics%2Findex.php&ticket=ST-22025-dBmsYdeplgmJe0j2C2Md-uuap', NULL, NULL, NULL) [Client.php:2762]
+3878 .|    |    |    |    |    => CAS_Request_CurlRequest::sendRequest() [AbstractRequest.php:220]
+3878 .|    |    |    |    |    |    Response Body: 
+3878 .|    |    |    |    |    |    <cas:serviceResponse xmlns:cas='http://www.yale.edu/tp/cas'>
+3878 .|    |    |    |    |    |    	<cas:authenticationSuccess>
+3878 .|    |    |    |    |    |    		<cas:user>heqing02</cas:user>
+3878 .|    |    |    |    |    |    
+3878 .|    |    |    |    |    |    
+3878 .|    |    |    |    |    |    	</cas:authenticationSuccess>
+3878 .|    |    |    |    |    |    </cas:serviceResponse>
+3878 .|    |    |    |    |    |     [CurlRequest.php:82]
+3878 .|    |    |    |    |    <= true
+3878 .|    |    |    |    <= true
+3878 .|    |    |    |    => CAS_Client::_readExtraAttributesCas20(DOMNodeList) [Client.php:2813]
+3878 .|    |    |    |    |    Testing for rubycas style attributes [Client.php:2923]
+3878 .|    |    |    |    <= ''
+3878 .|    |    |    |    Storing Proxy List [Client.php:2822]
+3878 .|    |    |    |    => CAS_ProxyChain_AllowedList::isProxyListAllowed(array ()) [Client.php:2825]
+3878 .|    |    |    |    |    No proxies were found in the response [AllowedList.php:81]
+3878 .|    |    |    |    <= true
+3878 .|    |    |    |    => CAS_Client::_renameSession('ST-22025-dBmsYdeplgmJe0j2C2Md-uuap') [Client.php:2856]
+3878 .|    |    |    |    |    Session ID: ST-22025-dBmsYdeplgmJe0j2C2Md-uuap [Client.php:3180]
+3878 .|    |    |    |    |    Restoring old session vars [Client.php:3183]
+3878 .|    |    |    |    <= ''
+3878 .|    |    |    <= true
+3878 .|    |    |    CAS 2.0 ticket `ST-22025-dBmsYdeplgmJe0j2C2Md-uuap' was validated [Client.php:1225]
+3878 .|    |    |    => CAS_Client::getURL() [Client.php:1279]
+3878 .|    |    |    <= 'http://localhost:8080/heqing02/statistics/index.php'
+3878 .|    |    |    Prepare redirect to : http://localhost:8080/heqing02/statistics/index.php [Client.php:1279]
+3878 .|    |    |    => CAS_Client::getURL() [Client.php:1280]
+3878 .|    |    |    <= 'http://localhost:8080/heqing02/statistics/index.php'
+3878 .|    |    |    exit()
+3878 .|    |    |    -
+3878 .|    |    -
+3878 .|    -
+E45A .START phpCAS-1.3.2 ****************** [CAS.php:450]
+E45A .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+E45A .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+E45A .|    |    Starting a new session [Client.php:792]
+E45A .|    <= ''
+E45A .<= ''
+E45A .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+E45A .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+E45A .<= ''
+E45A .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+E45A .|    Not a logout request [Client.php:1469]
+E45A .<= ''
+E45A .=> phpCAS::forceAuthentication() [authentication.php:31]
+E45A .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+E45A .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+E45A .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+E45A .|    |    |    |    user = `heqing02' [Client.php:1365]
+E45A .|    |    |    <= true
+E45A .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+E45A .|    |    <= true
+E45A .|    |    no need to authenticate [Client.php:1085]
+E45A .|    <= true
+E45A .<= ''
+BA18 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+BA18 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+BA18 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+BA18 .|    |    Starting a new session [Client.php:792]
+BA18 .|    <= ''
+BA18 .<= ''
+BA18 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+BA18 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+BA18 .<= ''
+BA18 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+BA18 .|    Not a logout request [Client.php:1469]
+BA18 .<= ''
+BA18 .=> phpCAS::forceAuthentication() [authentication.php:31]
+BA18 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+BA18 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+BA18 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+BA18 .|    |    |    |    user = `heqing02' [Client.php:1365]
+BA18 .|    |    |    <= true
+BA18 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+BA18 .|    |    <= true
+BA18 .|    |    no need to authenticate [Client.php:1085]
+BA18 .|    <= true
+BA18 .<= ''
+DF43 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+DF43 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+DF43 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+DF43 .|    |    Starting a new session [Client.php:792]
+DF43 .|    <= ''
+DF43 .<= ''
+DF43 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+DF43 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+DF43 .<= ''
+DF43 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+DF43 .|    Not a logout request [Client.php:1469]
+DF43 .<= ''
+DF43 .=> phpCAS::forceAuthentication() [authentication.php:31]
+DF43 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+DF43 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+DF43 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+DF43 .|    |    |    |    user = `heqing02' [Client.php:1365]
+DF43 .|    |    |    <= true
+DF43 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+DF43 .|    |    <= true
+DF43 .|    |    no need to authenticate [Client.php:1085]
+DF43 .|    <= true
+DF43 .<= ''
+89C2 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+89C2 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+89C2 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+89C2 .|    |    Starting a new session [Client.php:792]
+89C2 .|    <= ''
+89C2 .<= ''
+89C2 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+89C2 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+89C2 .<= ''
+89C2 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+89C2 .|    Not a logout request [Client.php:1469]
+89C2 .<= ''
+89C2 .=> phpCAS::forceAuthentication() [authentication.php:31]
+89C2 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+89C2 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+89C2 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+89C2 .|    |    |    |    user = `heqing02' [Client.php:1365]
+89C2 .|    |    |    <= true
+89C2 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+89C2 .|    |    <= true
+89C2 .|    |    no need to authenticate [Client.php:1085]
+89C2 .|    <= true
+89C2 .<= ''
+8FA1 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+8FA1 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+8FA1 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+8FA1 .|    |    Starting a new session [Client.php:792]
+8FA1 .|    <= ''
+8FA1 .<= ''
+8FA1 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+8FA1 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+8FA1 .<= ''
+8FA1 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+8FA1 .|    Not a logout request [Client.php:1469]
+8FA1 .<= ''
+8FA1 .=> phpCAS::forceAuthentication() [authentication.php:31]
+8FA1 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+8FA1 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+8FA1 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+8FA1 .|    |    |    |    user = `heqing02' [Client.php:1365]
+8FA1 .|    |    |    <= true
+8FA1 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+8FA1 .|    |    <= true
+8FA1 .|    |    no need to authenticate [Client.php:1085]
+8FA1 .|    <= true
+8FA1 .<= ''
+84AD .START phpCAS-1.3.2 ****************** [CAS.php:450]
+84AD .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+84AD .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+84AD .|    |    Starting a new session [Client.php:792]
+84AD .|    <= ''
+84AD .<= ''
+84AD .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+84AD .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+84AD .<= ''
+84AD .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+84AD .|    Not a logout request [Client.php:1469]
+84AD .<= ''
+84AD .=> phpCAS::forceAuthentication() [authentication.php:31]
+84AD .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+84AD .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+84AD .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+84AD .|    |    |    |    user = `heqing02' [Client.php:1365]
+84AD .|    |    |    <= true
+84AD .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+84AD .|    |    <= true
+84AD .|    |    no need to authenticate [Client.php:1085]
+84AD .|    <= true
+84AD .<= ''
+EB65 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+EB65 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+EB65 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+EB65 .|    |    Starting a new session [Client.php:792]
+EB65 .|    <= ''
+EB65 .<= ''
+EB65 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+EB65 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+EB65 .<= ''
+EB65 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+EB65 .|    Not a logout request [Client.php:1469]
+EB65 .<= ''
+EB65 .=> phpCAS::forceAuthentication() [authentication.php:31]
+EB65 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+EB65 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+EB65 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+EB65 .|    |    |    |    user = `heqing02' [Client.php:1365]
+EB65 .|    |    |    <= true
+EB65 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+EB65 .|    |    <= true
+EB65 .|    |    no need to authenticate [Client.php:1085]
+EB65 .|    <= true
+EB65 .<= ''
+31DC .START phpCAS-1.3.2 ****************** [CAS.php:450]
+31DC .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+31DC .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+31DC .|    |    Starting a new session [Client.php:792]
+31DC .|    <= ''
+31DC .<= ''
+31DC .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+31DC .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+31DC .<= ''
+31DC .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+31DC .|    Not a logout request [Client.php:1469]
+31DC .<= ''
+31DC .=> phpCAS::forceAuthentication() [authentication.php:31]
+31DC .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+31DC .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+31DC .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+31DC .|    |    |    |    user = `heqing02' [Client.php:1365]
+31DC .|    |    |    <= true
+31DC .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+31DC .|    |    <= true
+31DC .|    |    no need to authenticate [Client.php:1085]
+31DC .|    <= true
+31DC .<= ''
+C282 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+C282 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+C282 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+C282 .|    |    Starting a new session [Client.php:792]
+C282 .|    <= ''
+C282 .<= ''
+C282 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+C282 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+C282 .<= ''
+C282 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+C282 .|    Not a logout request [Client.php:1469]
+C282 .<= ''
+C282 .=> phpCAS::forceAuthentication() [authentication.php:31]
+C282 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+C282 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+C282 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+C282 .|    |    |    |    user = `heqing02' [Client.php:1365]
+C282 .|    |    |    <= true
+C282 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+C282 .|    |    <= true
+C282 .|    |    no need to authenticate [Client.php:1085]
+C282 .|    <= true
+C282 .<= ''
+B285 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+B285 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+B285 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+B285 .|    |    Starting a new session [Client.php:792]
+B285 .|    <= ''
+B285 .<= ''
+B285 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+B285 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+B285 .<= ''
+B285 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+B285 .|    Not a logout request [Client.php:1469]
+B285 .<= ''
+B285 .=> phpCAS::forceAuthentication() [authentication.php:31]
+B285 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+B285 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+B285 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+B285 .|    |    |    |    user = `heqing02' [Client.php:1365]
+B285 .|    |    |    <= true
+B285 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+B285 .|    |    <= true
+B285 .|    |    no need to authenticate [Client.php:1085]
+B285 .|    <= true
+B285 .<= ''
+8963 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+8963 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+8963 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+8963 .|    |    Starting a new session [Client.php:792]
+8963 .|    <= ''
+8963 .<= ''
+8963 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+8963 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+8963 .<= ''
+8963 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+8963 .|    Not a logout request [Client.php:1469]
+8963 .<= ''
+8963 .=> phpCAS::forceAuthentication() [authentication.php:31]
+8963 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+8963 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+8963 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+8963 .|    |    |    |    user = `heqing02' [Client.php:1365]
+8963 .|    |    |    <= true
+8963 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+8963 .|    |    <= true
+8963 .|    |    no need to authenticate [Client.php:1085]
+8963 .|    <= true
+8963 .<= ''
+CFBC .START phpCAS-1.3.2 ****************** [CAS.php:450]
+CFBC .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+CFBC .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+CFBC .|    |    Starting a new session [Client.php:792]
+CFBC .|    <= ''
+CFBC .<= ''
+CFBC .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+CFBC .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+CFBC .<= ''
+CFBC .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+CFBC .|    Not a logout request [Client.php:1469]
+CFBC .<= ''
+CFBC .=> phpCAS::forceAuthentication() [authentication.php:31]
+CFBC .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+CFBC .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+CFBC .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+CFBC .|    |    |    |    user = `heqing02' [Client.php:1365]
+CFBC .|    |    |    <= true
+CFBC .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+CFBC .|    |    <= true
+CFBC .|    |    no need to authenticate [Client.php:1085]
+CFBC .|    <= true
+CFBC .<= ''
+6FCA .START phpCAS-1.3.2 ****************** [CAS.php:450]
+6FCA .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+6FCA .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+6FCA .|    |    Starting a new session [Client.php:792]
+6FCA .|    <= ''
+6FCA .<= ''
+6FCA .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+6FCA .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+6FCA .<= ''
+6FCA .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+6FCA .|    Not a logout request [Client.php:1469]
+6FCA .<= ''
+6FCA .=> phpCAS::forceAuthentication() [authentication.php:31]
+6FCA .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+6FCA .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+6FCA .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+6FCA .|    |    |    |    user = `heqing02' [Client.php:1365]
+6FCA .|    |    |    <= true
+6FCA .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+6FCA .|    |    <= true
+6FCA .|    |    no need to authenticate [Client.php:1085]
+6FCA .|    <= true
+6FCA .<= ''
+650A .START phpCAS-1.3.2 ****************** [CAS.php:450]
+650A .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+650A .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+650A .|    |    Starting a new session [Client.php:792]
+650A .|    <= ''
+650A .<= ''
+650A .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+650A .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+650A .<= ''
+650A .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+650A .|    Not a logout request [Client.php:1469]
+650A .<= ''
+650A .=> phpCAS::forceAuthentication() [authentication.php:31]
+650A .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+650A .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+650A .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+650A .|    |    |    |    user = `heqing02' [Client.php:1365]
+650A .|    |    |    <= true
+650A .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+650A .|    |    <= true
+650A .|    |    no need to authenticate [Client.php:1085]
+650A .|    <= true
+650A .<= ''
+9548 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+9548 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+9548 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+9548 .|    |    Starting a new session [Client.php:792]
+9548 .|    <= ''
+9548 .<= ''
+9548 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+9548 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+9548 .<= ''
+9548 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+9548 .|    Not a logout request [Client.php:1469]
+9548 .<= ''
+9548 .=> phpCAS::forceAuthentication() [authentication.php:31]
+9548 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+9548 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+9548 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+9548 .|    |    |    |    user = `heqing02' [Client.php:1365]
+9548 .|    |    |    <= true
+9548 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+9548 .|    |    <= true
+9548 .|    |    no need to authenticate [Client.php:1085]
+9548 .|    <= true
+9548 .<= ''
+8E17 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+8E17 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+8E17 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+8E17 .|    |    Starting a new session [Client.php:792]
+8E17 .|    <= ''
+8E17 .<= ''
+8E17 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+8E17 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+8E17 .<= ''
+8E17 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+8E17 .|    Not a logout request [Client.php:1469]
+8E17 .<= ''
+8E17 .=> phpCAS::forceAuthentication() [authentication.php:31]
+8E17 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+8E17 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+8E17 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+8E17 .|    |    |    |    user = `heqing02' [Client.php:1365]
+8E17 .|    |    |    <= true
+8E17 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+8E17 .|    |    <= true
+8E17 .|    |    no need to authenticate [Client.php:1085]
+8E17 .|    <= true
+8E17 .<= ''
+9838 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+9838 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+9838 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+9838 .|    |    Starting a new session [Client.php:792]
+9838 .|    <= ''
+9838 .<= ''
+9838 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+9838 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+9838 .<= ''
+9838 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+9838 .|    Not a logout request [Client.php:1469]
+9838 .<= ''
+9838 .=> phpCAS::forceAuthentication() [authentication.php:31]
+9838 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+9838 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+9838 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+9838 .|    |    |    |    user = `heqing02' [Client.php:1365]
+9838 .|    |    |    <= true
+9838 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+9838 .|    |    <= true
+9838 .|    |    no need to authenticate [Client.php:1085]
+9838 .|    <= true
+9838 .<= ''
+38BD .START phpCAS-1.3.2 ****************** [CAS.php:450]
+38BD .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+38BD .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+38BD .|    |    Starting a new session [Client.php:792]
+38BD .|    <= ''
+38BD .<= ''
+38BD .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+38BD .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+38BD .<= ''
+38BD .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+38BD .|    Not a logout request [Client.php:1469]
+38BD .<= ''
+38BD .=> phpCAS::forceAuthentication() [authentication.php:31]
+38BD .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+38BD .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+38BD .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+38BD .|    |    |    |    user = `heqing02' [Client.php:1365]
+38BD .|    |    |    <= true
+38BD .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+38BD .|    |    <= true
+38BD .|    |    no need to authenticate [Client.php:1085]
+38BD .|    <= true
+38BD .<= ''
+ED57 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+ED57 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+ED57 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+ED57 .|    |    Starting a new session [Client.php:792]
+ED57 .|    <= ''
+ED57 .<= ''
+ED57 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+ED57 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+ED57 .<= ''
+ED57 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+ED57 .|    Not a logout request [Client.php:1469]
+ED57 .<= ''
+ED57 .=> phpCAS::forceAuthentication() [authentication.php:31]
+ED57 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+ED57 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+ED57 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+ED57 .|    |    |    |    user = `heqing02' [Client.php:1365]
+ED57 .|    |    |    <= true
+ED57 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+ED57 .|    |    <= true
+ED57 .|    |    no need to authenticate [Client.php:1085]
+ED57 .|    <= true
+ED57 .<= ''
+503E .START phpCAS-1.3.2 ****************** [CAS.php:450]
+503E .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+503E .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+503E .|    |    Starting a new session [Client.php:792]
+503E .|    <= ''
+503E .<= ''
+503E .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+503E .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+503E .<= ''
+503E .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+503E .|    Not a logout request [Client.php:1469]
+503E .<= ''
+503E .=> phpCAS::forceAuthentication() [authentication.php:31]
+503E .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+503E .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+503E .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+503E .|    |    |    |    user = `heqing02' [Client.php:1365]
+503E .|    |    |    <= true
+503E .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+503E .|    |    <= true
+503E .|    |    no need to authenticate [Client.php:1085]
+503E .|    <= true
+503E .<= ''
+16AF .START phpCAS-1.3.2 ****************** [CAS.php:450]
+16AF .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+16AF .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+16AF .|    |    Starting a new session [Client.php:792]
+16AF .|    <= ''
+16AF .<= ''
+16AF .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+16AF .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+16AF .<= ''
+16AF .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+16AF .|    Not a logout request [Client.php:1469]
+16AF .<= ''
+16AF .=> phpCAS::forceAuthentication() [authentication.php:31]
+16AF .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+16AF .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+16AF .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+16AF .|    |    |    |    user = `heqing02' [Client.php:1365]
+16AF .|    |    |    <= true
+16AF .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+16AF .|    |    <= true
+16AF .|    |    no need to authenticate [Client.php:1085]
+16AF .|    <= true
+16AF .<= ''
+3707 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+3707 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+3707 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+3707 .|    |    Starting a new session [Client.php:792]
+3707 .|    <= ''
+3707 .<= ''
+3707 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+3707 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+3707 .<= ''
+3707 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+3707 .|    Not a logout request [Client.php:1469]
+3707 .<= ''
+3707 .=> phpCAS::forceAuthentication() [authentication.php:31]
+3707 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+3707 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+3707 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+3707 .|    |    |    |    user = `heqing02' [Client.php:1365]
+3707 .|    |    |    <= true
+3707 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+3707 .|    |    <= true
+3707 .|    |    no need to authenticate [Client.php:1085]
+3707 .|    <= true
+3707 .<= ''
+9931 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+9931 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+9931 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+9931 .|    |    Starting a new session [Client.php:792]
+9931 .|    <= ''
+9931 .<= ''
+9931 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+9931 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+9931 .<= ''
+9931 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+9931 .|    Not a logout request [Client.php:1469]
+9931 .<= ''
+9931 .=> phpCAS::forceAuthentication() [authentication.php:31]
+9931 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+9931 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+9931 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+9931 .|    |    |    |    user = `heqing02' [Client.php:1365]
+9931 .|    |    |    <= true
+9931 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+9931 .|    |    <= true
+9931 .|    |    no need to authenticate [Client.php:1085]
+9931 .|    <= true
+9931 .<= ''
+4A1F .START phpCAS-1.3.2 ****************** [CAS.php:450]
+4A1F .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+4A1F .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+4A1F .|    |    Starting a new session [Client.php:792]
+4A1F .|    <= ''
+4A1F .<= ''
+4A1F .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+4A1F .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+4A1F .<= ''
+4A1F .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+4A1F .|    Not a logout request [Client.php:1469]
+4A1F .<= ''
+4A1F .=> phpCAS::forceAuthentication() [authentication.php:31]
+4A1F .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+4A1F .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+4A1F .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+4A1F .|    |    |    |    user = `heqing02' [Client.php:1365]
+4A1F .|    |    |    <= true
+4A1F .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+4A1F .|    |    <= true
+4A1F .|    |    no need to authenticate [Client.php:1085]
+4A1F .|    <= true
+4A1F .<= ''
+684D .START phpCAS-1.3.2 ****************** [CAS.php:450]
+684D .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+684D .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+684D .|    |    Starting a new session [Client.php:792]
+684D .|    <= ''
+684D .<= ''
+684D .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+684D .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+684D .<= ''
+684D .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+684D .|    Not a logout request [Client.php:1469]
+684D .<= ''
+684D .=> phpCAS::forceAuthentication() [authentication.php:31]
+684D .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+684D .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+684D .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+684D .|    |    |    |    user = `heqing02' [Client.php:1365]
+684D .|    |    |    <= true
+684D .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+684D .|    |    <= true
+684D .|    |    no need to authenticate [Client.php:1085]
+684D .|    <= true
+684D .<= ''
+5CD3 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+5CD3 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+5CD3 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+5CD3 .|    |    Starting a new session [Client.php:792]
+5CD3 .|    <= ''
+5CD3 .<= ''
+5CD3 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+5CD3 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+5CD3 .<= ''
+5CD3 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+5CD3 .|    Not a logout request [Client.php:1469]
+5CD3 .<= ''
+5CD3 .=> phpCAS::forceAuthentication() [authentication.php:31]
+5CD3 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+5CD3 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+5CD3 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+5CD3 .|    |    |    |    user = `heqing02' [Client.php:1365]
+5CD3 .|    |    |    <= true
+5CD3 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+5CD3 .|    |    <= true
+5CD3 .|    |    no need to authenticate [Client.php:1085]
+5CD3 .|    <= true
+5CD3 .<= ''
+6FDC .START phpCAS-1.3.2 ****************** [CAS.php:450]
+6FDC .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+6FDC .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+6FDC .|    |    Starting a new session [Client.php:792]
+6FDC .|    <= ''
+6FDC .<= ''
+6FDC .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+6FDC .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+6FDC .<= ''
+6FDC .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+6FDC .|    Not a logout request [Client.php:1469]
+6FDC .<= ''
+6FDC .=> phpCAS::forceAuthentication() [authentication.php:31]
+6FDC .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+6FDC .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+6FDC .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+6FDC .|    |    |    |    user = `heqing02' [Client.php:1365]
+6FDC .|    |    |    <= true
+6FDC .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+6FDC .|    |    <= true
+6FDC .|    |    no need to authenticate [Client.php:1085]
+6FDC .|    <= true
+6FDC .<= ''
+1A7B .START phpCAS-1.3.2 ****************** [CAS.php:450]
+1A7B .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+1A7B .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+1A7B .|    |    Starting a new session [Client.php:792]
+1A7B .|    <= ''
+1A7B .<= ''
+1A7B .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+1A7B .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+1A7B .<= ''
+1A7B .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+1A7B .|    Not a logout request [Client.php:1469]
+1A7B .<= ''
+1A7B .=> phpCAS::forceAuthentication() [authentication.php:31]
+1A7B .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+1A7B .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+1A7B .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+1A7B .|    |    |    |    user = `heqing02' [Client.php:1365]
+1A7B .|    |    |    <= true
+1A7B .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+1A7B .|    |    <= true
+1A7B .|    |    no need to authenticate [Client.php:1085]
+1A7B .|    <= true
+1A7B .<= ''
+36A1 .START phpCAS-1.3.2 ****************** [CAS.php:450]
+36A1 .=> phpCAS::client('2.0', 'itebeta.baidu.com', 443, '') [authentication.php:19]
+36A1 .|    => CAS_Client::__construct('2.0', false, 'itebeta.baidu.com', 443, '', true) [CAS.php:347]
+36A1 .|    |    Starting a new session [Client.php:792]
+36A1 .|    <= ''
+36A1 .<= ''
+36A1 .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+36A1 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+36A1 .<= ''
+36A1 .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+36A1 .|    Not a logout request [Client.php:1469]
+36A1 .<= ''
+36A1 .=> phpCAS::forceAuthentication() [authentication.php:31]
+36A1 .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+36A1 .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+36A1 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+36A1 .|    |    |    |    user = `heqing02' [Client.php:1365]
+36A1 .|    |    |    <= true
+36A1 .|    |    |    user was already authenticated, no need to look for tickets [Client.php:1206]
+36A1 .|    |    <= true
+36A1 .|    |    no need to authenticate [Client.php:1085]
+36A1 .|    <= true
+36A1 .<= ''
+B6BA .START phpCAS-1.3.2 ****************** [CAS.php:450]
+B6BA .=> phpCAS::client('2.0', 'uuap.baidu.com', 443, '') [authentication.php:19]
+B6BA .|    => CAS_Client::__construct('2.0', false, 'uuap.baidu.com', 443, '', true) [CAS.php:347]
+B6BA .|    |    Starting a new session [Client.php:792]
+B6BA .|    <= ''
+B6BA .<= ''
+B6BA .=> phpCAS::setNoCasServerValidation() [authentication.php:28]
+B6BA .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [CAS.php:1669]
+B6BA .<= ''
+B6BA .=> CAS_Client::handleLogoutRequests(true, false) [CAS.php:1299]
+B6BA .|    Not a logout request [Client.php:1469]
+B6BA .<= ''
+B6BA .=> phpCAS::forceAuthentication() [authentication.php:31]
+B6BA .|    => CAS_Client::forceAuthentication() [CAS.php:1101]
+B6BA .|    |    => CAS_Client::isAuthenticated() [Client.php:1083]
+B6BA .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1189]
+B6BA .|    |    |    |    no user found [Client.php:1375]
+B6BA .|    |    |    <= false
+B6BA .|    |    |    no ticket found [Client.php:1258]
+B6BA .|    |    <= false
+B6BA .|    |    => CAS_Client::redirectToCas(false) [Client.php:1092]
+B6BA .|    |    |    => CAS_Client::getServerLoginURL(false, false) [Client.php:1396]
+B6BA .|    |    |    |    => CAS_Client::getURL() [Client.php:328]
+B6BA .|    |    |    |    |    Final URI: http://localhost:8080/heqing02/statistics/index.php [Client.php:3071]
+B6BA .|    |    |    |    <= 'http://localhost:8080/heqing02/statistics/index.php'
+B6BA .|    |    |    <= 'https://uuap.baidu.com/login?service=http%3A%2F%2Flocalhost%3A8080%2Fheqing02%2Fstatistics%2Findex.php'
+B6BA .|    |    |    Redirect to : https://uuap.baidu.com/login?service=http%3A%2F%2Flocalhost%3A8080%2Fheqing02%2Fstatistics%2Findex.php [Client.php:1402]
+B6BA .|    |    |    exit()
+B6BA .|    |    |    -
+B6BA .|    |    -
+B6BA .|    -

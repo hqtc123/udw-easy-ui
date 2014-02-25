@@ -48,18 +48,11 @@
 
 .right-child {
     float: right;
-    width: 818px;
-    height: 816px;
+    width: 1000px;
+    min-height: 816px;
     margin-bottom: 10px;
 }
 
-#taskDiv {
-    height: 856px;
-}
-
-#summary-div {
-    height: 1256px;
-}
 
 #summary-div .panel {
     padding-bottom: 3px;
@@ -93,7 +86,7 @@
 
 #hq-summary-table td, #hq-total-table td {
     font-size: 18px;
-    width: 266px;
+    width: 316px;
     border: 1px solid #ddd;
     text-align: center;
 }
@@ -108,12 +101,12 @@ td span {
 }
 
 #index-total-graph, #index-trend-graph {
-    float: right;
+    float: left;
     margin-top: 20px;
 }
 
 #total-graph {
-    float: right;
+    float: left;
     padding-top: 20px;
 }
 
@@ -188,18 +181,14 @@ td span {
 }
 
 #hq-bar {
-    float: right;
-    width: 818px;
+    float: left;
+    width: 980px;
     height: 20px;
     background-color: #dcdcde;
 }
 
 .toolMenu {
     margin-left: -10px;
-}
-
-#total-graph-div {
-    height: 1000px;
 }
 
 #hq-res-estimate-table td, #res-estimate-add-table td {

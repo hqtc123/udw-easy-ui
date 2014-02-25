@@ -1,5 +1,5 @@
 <?php
-require_once("Db.php");
+require_once("../service/Db.php");
 $db = Db::getInstance();
 $db->createCon();
 date_default_timezone_set("Asia/Shanghai");
@@ -65,7 +65,7 @@ if ($_GET["action"] == "task") {
     $result["message"] = "OK";
     $result["total"] = $row[0];
 
-    $sql = 'select DISTINCT dagname FROM input_config limit ' . $offset . ',' . $rows . ';';
+    $sql = 'select DISTINCT dagname FROM input_config;';
 
     $rs = $db->query($sql);
     $resultRows = array();
@@ -93,7 +93,7 @@ if ($_GET["action"] == "task") {
     $result["message"] = "OK";
     $result["total"] = $row[0];
 
-    $sql = 'select DISTINCT log_path FROM input_config limit ' . $offset . ',' . $rows . ';';
+    $sql = 'select DISTINCT log_path FROM input_config;';
 
     $rs = $db->query($sql);
     $resultRows = array();
@@ -122,7 +122,7 @@ if ($_GET["action"] == "task") {
     $result["message"] = "OK";
     $result["total"] = $row[0];
 
-    $sql = 'select DISTINCT table_path FROM output_config limit ' . $offset . ',' . $rows . ';';
+    $sql = 'select DISTINCT table_path FROM output_config;';
 
     $rs = $db->query($sql);
     $resultRows = array();
@@ -196,7 +196,7 @@ if ($_GET["action"] == "task") {
         if ($result1[$i]["product"] == null || $result1[$i]["product"] == "" || $result1[$i]["days"] == 0 || $result1[$i]["product"] == "globalps") {
             continue;
         }
-        if (preg_match("%" . $product . "%", $result1[$i]["product"])) {
+        if ($product == $result1[$i]["product"] || $product == "") {
             array_push($result2, $result1[$i]);
         }
     }
@@ -208,7 +208,7 @@ if ($_GET["action"] == "task") {
     $result["total"] = count($result3);
     $result["success"] = true;
     $result["message"] = "OK";
-    $result["rows"] = array_slice($result3, $offset, $rows);
+    $result["rows"] = $result3;
     echo json_encode($result);
 } elseif ($_GET["action"] == "res-estimate") {
     $result = array();

@@ -75,10 +75,10 @@ class HistoryController {
     }
 
     public function addStorageHistory() {
-        return $this->db->query("insert into storage_history(storage_dir,date,tadd,tdel,tbefore,tafter,remark) values
+        return $this->db->query("insert into storage_history(storage_dir,date,tadd,tdel,tbefore,tafter,remark,cluster) values
         ('" . $this->storageHistory->getStorageDir() . "','" . $this->getStorageHistory()->getDate() . "',"
         . $this->getStorageHistory()->getAdd() . "," . $this->getStorageHistory()->getDel() . "," . $this->getStorageHistory()->getBefore()
-        . "," . $this->getStorageHistory()->getAfter() . ",'" . $this->getStorageHistory()->getRemark() . "')");
+        . "," . $this->getStorageHistory()->getAfter() . ",'" . $this->getStorageHistory()->getRemark() . "','" . $this->storageHistory->getCluster() . "')");
     }
 
     public function getAllDirs() {
@@ -89,8 +89,8 @@ class HistoryController {
         return $this->db->query("select * from storage_history where storage_dir='" . $dir . "' order by id desc");
     }
 
-    public function getAllChangesByDir($dir) {
-        return $this->db->query("select * from storage_history where storage_dir='" . $dir . "' order by date desc");
+    public function getAllChangesByDir($dir, $cluster) {
+        return $this->db->query("select * from storage_history where storage_dir='" . $dir . "' and cluster='" . $cluster . "' order by date desc");
     }
 
     public function deleteStorageHistory($id) {
@@ -106,15 +106,19 @@ class HistoryController {
         return $this->db->query("select distinct(cluster) from storage_dir");
     }
 
-    public function getAllChangesByQueue($queue) {
-        return $this->db->query("select * from calculate_history where queue='" . $queue . "' order by date desc");
+    public function getAllChangesByQueue($queue, $cluster) {
+        return $this->db->query("select * from calculate_history where queue='" . $queue . "' and cluster='" . $cluster . "' order by date desc");
     }
 
     public function addCalculateHistory() {
-        return $this->db->query("insert into calculate_history(queue,date,tadd,tdel,tbefore,tafter,remark) values
+        echo "insert into calculate_history(queue,date,tadd,tdel,tbefore,tafter,remark,cluster) values
+        ('" . $this->calculateHistory->getQueue() . "','" . $this->calculateHistory->getDate() . "',"
+            . $this->calculateHistory->getAdd() . "," . $this->calculateHistory->getDel() . "," . $this->calculateHistory->getBefore()
+            . "," . $this->calculateHistory->getAfter() . ",'" . $this->calculateHistory->getRemark() . "','" . $this->calculateHistory->getCluster() . "')";
+        return $this->db->query("insert into calculate_history(queue,date,tadd,tdel,tbefore,tafter,remark,cluster) values
         ('" . $this->calculateHistory->getQueue() . "','" . $this->calculateHistory->getDate() . "',"
         . $this->calculateHistory->getAdd() . "," . $this->calculateHistory->getDel() . "," . $this->calculateHistory->getBefore()
-        . "," . $this->calculateHistory->getAfter() . ",'" . $this->calculateHistory->getRemark() . "')");
+        . "," . $this->calculateHistory->getAfter() . ",'" . $this->calculateHistory->getRemark() . "','" . $this->calculateHistory->getCluster() . "')");
     }
 
     public function deleteCalculateHistory($id) {

@@ -100,14 +100,21 @@ if ($action == "storage") {
         }
     }
 } elseif ($action == "change") {
+    $cluster = $_GET["cluster"];
     if (isset($_GET["dir"])) {
         $dir = $_GET["dir"];
         if ($task == "all") {
-            $allRs = $historyController->getAllChangesByDir($dir);
+            $total["tadd"] = 0;
+            $total["tdel"] = 0;
+            $allRs = $historyController->getAllChangesByDir($dir, $cluster);
             $result = array();
             while ($row = mysql_fetch_array($allRs)) {
                 array_push($result, $row);
+                $total["tadd"] += $row["tadd"];
+                $total["tdel"] += $row["tdel"];
             }
+            $total["date"] = "合计";
+            array_push($result, $total);
             echo json_encode($result);
         } elseif ($task == "save") {
             $historyController->getStorageHistory()->setStorageDir($dir);
@@ -117,6 +124,7 @@ if ($action == "storage") {
             $historyController->getStorageHistory()->setBefore($_REQUEST["tbefore"]);
             $historyController->getStorageHistory()->setAfter($_REQUEST["tafter"]);
             $historyController->getStorageHistory()->setRemark($_REQUEST["remark"]);
+            $historyController->getStorageHistory()->setCluster($cluster);
             $rs = $historyController->addStorageHistory();
             if ($rs == false) {
                 $json["success"] = 0;
@@ -135,11 +143,17 @@ if ($action == "storage") {
     } else {
         $queue = $_GET["queue"];
         if ($task == "all") {
-            $allRs = $historyController->getAllChangesByQueue($queue);
+            $total["tadd"] = 0;
+            $total["tdel"] = 0;
+            $allRs = $historyController->getAllChangesByQueue($queue, $cluster);
             $result = array();
             while ($row = mysql_fetch_array($allRs)) {
+                $total["tadd"] += $row["tadd"];
+                $total["tdel"] += $row["tdel"];
                 array_push($result, $row);
             }
+            $total["date"] = "合计";
+            array_push($result, $total);
             echo json_encode($result);
         } elseif ($task == "save") {
             $historyController->getCalculateHistory()->setQueue($queue);
@@ -149,6 +163,7 @@ if ($action == "storage") {
             $historyController->getCalculateHistory()->setBefore($_REQUEST["tbefore"]);
             $historyController->getCalculateHistory()->setAfter($_REQUEST["tafter"]);
             $historyController->getCalculateHistory()->setRemark($_REQUEST["remark"]);
+            $historyController->getCalculateHistory()->setCluster($cluster);
             $rs = $historyController->addCalculateHistory();
             if ($rs == false) {
                 $json["success"] = 0;

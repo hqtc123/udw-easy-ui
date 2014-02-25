@@ -1,5 +1,5 @@
 <?php
-require_once("Db.php");
+require_once("../service/Db.php");
 $db = Db::getInstance();
 $db->createCon();
 $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
@@ -70,12 +70,12 @@ if (!isset($_GET["action"])) {
     }
     $resultRow2 = array();
     for ($i = 0; $i < count($resultRows); $i++) {
-        if (preg_match('*' . $logName . '*', $resultRows[$i]["logname"]) && $product == $resultRows[$i]["product"]) {
+        if (preg_match('*' . $logName . '*', $resultRows[$i]["logname"]) && ($product == $resultRows[$i]["product"] || $product == "")) {
             array_push($resultRow2, $resultRows[$i]);
         }
     }
     $result["total"] = count($resultRow2);
-    $result["rows"] = array_slice($resultRow2, $offset, $rows);
+    $result["rows"] = $resultRow2;
     echo json_encode($result);
 } elseif ($_GET["action"] == "table") {
     $tableName = $_GET["table-name"];
@@ -105,12 +105,12 @@ if (!isset($_GET["action"])) {
 
     $resultRow2 = array();
     for ($i = 0; $i < count($resultRows); $i++) {
-        if (preg_match('*' . $tableName . '*', $resultRows[$i]["tablename"]) && $product == $resultRows[$i]["product"]) {
+        if (preg_match('*' . $tableName . '*', $resultRows[$i]["tablename"]) && ($product == $resultRows[$i]["product"] || $product == "")) {
             array_push($resultRow2, $resultRows[$i]);
         }
     }
     $result["total"] = count($resultRow2);
-    $result["rows"] = array_slice($resultRow2, $offset, $rows);
+    $result["rows"] = $resultRow2;
     echo json_encode($result);
 } elseif ($_GET["action"] == "dag") {
     $dagName = $_GET["dag-name"];
@@ -134,13 +134,12 @@ if (!isset($_GET["action"])) {
 
     $resultRow2 = array();
     for ($i = 0; $i < count($resultRows); $i++) {
-        if (preg_match('*' . $dagName . '*', $resultRows[$i]["dagname"]) && $product == $resultRows[$i]["product"]) {
+        if (preg_match('*' . $dagName . '*', $resultRows[$i]["dagname"]) && ($product == $resultRows[$i]["product"] || $product == "")) {
             array_push($resultRow2, $resultRows[$i]);
         }
     }
     $result["total"] = count($resultRow2);
-    $result["rows"] = array_slice($resultRow2, $offset, $rows);
+    $result["rows"] = $resultRow2;
     echo json_encode($result);
 }
 $db->close();
-	

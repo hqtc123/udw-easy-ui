@@ -56,7 +56,13 @@ function drawTotalChart(id) {
                     title: {
                         enabled: false
                     },
-                    lineWidth: 1,
+                    plotLines: [
+                        {
+                            value: 0,
+                            width: 1,
+                            color: '#808080'
+                        }
+                    ],
                     labels: {
                         formatter: function () {
                             return this.value + " T";
@@ -66,14 +72,38 @@ function drawTotalChart(id) {
                         }
                     }
                 },
+                plotOptions: {
+                    area: {
+                        fillColor: {
+                            linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1},
+                            stops: [
+                                [0, Highcharts.getOptions().colors[0]],
+                                [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                            ]
+                        },
+                        lineWidth: 1,
+                        marker: {
+                            enabled: false
+                        },
+                        shadow: false,
+                        states: {
+                            hover: {
+                                lineWidth: 1
+                            }
+                        },
+                        threshold: null
+                    }
+                },
                 tooltip: {
                     formatter: function () {
-                        return this.x + ":<br>" + this.y.toFixed(1) + " T";
+                        return '<span style="font-size:12px;font-family:SimSun;color:{series.color}">' + this.x + '</span>\
+    				: <b><span style="font-size:12px;font-family:Arial;">' + this.y.toFixed(1) + 'T</span></b><br/>';
                     }
                 },
                 showEmpty: false,
                 series: [
                     {
+                        type: 'area',
                         name: 'total',
                         data: totalArr
                     }
@@ -114,7 +144,7 @@ function drawTrendChart(id) {
                     backgroundColor: "transparent"
                 },
                 title: {
-                    text: '每天总体输入输出趋势',
+                    text: '每天总体输入输出趋势（未压缩）',
                     verticalAlign: "bottom",
                     y: 10
                 },
@@ -256,19 +286,20 @@ function createSummary() {
         url: "service/main.php?action=table-date"
     })
 }
-function showStorageAll(dir) {
+function showStorageAll(dir, cluster) {
     $("#storage-record-edg").edatagrid({
-        url: 'service/history.php?action=change&task=all&dir=' + dir,
-        saveUrl: 'service/history.php?action=change&task=save&dir=' + dir,
-        updateUrl: 'service/history.php?action=change&task=update&dir=' + dir,
-        destroyUrl: 'service/history.php?action=change&task=delete&dir=' + dir,
+        url: 'service/history.php?action=change&task=all&dir=' + dir + '&cluster=' + cluster,
+        saveUrl: 'service/history.php?action=change&task=save&dir=' + dir + '&cluster=' + cluster,
+        updateUrl: 'service/history.php?action=change&task=update&dir=' + dir + '&cluster=' + cluster,
+        destroyUrl: 'service/history.php?action=change&task=delete&dir=' + dir + '&cluster=' + cluster,
         loadMsg: '',
+        title: '目录 ' + dir + ' 变更记录',
         idField: "id",
         columns: [
             [
                 {field: 'date', title: '日期', width: 140, editor: {type: 'validatebox'}},
-                {field: 'tadd', title: '增加', width: 90, editor: {type: 'validatebox'}},
-                {field: 'tdel', title: '减少', width: 90, editor: {type: 'validatebox'}},
+                {field: 'tadd', title: '增加(T)', width: 110, editor: {type: 'validatebox'}},
+                {field: 'tdel', title: '减少(T)', width: 110, editor: {type: 'validatebox'}},
                 {field: 'tbefore', title: '变更前', width: 100, editor: {type: 'validatebox'}},
                 {field: 'tafter', title: '变更后', width: 100, editor: {type: 'validatebox'}},
                 {field: 'remark', title: '备注', width: 566, editor: {type: 'validatebox'}}
@@ -276,21 +307,22 @@ function showStorageAll(dir) {
         ]
     });
 }
-function showCalculateAll(queue) {
+function showCalculateAll(queue, cluster) {
     $("#calculate-record-edg").edatagrid({
-        url: 'service/history.php?action=change&task=all&queue=' + queue,
-        saveUrl: 'service/history.php?action=change&task=save&queue=' + queue,
-        updateUrl: 'service/history.php?action=change&task=update&queue=' + queue,
-        destroyUrl: 'service/history.php?action=change&task=delete&queue=' + queue,
+        url: 'service/history.php?action=change&task=all&queue=' + queue + '&cluster=' + cluster,
+        saveUrl: 'service/history.php?action=change&task=save&queue=' + queue + '&cluster=' + cluster,
+        updateUrl: 'service/history.php?action=change&task=update&queue=' + queue + '&cluster=' + cluster,
+        destroyUrl: 'service/history.php?action=change&task=delete&queue=' + queue + '&cluster=' + cluster,
         loadMsg: '',
+        title: '目录 ' + queue + ' 变更记录',
         idField: "id",
         columns: [
             [
-                {field: 'date', title: '日期', width: 140, editor: {type: 'validatebox'}},
-                {field: 'tadd', title: '增加', width: 90, editor: {type: 'validatebox'}},
-                {field: 'tdel', title: '减少', width: 90, editor: {type: 'validatebox'}},
-                {field: 'tbefore', title: '变更前', width: 100, editor: {type: 'validatebox'}},
-                {field: 'tafter', title: '变更后', width: 100, editor: {type: 'validatebox'}},
+                {field: 'date', title: '日期', width: 130, editor: {type: 'validatebox'}},
+                {field: 'tadd', title: '增加(cpu%)', width: 125, editor: {type: 'validatebox'}},
+                {field: 'tdel', title: '减少(cpu%)', width: 125, editor: {type: 'validatebox'}},
+                {field: 'tbefore', title: '变更前', width: 110, editor: {type: 'validatebox'}},
+                {field: 'tafter', title: '变更后', width: 110, editor: {type: 'validatebox'}},
                 {field: 'remark', title: '备注', width: 566, editor: {type: 'validatebox'}}
             ]
         ]
@@ -301,7 +333,7 @@ function initTree() {
         url: "service/history.php?action=storage&task=tree",
         onClick: function (node) {
             if ($("#storage-left-tt").tree("isLeaf", node.target)) {
-                showStorageAll(node.text);
+                showStorageAll(node.text, $("#storage-left-tt").tree("getParent", node.target).text);
             }
         }
     })
@@ -309,7 +341,7 @@ function initTree() {
         url: "service/history.php?action=calculate&task=tree",
         onClick: function (node) {
             if ($("#calculate-left-tt").tree("isLeaf", node.target)) {
-                showCalculateAll(node.text);
+                showCalculateAll(node.text, $("#calculate-left-tt").tree("getParent", node.target).text);
             }
         }
     })
@@ -370,7 +402,7 @@ $(function () {
             url: "service/main.php?action=res-estimate",
             success: function (data) {
                 sizePerDay = parseFloat(data).toFixed(2);
-                $("#per-day-td").html("UDW压缩后平均每天数据量：" + sizePerDay + " T");
+                $("#per-day-td").html("UDW压缩后平均每天数据量(<b>经过ohio、RAID后的大小是100TB/天</b>)：" + sizePerDay + " T");
             }
         });
 

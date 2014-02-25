@@ -18,7 +18,7 @@
 </head>
 <body>
 <div id="header" style="height: 36px;width: 100%">
-    <div id="header-inner" style="width: 1000px; height: 36px">
+    <div id="header-inner" style="width: 1200px; height: 36px">
         <div id="titleDiv" style="width: 500px;height: 36px">
             <div id="titleDiv-inner">UDW 数据统计分析</div>
         </div>
@@ -31,7 +31,7 @@
         </div>
     </div>
 </div>
-<div id="container" style="width:1016px;height: 620px">
+<div id="container" style="width:1206px;height: 620px">
 <div class="easyui-panel" id="leftPanel" style="width: 189px;height: 660px">
     <div id="menuItem1" style="height: 180px">
         <div class="panel-header accordion-header" style="height: 16px; width: 178px;">
@@ -92,7 +92,7 @@
 <!--首页-->
 <div id="summary-div" class="right-child">
 
-    <div id="total-content" class="easyui-panel" title="UDW建设数据量" style="width:818px">
+    <div id="total-content" class="easyui-panel" title="UDW建设数据量" style="width:1018px">
         <table id="hq-total-table">
             <thead>
             <td>UDW建设数据量</td>
@@ -106,12 +106,12 @@
                 <td></td>
             </tr>
         </table>
-        <div id="index-total-graph" style="width:760px;height:200px;margin-right: 36px">
+        <div id="index-total-graph" style="width:890px;height:300px;margin-left: 36px">
 
         </div>
     </div>
 
-    <div id="summary-content" class="easyui-panel" title="UDW总体情况" style="width:818px">
+    <div id="summary-content" class="easyui-panel" title="UDW总体情况" style="width:1018px">
         <table id="hq-summary-table">
             <tr>
                 <td>DAG:任务数目</td>
@@ -125,12 +125,12 @@
             </tr>
         </table>
     </div>
-    <div id="in-trend-content" class="easyui-panel" title="每天总体输入输出" style="width:818px">
-        <div id="index-trend-graph" style="width:760px;height:300px;margin-right: 36px">
-
-        </div>
-    </div>
-    <table id="table-date-dg" title="各表的建设时间" class="easyui-datagrid" style="width:818px;height:350px"
+<!--    <div id="in-trend-content" class="easyui-panel" title="每天总体输入输出" style="width:1018px">-->
+<!--        <div id="index-trend-graph" style="width:890px;height:320px;margin-right: 36px">-->
+<!---->
+<!--        </div>-->
+<!--    </div>-->
+    <table id="table-date-dg" title="各表的建设时间" class="easyui-datagrid" style="width:1018px;height:350px"
            pagination="true" draggable="false"
            pageSize="10"
            rownumbers="true" fitColumns="true" singleSelect="true">
@@ -204,7 +204,7 @@
 </div>
 <!--任务流-->
 <div id="taskDiv" class="right-child">
-    <table id="dg" title="DAG:任务执行列表" class="easyui-datagrid" style="width:818px;height:500px"
+    <table id="dg" title="DAG:任务执行列表" class="easyui-datagrid" style="width:1018px;height:500px"
            pagination="true" draggable="false"
            pageSize="10"
            rownumbers="true" fitColumns="true" singleSelect="true">
@@ -280,38 +280,38 @@
     </div>
 </div>
 <div id="trend-graph-div" class="right-child">
-    <div id="trend-graph" style="width:810px;height:360px;margin: 0 auto">
+    <div id="trend-graph" style="width:980px;height:360px;margin: 0 auto">
 
     </div>
     <div id="hq-bar"></div>
     <table id="product-dg" title="各个产品线输入输出" class="easyui-datagrid"
-           style="width:818px;height:399px;margin-top: 20px;margin-left: 60px"
-           pagination="false" draggable="false"
-           rownumbers="true" fitColumns="true" singleSelect="true"
-           sortName="outputSize" sortOrder="desc">
-        <thead>
-        <tr>
-            <th field="product" width="35">产品线</th>
-            <th field="inputSize" width="35" sortable="true">输入（T）</th>
-            <th field="inputDate" width="20">输入数据日期</th>
-            <th field="outputSize" width="35" sortable="true">输出（T）</th>
-            <th field="outputDate" width="20">输出数据日期</th>
-            <th field="trend" width="10">趋势</th>
-        </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
+               style="width:1018px;height:399px;margin-top: 20px;margin-left: 60px"
+               pagination="false" draggable="false"
+               rownumbers="true" fitColumns="true" singleSelect="true"
+               sortName="outputSize" sortOrder="desc">
+            <thead>
+            <tr>
+                <th field="product" width="35">产品线</th>
+                <th field="inputSize" width="35" sortable="true">输入（T）</th>
+                <th field="inputDate" width="20">输入数据日期</th>
+                <th field="outputSize" width="35" sortable="true">输出（T）</th>
+                <th field="outputDate" width="20">输出数据日期</th>
+                <th field="trend" width="10">趋势</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
 </div>
 <div id="total-graph-div" class="right-child">
-    <div id="total-graph" style="width:810px;height:300px;margin: 0 auto">
+    <div id="total-graph" style="width:980px;height:300px;margin: 0 auto">
 
     </div>
     <div id="hq-bar"></div>
-    <div id="hq-pie" style="width: 810px;height: 320px"></div>
+    <div id="hq-pie" style="width: 980px;height: 360px"></div>
     <div id="hq-bar"></div>
     <table id="product-size-dg" title="各个产品线大小" class="easyui-datagrid"
-           style="width:818px;height:320px;margin-top: 20px;margin-left: 60px"
+           style="width:988px;height:360px;margin-top: 20px;margin-left: 60px"
            pagination="false" draggable="false"
            rownumbers="true" fitColumns="true" singleSelect="true"
         >
@@ -329,10 +329,12 @@
 </div>
 <!--资源预估-->
 <div id="res-estimate" class="right-child">
-    <div id="res-estimate-panel" class="easyui-panel" title="UDW资源预估" style="width:818px">
+    <div id="res-estimate-panel" class="easyui-panel" title="UDW资源预估" style="width:1018px">
         <table id="hq-res-estimate-table">
             <thead>
-            <td id="per-day-td">UDW压缩后平均每天数据量：</td>
+            <td id="per-day-td">UDW压缩后平均每天数据量：
+            (<b>经过ohio、RAID后的大小是100TB/天</b>)
+            </td>
             <td>输入天数：<input type="text" id="res-estimate-input"><input id="res-estimate-btn" type="button" value="确定">
             </td>
             <td>预估大小：<label>待估</label></td>
@@ -340,7 +342,7 @@
         </table>
     </div>
 
-    <div id="res-estimate-add-panel" class="easyui-panel" title="UDW资源增量预估" style="width:818px">
+    <div id="res-estimate-add-panel" class="easyui-panel" title="UDW资源增量预估" style="width:1018px">
         <table id="res-estimate-add-table">
             <thead>
             <td id="per-day-add-td">计算把所有表建设到指定天数还需要的存储量</td>
@@ -353,7 +355,7 @@
     </div>
 
     <!--每个表预计时间-->
-    <table id="table-estimate-dg" title="各表建设资源增量预估" class="easyui-datagrid" style="width:818px;height:500px"
+    <table id="table-estimate-dg" title="各表建设资源增量预估" class="easyui-datagrid" style="width:1018px;height:500px"
            pagination="true" draggable="false"
            pageSize="20"
            rownumbers="true" fitColumns="true" singleSelect="false">
@@ -421,7 +423,7 @@
 </div>
 <!--资源申请部分-->
 <div id="res-apply" class="right-child" style="height: 900px">
-    <div class="easyui-panel" title="资源申请" style="width:818px">
+    <div class="easyui-panel" title="资源申请" style="width:1018px">
         <div class="easyui-tabs" style="width:600px;height:388px;margin-left: 100px">
             <div title="申请存储资源" style="padding:10px 30px">
                 <form id="storage-form" method="post">
@@ -516,24 +518,24 @@
         </div>
     </div>
 
-    <table id="apply-dg" title="资源申请列表" class="easyui-datagrid" style="width:818px;height:388px;"
+    <table id="apply-dg" title="资源申请列表" class="easyui-datagrid" style="width:1018px;height:388px;"
            pagination="true" draggable="false"
            pageSize="10"
            rownumbers="false" fitColumns="true" singleSelect="true">
         <thead>
         <tr>
             <th field="id" width="15">编号</th>
-            <th field="type" width="20">类型</th>
+            <th field="type" width="25">类型</th>
             <th field="cluster" width="30">集群</th>
-            <th field="req_str" width="50">队列/存储目录</th>
+            <th field="req_str" width="40">队列/存储目录</th>
             <th field="req_num" width="20">TB/槽位</th>
             <th field="state" width="25">状态</th>
-            <th field="mail" width="35">申请人</th>
+            <th field="mail" width="25">申请人</th>
             <th field="req_time" width="35">提交时间</th>
-            <th field="dealer" width="35">审批人</th>
+            <th field="dealer" width="25">审批人</th>
             <th field="deal_time" width="35">审批时间</th>
             <th field="deal" width="20">操作</th>
-            <th field="deal_reason" width="30">审批理由</th>
+            <th field="deal_reason" width="150">审批理由</th>
         </tr>
         </thead>
         <tbody id="mainBody">
@@ -571,16 +573,16 @@
 <!--资源变更记录-->
 <div id="res-change" class="right-child">
     <!--    //存储资源变更记录-->
-    <div class="easyui-panel" title="存储资源变更记录" style="width:818px;height:396px;padding:10px;margin-bottom: 10px">
+    <div class="easyui-panel" title="存储资源变更记录" style="width:1018px;height:456px;padding:10px;margin-bottom: 20px">
         <div class="easyui-layout" data-options="fit:true">
-            <div title="集群-存储目录" data-options="region:'west',split:true" style="width:150px;padding:10px">
+            <div title="集群-存储目录" data-options="region:'west',split:true" style="width:250px;padding:10px">
                 <ul id="storage-left-tt" class="easyui-tree"></ul>
                 <input id="add-dir-btn" type="button" value="添加目录">
             </div>
             <div data-options="region:'center'" style="padding:10px">
                 <table id="storage-record-edg" fitColumns="true" title="存储资源变更记录"
                        singleSelect="true" toolbar="#edit-toolbar" rownumbers="true"
-                       style="width: 636px;height: 316px">
+                       style="width: 786px;height: 366px">
                 </table>
             </div>
         </div>
@@ -597,28 +599,28 @@
     </div>
 
     <!--    计算资源变更记录-->
-    <div class="easyui-panel" title="计算资源变更记录" style="width:818px;height:396px;padding:10px;">
+    <div class="easyui-panel" title="计算资源变更记录" style="width:1018px;height:456px;padding:10px;">
         <div class="easyui-layout" data-options="fit:true">
-            <div title="集群-队列" data-options="region:'west',split:true" style="width:150px;padding:10px">
+            <div title="集群-队列" data-options="region:'west',split:true" style="width:250px;padding:10px">
                 <ul id="calculate-left-tt" class="easyui-tree"></ul>
                 <input id="add-queue-btn" type="button" value="添加队列">
             </div>
             <div data-options="region:'center'" style="padding:10px">
                 <table id="calculate-record-edg" fitColumns="true" title="计算资源变更记录"
                        singleSelect="true" toolbar="#edit-toolbar-cal" rownumbers="true"
-                       style="width: 636px;height: 316px">
+                       style="width: 786px;height: 366px">
                 </table>
             </div>
         </div>
     </div>
     <div id="edit-toolbar-cal" style="display: none">
-        <a id="add-change" href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add"
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add"
            plain="true" onclick="javascript:$('#calculate-record-edg').edatagrid('addRow',0)">New</a>
-        <a id="remove-change" href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove"
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove"
            plain="true" onclick="deleteCalculateRow()">Delete</a>
-        <a id="save-change" href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-save"
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-save"
            plain="true" onclick="saveCalculateRow()">Save</a>
-        <a id="cancel-change" href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-undo"
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-undo"
            plain="true" onclick="javascript:$('#storage-calculate-edg').edatagrid('cancelRow')">Cancel</a>
     </div>
 
