@@ -164,11 +164,6 @@
     background: url('images/accordion_arrows.png') no-repeat -16px 0;
 }
 
-.accordion {
-    background: #fafafa;
-    border-color: #c3d9e0;
-}
-
 .accordion .accordion-header {
     background: #daeef5;
     filter: none;

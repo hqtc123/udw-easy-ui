@@ -11,9 +11,11 @@ if (isset($_GET["product"])) {
 }
 ?>
 <link rel="stylesheet" type="text/css" href="css/list.css">
-<div class="container" style="padding-top: 50px">
-    <div id="trend-div" style="height: 500px;width: 800px;">
+<div class="layout_rightmain">
+    <div class="inner">
+        <div id="trend-div" style="height: 500px;width: 800px;">
 
+        </div>
     </div>
 </div>
 <?php include_once("footer.html"); ?>
@@ -68,7 +70,7 @@ if (isset($_GET["product"])) {
     });
     chart.showLoading();
     $.ajax({
-        url: 'service/prosize.php?product=' + product+'&action=per',
+        url: 'service/prosize.php?product=' + product + '&action=per',
         dataType: "json",
         success: function (point) {
             var obj = eval(point);

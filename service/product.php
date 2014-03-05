@@ -92,7 +92,7 @@ if ($productName == "all") {
  */
 else {
     $rows = array();
-    $dateRs = $db->query('select DISTINCT date FROM output_size  ORDER BY date');
+    $dateRs = $db->query('select DISTINCT date FROM output_size  ORDER BY date desc limit 30');
     while ($dateRow = mysql_fetch_row($dateRs)) {
         $newRow["date"] = $dateRow[0];
         $outSize = 0;
@@ -131,5 +131,5 @@ else {
         $newRow["input"] = $inSize;
         array_push($rows, $newRow);
     }
-    echo json_encode($rows);
+    echo json_encode(array_reverse($rows));
 }

@@ -1,18 +1,23 @@
-function getDataAjax(urlStr) {
-    $("#dg").datagrid({
-        url: urlStr
-    })
-}
-function getProductData() {
-    $("#product-dg").datagrid({
-        url: "service/product.php?product=all"
-    })
-}
-function getProductSizeData() {
-    $("#product-size-dg").datagrid({
-        url: "service/prosize.php?action=size"
-    })
-}
+var liAndPageTitle = {
+    summary: " UDW 总体情况",
+    task: " DAG 任务流",
+    inout: " Input & Output",
+    total: " UDW 建设数据量",
+    estimate: " 资源预估",
+    apply: " 资源申请 | 审批",
+    record: " 资源变更记录",
+    quality: " 数据质量"
+};
+var pageAlreadyInit = {
+    summary: true,
+    task: false,
+    inout: false,
+    total: false,
+    estimate: false,
+    apply: false,
+    record: false,
+    quality: false
+};
 function drawTotalChart(id) {
     var chart;
     var dateArr = [];
@@ -257,6 +262,7 @@ function drawSizePie() {
 
 }
 function createSummary() {
+    var quota = 35;
     $.ajax({
         url: "service/main.php?action=summary",
         dataType: "json",
@@ -270,21 +276,20 @@ function createSummary() {
                 var tableNum = res.tableNum;
                 var tableBigNum = res.tableBigNum;
                 var tableSmallNum = tableNum - tableBigNum;
-                var percentage = ((totalSize / 35) * 100).toFixed(1);
+                var percentage = ((totalSize / quota) * 100).toFixed(1);
 
-                $("#hq-total-table tr:eq(1) td:eq(0)").html(totalSize + "  P");
-                $("#hq-total-table tr:eq(1) td:eq(2)").html(percentage + "  %");
-                $("#hq-summary-table tr:eq(1) td:eq(0) a").html(dagNum);
-                $("#hq-summary-table tr:eq(1) td:eq(1) a").html(logNum);
-                $("#hq-summary-table tr:eq(1) td:eq(1) span").html(" (BIGPIPE:" + logBigNum + ",LDM:" + logLdmNum + ")");
-                $("#hq-summary-table tr:eq(1) td:eq(2) a").html(tableNum);
-                $("#hq-summary-table tr:eq(1) td:eq(2) span").html(" (BIG:" + tableBigNum + ",SMALL:" + tableSmallNum + ")");
+                $("#udw-size-data b:eq(0)").html(totalSize + "  P");
+                $("#udw-size-data b:eq(1)").html(quota + "  P");
+                $("#udw-size-data b:eq(2)").html(percentage + "  %");
+                $("#hq-summary-table #dag-a").html(dagNum);
+                $("#hq-summary-table #log-a").html(logNum);
+                $("#hq-summary-table #log-span").html(" (BIGPIPE:" + logBigNum + ",LDM:" + logLdmNum + ")");
+                $("#hq-summary-table #table-a").html(tableNum);
+                $("#hq-summary-table #table-span").html(" (BIG:" + tableBigNum + ",SMALL:" + tableSmallNum + ")");
             }
         }
     })
-    $("#table-date-dg").datagrid({
-        url: "service/main.php?action=table-date"
-    })
+    $("#table-date-dg").heDatagrid("service/main.php?action=table-date");
 }
 function showStorageAll(dir, cluster) {
     $("#storage-record-edg").edatagrid({
@@ -346,6 +351,8 @@ function initTree() {
         }
     })
 }
+
+//function setPageTilte
 //加载 ……
 $(function () {
     var sizePerDay = 0;
@@ -357,76 +364,95 @@ $(function () {
         $("#contact-content").dialog("open");
     });
     drawTotalChart("index-total-graph");
-    drawTrendChart("index-trend-graph");
     $(".right-child").hide();
     $("#summary-div").show();
-    $(".itemSpan").on("click", function () {
-        $(".itemSpan").parent("li").removeClass("onSelect");
-        $(this).parent("li").addClass("onSelect");
-    })
     createSummary();
 //    左侧菜单栏点击事件处理
+    $(".item-span").on("click", function () {
+        $(".item-span").removeClass("active");
+        $(this).addClass("active");
+        var idStr = $(this).attr("id");
+        var arr = idStr.split("-");
+        var id = arr[1];
+        $("#page-title-span").text(liAndPageTitle[id]);
+    })
 
     $("#choose-summary").on("click", function () {
-        createSummary();
         $(".right-child[id!='summary-div']").fadeOut("slow", function () {
             $("#summary-div").show();
+            if (!pageAlreadyInit.summary) {
+                createSummary();
+                pageAlreadyInit.summary = true;
+            }
         });
     })
 
     $("#choose-task").on("click", function () {
-        $(".right-child[id!='taskDiv']").fadeOut("slow", function () {
-            $("#taskDiv").show();
-            getDataAjax("service/main.php?action=task");
-        });
-    })
-
-    $("#choose-trend").on("click", function () {
-        drawTrendChart("trend-graph");
-        getProductData();
-        $(".right-child[id!='trend-graph-div']").fadeOut("slow", function () {
-            $(".right-child[id='trend-graph-div']").show();
-        });
-    })
-    $("#choose-total-trend").on("click", function () {
-        drawTotalChart("total-graph");
-        drawSizePie();
-        getProductSizeData();
-        $(".right-child[id!='total-graph-div']").fadeOut("slow", function () {
-            $(".right-child[id='total-graph-div']").show();
-        });
-    })
-
-    $("#choose-res-estimate").on("click", function () {
-        $.ajax({
-            url: "service/main.php?action=res-estimate",
-            success: function (data) {
-                sizePerDay = parseFloat(data).toFixed(2);
-                $("#per-day-td").html("UDW压缩后平均每天数据量(<b>经过ohio、RAID后的大小是100TB/天</b>)：" + sizePerDay + " T");
+        $(".right-child[id!='task-div']").fadeOut("slow", function () {
+            $("#task-div").show();
+            if (!pageAlreadyInit.task) {
+                $("#dag-dg").heDatagrid("service/main.php?action=task");
+                pageAlreadyInit.task = true;
             }
         });
+    })
 
-        $("#table-estimate-dg").datagrid({
-            url: "service/main.php?action=table-estimate"
-        })
-        $(".right-child[id!='res-estimate']").fadeOut("slow", function () {
-            $(".right-child[id='res-estimate']").show();
+    $("#choose-inout").on("click", function () {
+        $(".right-child[id!='inout-div']").fadeOut("slow", function () {
+            $(".right-child[id='inout-div']").show();
+            if (!pageAlreadyInit.inout) {
+                drawTrendChart("inout-graph");
+                $("#product-dg").heDatagrid("service/product.php?product=all", false);
+                pageAlreadyInit.inout = true;
+            }
+        });
+    })
+    $("#choose-total").on("click", function () {
+        $(".right-child[id!='total-div']").fadeOut("slow", function () {
+            $(".right-child[id='total-div']").show();
+            if (!pageAlreadyInit.total) {
+                drawTotalChart("total-graph");
+                drawSizePie();
+                $("#product-size-dg").heDatagrid("service/prosize.php?action=size");
+                pageAlreadyInit.total = true;
+            }
         });
     })
 
-    $("#choose-res-apply").on("click", function () {
-        $("#apply-dg").datagrid({
-            url: "service/resources.php?action=all"
-        })
+    $("#choose-estimate").on("click", function () {
+        $(".right-child[id!='estimate-div']").fadeOut("slow", function () {
+            $(".right-child[id='estimate-div']").show();
+            if (!pageAlreadyInit.estimate) {
+                $.ajax({
+                    url: "service/main.php?action=res-estimate",
+                    success: function (data) {
+                        sizePerDay = parseFloat(data).toFixed(2);
+                        $("#per-day-td").html("UDW压缩后平均每天数据量："+sizePerDay+"T。(<b>经过ohio、RAID后的大小是100TB/天</b>)");
+                    }
+                });
+                $("#table-estimate-dg").heDatagrid("service/main.php?action=table-estimate");
+                pageAlreadyInit.estimate = true;
+            }
+        });
+    })
+
+    $("#choose-apply").on("click", function () {
         $(".right-child[id!='res-apply']").fadeOut("slow", function () {
-            $(".right-child[id='res-apply']").show();
+            $(".right-child[id='apply-div']").show();
+            if (pageAlreadyInit.apply == false) {
+                $("#apply-dg").heDatagrid("service/resources.php?action=all");
+                pageAlreadyInit.apply = true;
+            }
         });
     })
 
-    $("#choose-res-change").on("click", function () {
-        initTree();
-        $(".right-child[id!='res-change']").fadeOut("slow", function () {
-            $(".right-child[id='res-change']").show();
+    $("#choose-record").on("click", function () {
+        $(".right-child[id!='record-div']").fadeOut("slow", function () {
+            $(".right-child[id='record-div']").show();
+            if (pageAlreadyInit.record == false) {
+                initTree();
+                pageAlreadyInit.record = true;
+            }
         });
     })
 
@@ -481,7 +507,7 @@ $(function () {
         suffix += "&table-type=" + tableType;
         suffix += "&table-path=" + tablePath;
         suffix += "&log-path=" + logPath;
-        getDataAjax("service/query.php" + suffix);
+        $("#dag-dg").heDatagrid("service/query.php" + suffix);
     })
 //首页summary-div的表，建设天数查询
     $("#index-query-button").on("click", function () {
@@ -501,56 +527,77 @@ $(function () {
     //每个表增量建设查询
     $("#res-query-button").on("click", function () {
         var tableName = $("input[name='table-name3']").val().trim();
-        var product = $("input[name='product2']").val().trim();
+        var product = $("select[name='product2']").val().trim();
         var suffix = "";
         suffix += "&table-name=" + tableName;
         suffix += "&product=" + product;
         suffix += "&page=" + 1;
         suffix += "&rows=" + 10;
-        $("#table-estimate-dg").datagrid({
-            url: "service/main.php?action=table-estimate" + suffix
-        })
+        $("#table-estimate-dg").heDatagrid("service/main.php?action=table-estimate" + suffix);
     })
 
-    //申请存储资源表单提交
-    $("#storage-form").form({
-        url: "service/resources.php?action=add",
-        onSubmit: function () {
-            return $(this).form('validate');
-        },
-        success: function (result) {
-            if (result == 1) {
-                alert("申请成功");
-                $("#storage-form").form("clear");
-                $("#apply-dg").datagrid({
-                    url: "service/resources.php?action=all"
-                })
-            }
+    //申请资源表单处理部分
+    $(".tabs-panels form").find("input,textarea").on("keyup", function () {
+        if ($(this).val().trim() != "") {
+            $(this).next("span").hide();
+        } else {
+            $(this).next("span").show();
         }
     })
 
-    $("#calculate-form").form({
-        url: "service/resources.php?action=add",
-        onSubmit: function () {
-            return $(this).form('validate');
-        },
-        success: function (result) {
-            if (result == 1) {
-                alert("申请成功");
-                $("#calculate-form").form("clear");
-                $("#apply-dg").datagrid({
-                    url: "service/resources.php?action=all"
-                })
+    $("#apply-div").on("click", "#storage-btn", function () {
+        var all = true;
+        $.each($("#storage-form").find("input", "textarea"), function () {
+            if ($(this).val().trim() == "") {
+                alert("fill all blank required, please");
+                all = false;
+                return false;
             }
+            $(this).val($(this).val().trim());
+        });
+        if (all) {
+            $.ajax({
+                    url: "service/resources.php?action=add&" + $("#storage-form").serialize(),
+                    type: "post",
+                    dataType: "json",
+                    success: function () {
+                        alert("申请已经提交！");
+                        resetStorageForm();
+                    }
+                }
+            )
         }
     })
+    $("#apply-div").on("click", "#calculate-btn", function () {
+        var all = true;
+        $.each($("#calculate-form").find("input", "textarea"), function () {
+            if ($(this).val().trim() == "") {
+                alert("fill all blank required, please");
+                all = false;
+                return false;
+            }
+            $(this).val($(this).val().trim());
+        });
+        if (all) {
+            $.ajax({
+                    url: "service/resources.php?action=add&" + $("#calculate-form").serialize(),
+                    type: "post",
+                    dataType: "json",
+                    success: function () {
+                        alert("申请已经提交！");
+                        resetCalculateForm();
+                    }
+                }
+            )
+        }
+    })
+
+
 //资源查询的处理
     $("#deal-query-button").on("click", function () {
-        var type = $("input[name='app-type']").val().trim();
-        var state = $("input[name='app-state']").val().trim();
-        $("#apply-dg").datagrid({
-            url: "service/resources.php?action=all" + "&type=" + type + "&state=" + state
-        })
+        var type = $("select[name='app-type']").val().trim();
+        var state = $("select[name='app-state']").val().trim();
+        $("#apply-dg").heDatagrid("service/resources.php?action=all" + "&type=" + type + "&state=" + state);
     });
 //    添加一条存储目录
     $("#add-dir-win").window("close");

@@ -70,7 +70,7 @@ if (!isset($_GET["action"])) {
     }
     $resultRow2 = array();
     for ($i = 0; $i < count($resultRows); $i++) {
-        if (preg_match('*' . $logName . '*', $resultRows[$i]["logname"]) && $product == $resultRows[$i]["product"]) {
+        if (preg_match('*' . $logName . '*', $resultRows[$i]["logname"]) && preg_match('*' . $product . '*', $resultRows[$i]["product"])) {
             array_push($resultRow2, $resultRows[$i]);
         }
     }
@@ -105,7 +105,7 @@ if (!isset($_GET["action"])) {
 
     $resultRow2 = array();
     for ($i = 0; $i < count($resultRows); $i++) {
-        if (preg_match('*' . $tableName . '*', $resultRows[$i]["tablename"]) && $product == $resultRows[$i]["product"]) {
+        if (preg_match('*' . $tableName . '*', $resultRows[$i]["tablename"]) && preg_match('*' . $product . '*', $resultRows[$i]["product"])) {
             array_push($resultRow2, $resultRows[$i]);
         }
     }
@@ -134,7 +134,7 @@ if (!isset($_GET["action"])) {
 
     $resultRow2 = array();
     for ($i = 0; $i < count($resultRows); $i++) {
-        if (preg_match('*' . $dagName . '*', $resultRows[$i]["dagname"]) && $product == $resultRows[$i]["product"]) {
+        if (preg_match('*' . $dagName . '*', $resultRows[$i]["dagname"]) && preg_match('*' . $product . '*', $resultRows[$i]["product"])) {
             array_push($resultRow2, $resultRows[$i]);
         }
     }

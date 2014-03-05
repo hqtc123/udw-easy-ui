@@ -44,7 +44,7 @@ $(function () {
 
     $("#hq-log-button").on("click", function () {
         var logName = $("input[name='log-name']").val().trim();
-        var product = $("input[name='product']").val().trim();
+        var product = $("select[name='product']").val().trim();
         var suffix = "";
         suffix += "&log-name=" + logName;
         suffix += "&product=" + product;
@@ -53,7 +53,7 @@ $(function () {
 
     $("#hq-dag-button").on("click", function () {
         var dagName = $("input[name='dag-name']").val().trim();
-        var product = $("input[name='product']").val().trim();
+        var product = $("select[name='product']").val().trim();
         var suffix = "";
         suffix += "&dag-name=" + dagName;
         suffix += "&product=" + product;
@@ -62,7 +62,7 @@ $(function () {
 
     $("#hq-table-button").on("click", function () {
         var tableName = $("input[name='table-name']").val().trim();
-        var product = $("input[name='product']").val().trim();
+        var product = $("select[name='product']").val().trim();
         var suffix = "";
         suffix += "&table-name=" + tableName;
         suffix += "&product=" + product;

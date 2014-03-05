@@ -281,7 +281,7 @@ if ($_GET["action"] == "task") {
         $startDate = substr($row2[3], 0, 4) . "-" . substr($row2[3], 4, 2) . "-" . substr($row2[3], 6, 2);
         $endDate = substr($row2[4], 0, 4) . "-" . substr($row2[4], 4, 2) . "-" . substr($row2[4], 6, 2);
         $newRow["already_days"] = abs((strtotime($endDate) - strtotime($startDate)) / 3600 / 24);
-        $newRow["input"] = "输入天数：<input type='text' style='width: 80px'><input onclick='" . $toInject . "' type='button' value='确定' class='estimate-btn' />";
+        $newRow["input"] = "输入天数：<input type='text' class='input-small' style='width: 80px'><a onclick='" . $toInject . "' class='estimate-btn btn btn-primary btn-small'>确定</a>";
         $newRow["result"] = "待计算";
         array_push($resultRows, $newRow);
     }

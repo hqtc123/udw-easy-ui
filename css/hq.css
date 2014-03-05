@@ -1,0 +1,53 @@
+.datagrid-cell {
+    margin-left: 4px;
+    margin-right: 4px;
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+#log-a, #dag-a, #table-a {
+    text-decoration: underline;
+    font-size: 20px;
+}
+
+#hq-summary-table .before-span {
+    font-size: 16px;
+    margin-right: 10px;
+    color: #444;
+}
+
+#query-days-table {
+    margin-top: 20px;
+    margin-left: 36px;
+}
+
+.tabs-header {
+    border: none;
+    background: none;
+}
+
+form table td {
+    line-height: 28px;
+    padding: 8px;
+    color: #333;
+}
+
+.accordion {
+    border-right: none;
+}
+
+.accordion>li>a {
+    font-size: 16px;
+    font-family: "隶书";
+    color: #fff;
+    background: #678;
+}
+
+.sub-menu li a {
+    background: #123;
+}
+
+.sub-menu li a.active {
+    background: #ffffff;
+}

@@ -10,19 +10,18 @@ require_once("../controller/ResController.php");
 require_once("../model/ResApply.php");
 $action = isset($_GET["action"]) ? $_GET["action"] : "add";
 if ($action == "add") {
-    $type = $_POST["type"];
-    $cluster = $_POST["cluster"];
-    $reqStr = $_POST["req_str"];
-    $reqNum = $_POST["req_num"];
-    $reason = $_POST["reason"];
-    $email = $_POST["mail"];
+    $type = $_REQUEST["type"];
+    $cluster = $_REQUEST["cluster"];
+    $reqStr = $_REQUEST["req_str"];
+    $reqNum = $_REQUEST["req_num"];
+    $reason = $_REQUEST["reason"];
+    $email = $_REQUEST["mail"];
 
     $resApply = new ResApply($cluster, $reason, $reqNum, $reqStr, $type, $email);
     $resController = new ResController();
     $resController->setResApply($resApply);
     $resController->addResApply();
     $resController->closeDb();
-
     echo '1';
 } elseif ($action == "all") {
     $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
