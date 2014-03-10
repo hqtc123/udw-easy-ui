@@ -6,9 +6,9 @@
  * Time: 下午2:11
  * To change this template use File | Settings | File Templates.
  */
-require_once("Db.php");
+require_once("../model/db/Db.php");
 $db = Db::getInstance();
-$db->createCon();
+$db->connectUdwUi();
 $productName = $_GET["product"];
 /**
  * 各个产品线输入输出的表格

@@ -6,9 +6,9 @@
  * Time: 下午2:57
  * To change this template use File | Settings | File Templates.
  */
-require_once("Db.php");
+require_once("../model/db/Db.php");
 $db = Db::getInstance();
-$db->createCon();
+$db->connectUdwUi();
 if ($_GET["action"] == "pie") {
     $sql = "select distinct date from product_table order by date desc limit 1";
     $dateRs = $db->query($sql);

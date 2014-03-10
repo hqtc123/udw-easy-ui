@@ -6,10 +6,10 @@
  * Time: 上午10:24
  * To change this template use File | Settings | File Templates.
  */
-require_once("Db.php");
+require_once("../model/db/Db.php");
 require_once("../controller/HistoryController.php");
 $db = Db::getInstance();
-$db->createCon();
+$db->connectUdwUi();
 
 $action = $_GET["action"];
 $task = $_GET["task"];

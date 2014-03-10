@@ -55,8 +55,8 @@
                 </li>
                 <li id="three"><a href="#three">数据质量<span></span></a>
                     <ul class="sub-menu">
-                        <li><a href="http://szwg-qatest-dpf006.szwg01.baidu.com:8525/index.php"
-                               id="choose-quality">数据质量</a></li>
+<!--                        <li><a href="http://szwg-qatest-dpf006.szwg01.baidu.com:8525/index.php"-->
+<!--                               id="choose-quality">数据质量</a></li>-->
                         <li><a href="javascript:void(0)" class="item-span">敬请期待</a></li>
                     </ul>
                 </li>
