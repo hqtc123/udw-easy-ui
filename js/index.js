@@ -262,7 +262,7 @@ function drawSizePie() {
 
 }
 function createSummary() {
-    var quota = 35;
+    var quota = 31;
     $.ajax({
         url: "service/main.php?action=summary",
         dataType: "json",

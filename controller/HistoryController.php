@@ -10,6 +10,7 @@ require_once("../model/StorageDir.php");
 require_once("../model/StorageHistory.php");
 require_once("../model/CalculateQueue.php");
 require_once("../model/CalculateHistory.php");
+require_once("../model/db/Db.php");
 class HistoryController {
     private $calculateQueue;
     private $calculateHistory;
@@ -19,7 +20,7 @@ class HistoryController {
 
     function __construct() {
         $this->db = Db::getInstance();
-        $this->db->createCon();
+        $this->db->connectUdwUi();
         $this->storageDir = new StorageDir();
         $this->storageHistory = new StorageHistory();
         $this->calculateQueue = new CalculateQueue();

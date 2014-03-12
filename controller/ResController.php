@@ -6,7 +6,7 @@
  * Time: 上午10:05
  * To change this template use File | Settings | File Templates.
  */
-require_once("../service/Db.php");
+require_once("../model/db/Db.php");
 require_once("../model/ResApply.php");
 class ResController {
     private $db;
@@ -14,7 +14,7 @@ class ResController {
 
     function __construct() {
         $this->db = Db::getInstance();
-        $this->db->createCon();
+        $this->db->connectUdwUi();
     }
 
     /**
