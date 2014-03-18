@@ -30,4 +30,26 @@
             });
         }
     }
+    $.fn.rowSpan = function (colIdx) { //封装的一个JQuery小插件
+        return this.each(function () {
+            var that;
+            $('tr', this).each(function (row) {
+                $('td:eq(' + colIdx + ')', this).filter(':visible').each(function (col) {
+                    if (that != null && $(this).html() == $(that).html()) {
+                        var rowSpan = $(that).attr("rowspan");
+                        if (rowSpan == undefined) {
+                            $(that).attr("rowSpan", 1);
+                            rowSpan = $(that).attr("rowspan");
+                        }
+                        rowSpan = Number(rowSpan) + 1;
+                        $(that).attr("rowspan", rowSpan);
+                        $(this).hide();
+                    } else {
+                        that = this;
+                    }
+                });
+            });
+        });
+    }
+
 })(jQuery);

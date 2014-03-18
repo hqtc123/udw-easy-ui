@@ -2,14 +2,11 @@
 /**
  * Created by JetBrains PhpStorm.
  * User: heqing02
- * Date: 14-3-10
- * Time: 上午11:20
+ * Date: 14-3-14
+ * Time: 下午5:34
  * To change this template use File | Settings | File Templates.
  */
-
-class StoreSizeController {
-
-    public function actionSize($params){
-
-    }
+require_once("../model/db/Db.php");
+interface DAOInterface {
+    public function getAll();
 }

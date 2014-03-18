@@ -51,3 +51,9 @@ form table td {
 .sub-menu li a.active {
     background: #ffffff;
 }
+
+.list-table td{
+    color: #555;
+    border-right: 1px #e0e3e6 solid;
+    border-top: 1px #d0d3d6 solid;
+}

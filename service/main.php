@@ -275,9 +275,12 @@ if ($_GET["action"] == "task") {
         $row2 = mysql_fetch_array($newRs);
         $newRow["product"] = $row2[1];
         $compRs = $db->query("select * from table_comp_size where table_name='" . $newRow["tableName"] . "'");
-        $rsRow = mysql_fetch_array($compRs);
-        if ($rsRow[2] != null && $rsRow[2] != 0)
-            $newRow["per_size"] = $rsRow[1] / $rsRow[2];
+        if ($rsRow = mysql_fetch_array($compRs)) {
+            if ($rsRow[2] != null && $rsRow[2] != 0)
+                $newRow["per_size"] = $rsRow[1] / $rsRow[2];
+        } else {
+            $newRow["per_size"] = 0;
+        }
         $startDate = substr($row2[3], 0, 4) . "-" . substr($row2[3], 4, 2) . "-" . substr($row2[3], 6, 2);
         $endDate = substr($row2[4], 0, 4) . "-" . substr($row2[4], 4, 2) . "-" . substr($row2[4], 6, 2);
         $newRow["already_days"] = abs((strtotime($endDate) - strtotime($startDate)) / 3600 / 24);

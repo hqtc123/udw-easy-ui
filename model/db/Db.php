@@ -26,9 +26,9 @@ class Db {
         mysql_select_db(DBConfig::DB_UDW_UI);
     }
 
-    public function connectStorageResource() {
+    public function connectResource() {
         mysql_connect(DBConfig::HOST . ":" . DBConfig::PORT, DBConfig::USER, DBConfig::PASSWORD);
-        mysql_select_db(DBConfig::DB_STORAGE_RESOURCES);
+        mysql_select_db(DBConfig::DB_RESOURCES);
     }
 
     public function query($sql) {

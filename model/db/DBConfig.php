@@ -7,5 +7,5 @@ class DBConfig {
     const PASSWORD = "123456";
 
     const DB_UDW_UI = "udw_ui";
-    const DB_STORAGE_RESOURCES = "storage_resources";
+    const DB_RESOURCES = "resources";
 }

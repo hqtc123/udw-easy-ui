@@ -6,9 +6,9 @@
  * Time: 下午5:51
  * To change this template use File | Settings | File Templates.
  */
-require_once("../service/Db.php");
+require_once("../model/db/Db.php");
 $db = Db::getInstance();
-$db->createCon();
+$db->connectUdwUi();
 if ($_GET["action"] == "in-out") {
     $result = $db->query('select DISTINCT date FROM input_size UNION select DISTINCT date FROM output_size ORDER BY date');
 

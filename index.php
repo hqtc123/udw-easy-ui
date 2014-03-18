@@ -53,10 +53,11 @@
                         <li><a href="javascript:void(0)" id="choose-record" class="item-span">资源变更记录</a></li>
                     </ul>
                 </li>
-                <li id="three"><a href="#three">数据质量<span></span></a>
+                <li id="three"><a href="#three">资源账单<span></span></a>
                     <ul class="sub-menu">
-<!--                        <li><a href="http://szwg-qatest-dpf006.szwg01.baidu.com:8525/index.php"-->
-<!--                               id="choose-quality">数据质量</a></li>-->
+                        <!--                        <li><a href="http://szwg-qatest-dpf006.szwg01.baidu.com:8525/index.php"-->
+                        <!--                               id="choose-quality">数据质量</a></li>-->
+                        <li><a href="javascript:void(0)" id="choose-storage" class="item-span">存储资源账单</a></li>
                         <li><a href="javascript:void(0)" class="item-span">敬请期待</a></li>
                     </ul>
                 </li>
@@ -101,6 +102,7 @@
         <?php include_once("page-partitions/right_estimate.php"); ?>
         <?php include_once("page-partitions/right_apply.php"); ?>
         <?php include_once("page-partitions/right_record.php"); ?>
+        <?php include_once("page-partitions/right_storage.php"); ?>
     </div>
 </div>
 <!--</div>-->

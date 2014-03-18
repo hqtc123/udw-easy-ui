@@ -1,7 +1,7 @@
 <?php
-require_once("../service/Db.php");
+require_once("../model/db/Db.php");
 $db = Db::getInstance();
-$db->createCon();
+$db->connectUdwUi();
 $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
 $rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
 $offset = ($page - 1) * $rows;

@@ -6,7 +6,8 @@ var liAndPageTitle = {
     estimate: " 资源预估",
     apply: " 资源申请 | 审批",
     record: " 资源变更记录",
-    quality: " 数据质量"
+    quality: " 数据质量",
+    storage: "存储资源账单"
 };
 var pageAlreadyInit = {
     summary: true,
@@ -18,6 +19,19 @@ var pageAlreadyInit = {
     record: false,
     quality: false
 };
+
+function PostToAction(url, params, func) {
+
+    $.ajax({
+        url: url,
+        dataType: "json",
+        type: "POST",
+        data: params,
+        success: function (ret) {
+            func(ret);
+        }
+    })
+}
 function drawTotalChart(id) {
     var chart;
     var dateArr = [];
@@ -427,7 +441,7 @@ $(function () {
                     url: "service/main.php?action=res-estimate",
                     success: function (data) {
                         sizePerDay = parseFloat(data).toFixed(2);
-                        $("#per-day-td").html("UDW压缩后平均每天数据量："+sizePerDay+"T。(<b>经过ohio、RAID后的大小是100TB/天</b>)");
+                        $("#per-day-td").html("UDW压缩后平均每天数据量：" + sizePerDay + "T。(<b>经过ohio、RAID后的大小是100TB/天</b>)");
                     }
                 });
                 $("#table-estimate-dg").heDatagrid("service/main.php?action=table-estimate");
@@ -451,6 +465,27 @@ $(function () {
             $(".right-child[id='record-div']").show();
             if (pageAlreadyInit.record == false) {
                 initTree();
+                pageAlreadyInit.record = true;
+            }
+        });
+    })
+    $("#choose-storage").on("click", function () {
+        $(".right-child[id!='storage-div']").fadeOut("slow", function () {
+            $(".right-child[id='storage-div']").show();
+            if (pageAlreadyInit.record == false) {
+                var params = {};
+                PostToAction("service/index.php?c=storage_quota&a=get_all_new", params, function (ret) {
+                    for (var x in ret) {
+                        var tr = $("<tr>")
+                        tr.append($("<td>").text(ret[x].house)).append($("<td>").text(ret[x].cluster)).append($("<td>").text(ret[x].quota));
+                        tr.append($("<td>").text(ret[x].compressed_used)).append($("<td>").text((ret[x].scale * 100).toFixed(2) + " %")).append($("<td>").text(ret[x].rest));
+                        tr.append($("<td>").text(ret[x].log)).append($("<td>").text(ret[x].log36)).append($("<td>").text(ret[x].lsp));
+                        tr.append($("<td>").text(ret[x].event)).append($("<td>").text(ret[x].mart)).append($("<td>").text(ret[x].qe));
+                        tr.append($("<td>").text(ret[x].data_use))
+                        $("#storage-bill-table tbody").append(tr);
+                    }
+                    $("#storage-bill-table").rowSpan(0);
+                })
                 pageAlreadyInit.record = true;
             }
         });

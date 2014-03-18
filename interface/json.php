@@ -1,7 +1,7 @@
 <?php
-include_once("../service/Db.php");
+include_once("../model/db/Db.php");
 $db = Db::getInstance();
-$db->createCon();
+$db->connectUdwUi();
 date_default_timezone_set("Asia/Shanghai");
 $req = isset($_GET["req"]) ? $_GET["req"] : "table";
 

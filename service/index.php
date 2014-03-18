@@ -9,7 +9,7 @@
 require_once("../controller/Dispatcher.php");
 $controller = $_REQUEST["c"];
 $action = $_REQUEST["a"];
-$params = $_REQUEST["params"];
+$params = isset($_REQUEST["params"]) ? $_REQUEST["params"] : "";
 
 $dispatcher = Dispatcher::getInstance();
 $dispatcher->dispatch($controller, $action, $params);
