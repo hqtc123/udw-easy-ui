@@ -68,8 +68,8 @@ class StorageQuotaController {
             $newArr["rest"] = $newArr["quota"] - $newArr["compressed_used"];
             array_push($ret, $newArr);
         }
-        $newArr["cluster"] = "合计";
-        $newArr["house"] = "";
+        $result["data"] = $ret;
+
         $newArr["quota"] = 0;
         $newArr["compressed_used"] = 0;
         $newArr["log"] = 0;
@@ -92,7 +92,17 @@ class StorageQuotaController {
         }
         $newArr["scale"] = $newArr["compressed_used"] / $newArr["quota"];
         $newArr["rest"] = $newArr["quota"] - $newArr["compressed_used"];
-        array_push($ret, $newArr);
+        $result["total"] = $newArr;
+        echo json_encode($result);
+    }
+
+    public function actionDetailQuota($params) {
+        $ret = array();
+        $date = $this->storageQuotaDao->getNewDate();
+        $storageQuotaList = $this->storageQuotaDao->getAllByDate($date);
+        foreach ($storageQuotaList as $storageQuota) {
+            array_push($ret, $storageQuota->toArray());
+        }
         echo json_encode($ret);
     }
 }

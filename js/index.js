@@ -17,11 +17,11 @@ var pageAlreadyInit = {
     estimate: false,
     apply: false,
     record: false,
-    quality: false
+    quality: false,
+    storage: false
 };
 
 function PostToAction(url, params, func) {
-
     $.ajax({
         url: url,
         dataType: "json",
@@ -472,21 +472,63 @@ $(function () {
     $("#choose-storage").on("click", function () {
         $(".right-child[id!='storage-div']").fadeOut("slow", function () {
             $(".right-child[id='storage-div']").show();
-            if (pageAlreadyInit.record == false) {
+            if (pageAlreadyInit.storage == false) {
                 var params = {};
-                PostToAction("service/index.php?c=storage_quota&a=get_all_new", params, function (ret) {
+                PostToAction("service/index.php?c=storage_quota&a=get_all_new", params, function (result) {
+
+                    var ret = result.data;
                     for (var x in ret) {
                         var tr = $("<tr>")
-                        tr.append($("<td>").text(ret[x].house)).append($("<td>").text(ret[x].cluster)).append($("<td>").text(ret[x].quota));
-                        tr.append($("<td>").text(ret[x].compressed_used)).append($("<td>").text((ret[x].scale * 100).toFixed(2) + " %")).append($("<td>").text(ret[x].rest));
-                        tr.append($("<td>").text(ret[x].log)).append($("<td>").text(ret[x].log36)).append($("<td>").text(ret[x].lsp));
-                        tr.append($("<td>").text(ret[x].event)).append($("<td>").text(ret[x].mart)).append($("<td>").text(ret[x].qe));
-                        tr.append($("<td>").text(ret[x].data_use))
+                        tr.append($("<td>").text(ret[x].house)).append($("<td>").text(ret[x].cluster))
+                        tr.append($("<td>").text(ret[x].quota));
+                        tr.append($("<td>").text(ret[x].compressed_used)).append($("<td>").text((ret[x].scale * 100).toFixed(2)
+                            + " %"));
+                        tr.append($("<td>").text(ret[x].rest));
+                        tr.append($("<td>").text(ret[x].log)).append($("<td>").text(ret[x].log36))
+                        tr.append($("<td>").text(ret[x].lsp));
+                        tr.append($("<td>").text(ret[x].event)).append($("<td>").text(ret[x].mart))
+                        tr.append($("<td>").text(ret[x].qe));
+                        tr.append($("<td>").text(ret[x].data_use));
                         $("#storage-bill-table tbody").append(tr);
                     }
+                    var total = result.total;
+                    tr = $("<tr class='total-tr'>");
+                    tr.append($("<td colspan='2' style='text-align: center;'>").text("合 计")).append($("<td>").text(total.quota));
+                    tr.append($("<td>").text(total.compressed_used)).append($("<td>").text((total.scale * 100).toFixed(2)
+                        + " %"));
+                    tr.append($("<td>").text(total.rest));
+                    tr.append($("<td>").text(total.log)).append($("<td>").text(total.log36))
+                    tr.append($("<td>").text(total.lsp));
+                    tr.append($("<td>").text(total.event)).append($("<td>").text(total.mart))
+                    tr.append($("<td>").text(total.qe));
+                    tr.append($("<td>").text(total.data_use));
+                    $("#storage-bill-table tbody").append(tr);
                     $("#storage-bill-table").rowSpan(0);
+                });
+                PostToAction("service/index.php?c=storage_quota&a=get_detail_quota", params, function (ret) {
+                    for (var x in ret) {
+                        var tr = $("<tr>");
+                        tr.append($("<td>").text(ret[x].cluster)).append($("<td>").text(ret[x].dir));
+                        var quota = ret[x].quota;
+                        var used = ret[x].compressed_used;
+                        if (ret[x].dir == "/log/20682/") {
+                            quota = -quota;
+                            used = -used;
+                        }
+                        var scale = (used / quota * 100).toFixed(2) + " %";
+                        var rest = quota - used;
+                        tr.append($("<td>").text(quota)).append($("<td>").text(used));
+                        if (used - quota > 0 && quota > 0) {
+                            tr.append($("<td style='color: red'>").text(scale)).append($("<td>").text(rest));
+                        }
+                        else
+                            tr.append($("<td>").text(scale)).append($("<td>").text(rest));
+                        tr.append($("<td>").text(ret[x].detect_date));
+                        $("#storage-detail-table tbody").append(tr);
+                    }
+                    $("#storage-detail-table").rowSpan(0);
                 })
-                pageAlreadyInit.record = true;
+                pageAlreadyInit.storage = true;
             }
         });
     })

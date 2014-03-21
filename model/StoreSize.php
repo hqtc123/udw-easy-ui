@@ -7,7 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
 
-class StorageSize {
+class StoreSize {
     private $id;
     private $system;
     private $product;
@@ -138,5 +138,17 @@ class StorageSize {
      */
     public function getSystem() {
         return $this->system;
+    }
+
+    public function toArray() {
+        $arr["id"] = $this->id;
+        $arr["system"] = $this->system;
+        $arr["product"] = $this->product;
+        $arr["name"] = $this->name;
+        $arr["path"] = $this->path;
+        $arr["size"] = $this->size;
+        $arr["cluster"] = $this->cluster;
+        $arr["date"] = $this->date;
+        return $arr;
     }
 }

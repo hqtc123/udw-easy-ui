@@ -52,8 +52,14 @@ form table td {
     background: #ffffff;
 }
 
-.list-table td{
+.list-table td {
     color: #555;
     border-right: 1px #e0e3e6 solid;
     border-top: 1px #d0d3d6 solid;
+    padding: 0 4px;
+}
+
+.total-tr td {
+    padding: 2px 2px;
+    font-size: 14px;
 }

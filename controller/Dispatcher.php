@@ -9,6 +9,7 @@
 require_once("HistoryController.php");
 require_once("ResController.php");
 require_once("StorageQuotaController.php");
+require_once("StoreSizeController.php");
 class Dispatcher {
     private static $instance = null;
 
@@ -22,11 +23,18 @@ class Dispatcher {
     public function dispatch($controller, $action, $params) {
         switch ($controller) {
             case "store_size":
+                $storeSizeController = new StoreSizeController();
+                if ($action == "get_all") {
+                    $storeSizeController->actionAll($params);
+                }
                 break;
             case "storage_quota":
-                $storageController = new StorageQuotaController();
+                $storageQuotaController = new StorageQuotaController();
                 if ($action == "get_all_new") {
-                    $storageController->actionQuotaAllNew($params);
+                    $storageQuotaController->actionQuotaAllNew($params);
+                }
+                if ($action == "get_detail_quota") {
+                    $storageQuotaController->actionDetailQuota($params);
                 }
             default:
                 break;

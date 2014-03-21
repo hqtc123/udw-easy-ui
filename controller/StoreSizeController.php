@@ -6,10 +6,23 @@
  * Time: 上午11:20
  * To change this template use File | Settings | File Templates.
  */
-
+require_once("../model/dao/StoreSizeDao.php");
+require_once("../model/StoreSize.php");
 class StoreSizeController {
+    private $storeSizeDao;
 
-    public function actionSize($params){
+    function __construct() {
+        $this->storeSizeDao = new StoreSizeDao();
+    }
 
+    public function actionAll($params) {
+        $data = array();
+        $storeSizeList = $this->storeSizeDao->getAll();
+        foreach ($storeSizeList as $storeSize) {
+            array_push($data, $storeSize->toArray());
+        }
+        $ret["success"] = true;
+        $ret["data"] = $data;
+        echo json_encode($ret);
     }
 }
