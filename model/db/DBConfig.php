@@ -6,6 +6,6 @@ class DBConfig {
     const USER = "root";
     const PASSWORD = "123456";
 
-    const DB_UDW_UI = "udw_ui";
-    const DB_RESOURCES = "resources";
+    const DB_UDW_UI = "ui";
+    const DB_RESOURCES = "es";// recommend gui
 }
